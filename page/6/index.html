@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"crayonxinxin.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"crayonxinxin.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://crayonxinxin.github.io/page/6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Crayonxiaoxin">
 <meta name="twitter:card" content="summary">
 
@@ -37,7 +37,7 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'en'
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -81,7 +81,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -99,6 +99,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -115,24 +116,51 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>الوسوم<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>التصنيفات<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">57</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات<span class="badge">57</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>بحث
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="بحث..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -142,6 +170,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -154,7 +183,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/dp/%E6%A6%82%E7%8E%87dp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -177,26 +206,40 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:03:53 / Modified: 22:04:15" itemprop="dateCreated datePublished" datetime="2024-05-30T22:03:53+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:03:53 / عُدل: 22:04:15" itemprop="dateCreated datePublished" datetime="2024-05-30T22:03:53+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -223,6 +266,14 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">2010</span>;</span><br><span class="line"><span class="type">int</span> n, m, v, e;</span><br><span class="line"><span class="type">int</span> f[maxn][maxn], c[maxn], d[maxn];</span><br><span class="line"><span class="type">double</span> dp[maxn][maxn][<span class="number">2</span>], p[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d&quot;</span>, &amp;n, &amp;m, &amp;v, &amp;e);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;c[i]);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;d[i]);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>, &amp;p[i]);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= v; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; i; j++) f[i][j] = f[j][i] = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> u, V, w;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= e; i++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;u, &amp;V, &amp;w);</span><br><span class="line">    f[u][V] = f[V][u] = <span class="built_in">min</span>(w, f[u][V]);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= v; k++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= v; i++)  <span class="comment">// 前面的，按照前面的题解进行一个状态转移</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; i; j++)</span><br><span class="line">        <span class="keyword">if</span> (f[i][k] + f[k][j] &lt; f[i][j]) f[i][j] = f[j][i] = f[i][k] + f[k][j];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= m; j++) dp[i][j][<span class="number">0</span>] = dp[i][j][<span class="number">1</span>] = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line">  dp[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>] = dp[<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++)  <span class="comment">// 有后效性方程</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= <span class="built_in">min</span>(i, m); j++) &#123;</span><br><span class="line">      dp[i][j][<span class="number">0</span>] = <span class="built_in">min</span>(dp[i - <span class="number">1</span>][j][<span class="number">0</span>] + f[c[i - <span class="number">1</span>]][c[i]],</span><br><span class="line">                        dp[i - <span class="number">1</span>][j][<span class="number">1</span>] + f[c[i - <span class="number">1</span>]][c[i]] * (<span class="number">1</span> - p[i - <span class="number">1</span>]) +</span><br><span class="line">                            f[d[i - <span class="number">1</span>]][c[i]] * p[i - <span class="number">1</span>]);</span><br><span class="line">      <span class="keyword">if</span> (j != <span class="number">0</span>) &#123;</span><br><span class="line">        dp[i][j][<span class="number">1</span>] = <span class="built_in">min</span>(dp[i - <span class="number">1</span>][j - <span class="number">1</span>][<span class="number">0</span>] + f[c[i - <span class="number">1</span>]][d[i]] * p[i] +</span><br><span class="line">                              f[c[i - <span class="number">1</span>]][c[i]] * (<span class="number">1</span> - p[i]),</span><br><span class="line">                          dp[i - <span class="number">1</span>][j - <span class="number">1</span>][<span class="number">1</span>] +</span><br><span class="line">                              f[c[i - <span class="number">1</span>]][c[i]] * (<span class="number">1</span> - p[i - <span class="number">1</span>]) * (<span class="number">1</span> - p[i]) +</span><br><span class="line">                              f[c[i - <span class="number">1</span>]][d[i]] * (<span class="number">1</span> - p[i - <span class="number">1</span>]) * p[i] +</span><br><span class="line">                              f[d[i - <span class="number">1</span>]][c[i]] * (<span class="number">1</span> - p[i]) * p[i - <span class="number">1</span>] +</span><br><span class="line">                              f[d[i - <span class="number">1</span>]][d[i]] * p[i - <span class="number">1</span>] * p[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">double</span> ans = <span class="number">1e9</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= m; i++) ans = <span class="built_in">min</span>(dp[n][i][<span class="number">0</span>], <span class="built_in">min</span>(dp[n][i][<span class="number">1</span>], ans));</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>, ans);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/dp/%E6%A6%82%E7%8E%87dp/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -240,7 +291,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/dp/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -263,26 +314,40 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 21:59:40 / Modified: 22:03:13" itemprop="dateCreated datePublished" datetime="2024-05-30T21:59:40+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 21:59:40 / عُدل: 22:03:13" itemprop="dateCreated datePublished" datetime="2024-05-30T21:59:40+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -304,325 +369,14 @@
 <p><code>dp[i][j]</code>表示前 i 件物品恰放入一个容量为 j 的背包可以获得的最大价值<br>则状态转移方程为：</p>
 <p><code>dp[i][j] = max(dp[i-1][j] , dp[i-1][j-c[i]] + w[i]])</code></p>
 <p>代码实现：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long int</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> c[maxn], w[maxn], dp[maxn][maxn];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, v;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; v;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        cin &gt;&gt; c[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        cin &gt;&gt; w[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= v;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][j] = dp[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(c[i]&lt;=j)&#123;</span><br><span class="line">                dp[i][j] = <span class="built_in">max</span>(dp[i][j], dp[i - <span class="number">1</span>][j - c[i]] + w[i]);</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; dp[n][v] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// std::ios::sync_with_stdio(false);</span></span><br><span class="line">    <span class="comment">// cin.tie(0);</span></span><br><span class="line">    <span class="comment">// cout.tie(0);</span></span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>此时的时间和空间复杂度均为Θ(<em>V</em>∗<em>N</em>) ,</p>
-<h3 id="滚动数组"><a href="#滚动数组" class="headerlink" title="滚动数组"></a>滚动数组</h3><p>滚动数组是 dp 中最常用的空间优化技术</p>
-<p>使用滚动数组，可以将 dp 的状态维度减少一维</p>
-<p>从转移方程可以看出 <code>dp[i][j] = max(dp[i-1][j-v[i]]+w[i],dp[i-1][j])</code> 只与 <code>dp[i-1]</code>有关，和 <code>dp[i-2],dp[i-3]</code>… 都没有关系，所以我们只需要 <code>dp[i-1]</code> 就够了</p>
-<h4 id="交替滚动"><a href="#交替滚动" class="headerlink" title="交替滚动"></a>交替滚动</h4><p>定义<code>dp[2][j]</code>，用<code>dp[1][j],dp[0][j]</code>交替滚动</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= v; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        dp[i &amp; <span class="number">1</span>][j] = dp[(i &amp; <span class="number">1</span>) ^ <span class="number">1</span>][j];</span><br><span class="line">        <span class="comment">// 如果当前物品的体积大于当前的容量，显然不能放入</span></span><br><span class="line">        <span class="keyword">if</span> (c[i] &lt;= j)</span><br><span class="line">            dp[i &amp; <span class="number">1</span>][j] = <span class="built_in">max</span>(dp[i &amp; <span class="number">1</span>][j], dp[(i &amp; <span class="number">1</span>) ^ <span class="number">1</span>][j - c[i]] + w[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="自我滚动"><a href="#自我滚动" class="headerlink" title="自我滚动"></a>自我滚动</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 逆序！！！</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = m; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c[i] &lt;= j)</span><br><span class="line">            dp[j] = <span class="built_in">max</span>(dp[j], dp[j - c[i]] + w[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>循环 j 的时候记得反过来</strong></p>
-<h3 id="初始化问题"><a href="#初始化问题" class="headerlink" title="初始化问题"></a>初始化问题</h3><p>我们看到的求最优解的背包问题题目中，事实上有两种不太相同的问法。</p>
-<p>有的题目要求“<strong>恰好装满背包</strong>”时的最优解，有的题目则并没有要求必须把背包装满。一种区别这两种问法的实现方法是在初始化的时候有所不同。</p>
-<p>如果是第一种问法，要求恰好装满背包，那么在初始化时除了 <code>dp[0]</code> 为 0，其 它 <code>dp[1...v]</code> 均设为 <code>−∞</code>，这样就可以保证最终得到的 <code>dp[v]</code> 是一种恰好装满背包的 最优解。</p>
-<p>如果并没有要求必须把背包装满，而是只希望价格尽量大，初始化时应该 将 <code>dp[0...V]</code>全部设为 0 。</p>
-<p>这是为什么呢？可以这样理解：初始化的 F 数组事实上就是在没有任何物品可以放入背包时的合法状态。如果要求背包恰好装满，那么此时只有容量为 0 的背包可以在什么也不装且价值为 0 的情况下被“恰好装满”，其它容量的背包均没有合法的解，属于未定义的状态，应该被赋值为 <code>−∞ </code>了。如果背包并非必须被装满，那么任何容量的背包都有一个合法解“什么都不装”，这个解的价值为 0 ，所以初始时状态的值也就全部为 0 了。</p>
-<p>这个小技巧完全可以推广到其它类型的背包问题，后面也就不再对进行状态转移之前的初始化进行讲解。</p>
-<h2 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h2><h3 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h3><p>有N 种物品和一个容量为V 的背包，每种物品都有无限件可用。第 i 种物品的费用是c [ i ] ，价值是w [ i ]。求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这种问题类似于01背包，不同的是每件物品有无限件，而01背包每件物品只有一件。状态方程仍然可以按照01背包时的思路，令<code>dp[i][j]</code>表示前 i 种物品放入一个容量为 j 的背包的最大权值。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j]=<span class="built_in">max</span>(dp[i−<span class="number">1</span>][j−k∗c[i]]+k∗w[i])   ∣   <span class="number">0</span>≤k∗c[i]≤j</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)<span class="comment">//第i件物品</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = c[i]; j &lt;= V; j++)<span class="comment">//背包体积</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k * c[i] &lt;= j; k++)<span class="comment">//决策数</span></span><br><span class="line">				dp[i][j] = <span class="built_in">max</span>(dp[i][j], dp[i - <span class="number">1</span>][j - k * c[i]] + k * w[i]);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">for 物品</span></span><br><span class="line"><span class="comment">    for 体积</span></span><br><span class="line"><span class="comment">        for 决策</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>注意取 max 时与01背包不同</strong>，max 的第一个参数不再是<code>dp[i-1][j]</code>，因为<code>dp[i][j]</code>要在取多件的情况中取最值； 当 k &#x3D; 0时，<code>dp[i-1][j - k*c[i]] + k*w[i]</code>就相当于<code>dp[i-1][j]</code>，也就是这件物品一件也不取的情况</p>
-<p>时间复杂度为<code>Θ(N ∗ Σ(V/c[i]))</code></p>
-<h2 id="多重背包"><a href="#多重背包" class="headerlink" title="多重背包"></a>多重背包</h2><h3 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意"></a>题目大意</h3><p>有 N 种物品和一个容量为 V 的背包。第 i 种物品最多有 p [ i ] 件可用，每件费用是c [ i ] ，价值是w [ i ] 。求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大。</p>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>对于第 i 种物品有 <code>p[i]+1</code>种策略：取<code>0...p[i]</code>件，令<code>dp[i][j]</code>表示前 i 种物品恰放入一个容量为 j 的背包的最大价值，则有状态转移方程</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j]=<span class="built_in">max</span>(dp[i−<span class="number">1</span>][j−k∗c[i]]+k∗w[i]) ∣     <span class="number">0</span>≤k≤p[i]</span><br></pre></td></tr></table></figure>
-
-<h3 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long int</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> dp[maxn], c[maxn], w[maxn], p[maxn];</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        cin &gt;&gt; c[i] &gt;&gt; w[i] &gt;&gt; p[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = m; j &gt;= <span class="number">0</span>; --j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k * c[i] &lt;= j &amp;&amp; k &lt;= p[i]; ++k)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[j] = <span class="built_in">max</span>(dp[j], dp[j - c[i] * k] + w[i] * k);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)</span><br><span class="line">        res = <span class="built_in">max</span>(res, dp[i]);</span><br><span class="line">    cout &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// std::ios::sync_with_stdio(false);</span></span><br><span class="line">    <span class="comment">// cin.tie(0);</span></span><br><span class="line">    <span class="comment">// cout.tie(0);</span></span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>时间复杂度</strong>: O( 物品数 × 背包的体积 × 选法) </p>
-<h3 id="二进制优化法"><a href="#二进制优化法" class="headerlink" title="二进制优化法"></a>二进制优化法</h3><blockquote>
-<p>本质： 将多重背包转化为 01背包问题</p>
-</blockquote>
-<h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><p>暴力法实质上是把多重背包中的每个物品都分成了 p 件，我们可以通过其他分法，可以通过选这些物品，选几个来表示选 s 个的所有可能</p>
-<p>这时候就想到了二进制，因为任何实数都可以由二进制数组成。</p>
-<p>那么我们就可以把一个物品拆成 $ 2^0 ，2^1 , 2^2 , …… , 2^k , (x-2^{k+1}+1)$ ( k 为最大的  $2^i$ 总和不大于 x 的实数，$log_x$ 个物品</p>
-<p>这些物品可以通过组合，组成 0 - x 内的整数（不能漏不能多）</p>
-<h4 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h4><p>设一个实数 x ， 拆分成 $ 2^0 ，2^1 , 2^2 , …… , 2^k ,c$ ，因 ( k 为最大的  $2^i$ 总和不大于 x 的实数)为 k 是最大的 $2^k$ 不大于 x 的实数，所以可以知道 c  &lt; $2^{k+1}$</p>
-<p>根据二进制可知 0 到 ($2^{k+1}-1$)都可以用以上的数组成</p>
-<p>因为 $2^{k+1}-1+c$为可以凑到的最大值，所以$2^{k+1}-1+c&#x3D;p &#x3D;&gt; p-(2^{k+1}-1)$</p>
-<p>现在已知$0-(2^{k+1}-1)$ 和$c-p$ 两端都可以由以上数拼接起来，现在问题就是，这两段合在一起的时候，中间有无空缺。</p>
-<p>如果有空缺的话，$c&gt;2^{k+1}-1$ 即 $c\ge2^{k+1}$</p>
-<p>显然与开始得到的 $c&lt;2^{k+1}$相矛盾，可得0-p中的任何一个数都可以拼接起来</p>
-<p><strong>时间复杂度</strong>：O$( 物品数 \times 背包的体积 \times log 选法) $&#x3D; O$(N \times V \times logP)$</p>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/5/">多重背包问题 ||</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long int</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> c[maxn], w[maxn], p[maxn], dp[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> c, w;</span><br><span class="line">&#125; good[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        cin &gt;&gt; c[i] &gt;&gt; w[i] &gt;&gt; p[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cnt = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 分成2^k次方的时候</span></span><br><span class="line">        <span class="comment">// 新物品的体积和价值 = 选的个数 *单个的体积和价格</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> z = <span class="number">1</span>; z &lt;= p[i]; z *= <span class="number">2</span>, ++cnt)</span><br><span class="line">        &#123;</span><br><span class="line">            good[cnt].c = z * c[i];</span><br><span class="line">            good[cnt].w = z * w[i];</span><br><span class="line">            p[i] -= z;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (p[i] &gt; <span class="number">0</span>)<span class="comment">//最后一个物品</span></span><br><span class="line">        &#123;</span><br><span class="line">            good[cnt].c = p[i] * c[i];</span><br><span class="line">            good[cnt++].w = p[i] * w[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//变成了01背包</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; cnt;++j)<span class="comment">//遍历选法</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = m; k &gt;= good[j].c;k--)<span class="comment">//遍历体积，由于是滚动一维，所以要逆序遍历</span></span><br><span class="line">            &#123;</span><br><span class="line">                dp[k]=<span class="built_in">max</span>(dp[k],dp[k-good[j].c]+good[j].w);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; dp[m] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// std::ios::sync_with_stdio(false);</span></span><br><span class="line">    <span class="comment">// cin.tie(0);</span></span><br><span class="line">    <span class="comment">// cout.tie(0);</span></span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="单调队列优化法"><a href="#单调队列优化法" class="headerlink" title="单调队列优化法"></a>单调队列优化法</h3><h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><p>转移方程<code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-k*c[i]] + k*w[i])</code></p>
-<p>单调队列优化的主要思想就是<strong>分组更新</strong>，因为<code>w[i]</code>是成倍增加的，<code>dp[i-1][j]</code>只会更新<code>dp[i-1][j+k*w[i]]</code>(这里是从前往后看的，所以是+)</p>
-<p>对于当前为 w 的体积，我们可以按照余数将它分为 w 组，也就是0… w−1同一个剩余系的数在一组<br>比如在模 3 意义下，1 , 4 , 7 , 10 是一组，2 , 5 , 8 , 11 是一组，3 , 6 , 9 , 12 是一组<br>每组的转移是互不影响的，也就是单独转移</p>
-<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">20005</span>;</span><br><span class="line"><span class="comment">// pre存储i - 1的时候的值</span></span><br><span class="line"><span class="comment">// q为偏移量为?时候的单调队列</span></span><br><span class="line"><span class="type">int</span> dp[N], pre[N], q[N], n, m;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//n为物品的总数，背包容量为m</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">while</span> (n--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> v, w, s;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;v, &amp;w, &amp;s);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//赋值上一层结果</span></span><br><span class="line">        <span class="built_in">memcpy</span>(pre, dp, <span class="built_in">sizeof</span>(dp));</span><br><span class="line">		</span><br><span class="line">        <span class="comment">//枚举偏移量(起点)</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; v; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//建新的单调队列 头&gt;&gt;&gt;尾巴，里面存的是体积</span></span><br><span class="line">            <span class="type">int</span> head = <span class="number">0</span>, tail = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//更新该起点代表的行,k是此时的体积</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = i; k &lt;= m; k += v)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//判断窗格是否超过了k,头需要往后滑动</span></span><br><span class="line">                <span class="keyword">if</span> (head &lt;= tail &amp;&amp; k - q[head] &gt; s * v)</span><br><span class="line">                    head++;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//赋值</span></span><br><span class="line">                <span class="comment">//pre[q[head]]+(k - q[head]) / v * w)：前i-1个中选，且体积不大于q[head]的最大价值 + 第i个物品选(k - q[head]) / v 个的价值</span></span><br><span class="line">                <span class="keyword">if</span> (head &lt;= tail)</span><br><span class="line">                    dp[k] = <span class="built_in">max</span>(dp[k], pre[q[head]] + (k - q[head]) / v * w);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//队列中加入k,并且维护队列单调性</span></span><br><span class="line">                <span class="comment">//pre[k]：前i-1个中选，且体积不大于q[head]的最大价值 + 第i个物品选0个</span></span><br><span class="line">                <span class="comment">//pre[q[tail]] + (k - q[tail]) / v * w ：前i-1个中选，且体积不大于q[tail]的最大价值 + 第i个物品选(k - q[tail]) / v个</span></span><br><span class="line">                <span class="keyword">while</span> (head &lt;= tail &amp;&amp; pre[q[tail]] + (k - q[tail]) / v * w &lt; pre[k])</span><br><span class="line">                    tail--;</span><br><span class="line">                q[++tail] = k;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, dp[m]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="http://acm.sztu.edu.cn/csgoj/problemset/problem?pid=1538">演唱会 SOJ1538</a></p>
-<h2 id="混合多种背包问题"><a href="#混合多种背包问题" class="headerlink" title="混合多种背包问题"></a>混合多种背包问题</h2><h3 id="题目大意-3"><a href="#题目大意-3" class="headerlink" title="题目大意"></a>题目大意</h3><p>将前面三个背包混合起来，也就是说，有的物品只可以取一次（01背包），有的物品可以取无限次（完全背包），有的物品可以取的次数有一个上限（多重背包）</p>
-<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>当前物品的选法，和相应的更新值，和之前的物品类型无关。所以每次判断当前物品的类型，选择对应的转移方程来进行转移就可以了。</p>
-<h2 id="二维费用背包问题"><a href="#二维费用背包问题" class="headerlink" title="二维费用背包问题"></a>二维费用背包问题</h2><h3 id="题目大意-4"><a href="#题目大意-4" class="headerlink" title="题目大意"></a>题目大意</h3><p>二维费用的背包问题是指：对于每件物品，具有两种不同的费用；选择这件物品必须同时付出这两种代价；对于每种代价都有一个可付出的最大值（背包容量）。问怎样选择物品可以得到最大的价值</p>
-<p><strong>P1507 NASA的食物计划</strong></p>
-<p>航天飞机的体积有限，当然如果载过重的物品，燃料会浪费很多钱，每件食品都有各自的体积、质量以及所含卡路里。在告诉你体积和质量的最大值的情况下，请输出能达到的食品方案所含卡路里的最大值，当然每个食品只能使用一次。</p>
-<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>状态定义：</p>
-<p>现在不仅仅是对体积有限制，还对质量有限制，因此我们在选择一个物品时还应该在意当前的质量，所以需要在01背包的基础上再加一个维度</p>
-<p>定义<code>dp[i][j][k]</code>为遍历到第 i 个物品，当前体积不超过 j ，质量不超过 k 获得的最大卡路里值</p>
-<p>转移方程</p>
-<p><code>dp[i][j][k]=max(dp[i−1][j][k],dp[i−1][j−c[i]][k−g[i]]+w[i])</code></p>
-<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">55</span>, M = <span class="number">4e2</span> + <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> h1[N], t1[N], k1[N];</span><br><span class="line"><span class="type">int</span> f[N][M][M];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> h, t, n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;h, &amp;t, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;h1[i], &amp;t1[i], &amp;k1[i]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        f[i][<span class="number">0</span>][<span class="number">0</span>] = f[i - <span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= h; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= t; k++)</span><br><span class="line">            &#123;</span><br><span class="line">                f[i][j][k] = f[i - <span class="number">1</span>][j][k];</span><br><span class="line">                <span class="keyword">if</span> (h1[i] &lt;= j &amp;&amp; t1[i] &lt;= k)</span><br><span class="line">                &#123;</span><br><span class="line">                    f[i][j][k] = <span class="built_in">max</span>(f[i][j][k], f[i - <span class="number">1</span>][j - h1[i]][k - t1[i]] + k1[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, f[n][h][t]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="物品总个数的限制"><a href="#物品总个数的限制" class="headerlink" title="物品总个数的限制"></a>物品总个数的限制</h3><p>有时,”二维费用” 的条件是以这样一种隐含的方式给出的：最多只能取 U 件物品。这事实上相等于每件物品多了一种 “件数” 的费用，每个物品的件数费用均为 1 ，可以付出的最大件数费用为 U </p>
-<h2 id="分组背包"><a href="#分组背包" class="headerlink" title="分组背包"></a>分组背包</h2><h3 id="题目大意-5"><a href="#题目大意-5" class="headerlink" title="题目大意"></a>题目大意</h3><p>有 N 件物品和一个容量为 V 的背包。第i ii件物品的费用是 c [ i ] ，价值是 w [ i ] 。这些物品被划分为若干组，每组中的物品互相冲突，最多选一件。求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大。</p>
-<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>将同一组的物品整合起来，称为一个大物品，那么问题就变成了若干个大物品中，每个可以选择其中的一个物品，求总费用不超过限制的价值最大值是多少？</p>
-<p>其实可以发现，这个非常的类似多重背包。</p>
-<p>定义<code>f[k][j]</code>为遍历到第 k 个大物品，当前体积不超过 j 的价值最大值</p>
-<p><code>f[k][j] = max(f[k-1][j] , f[k-1][j-c[i]]+w[i]) </code>   物品 i $\subseteq $组别 k</p>
-<h3 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1005</span>;</span><br><span class="line"><span class="type">int</span> dp[N][N], q[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> wei, val;</span><br><span class="line">    <span class="built_in">node</span>(<span class="type">int</span> a, <span class="type">int</span> b)</span><br><span class="line">    &#123;</span><br><span class="line">        wei = a, val = b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;node&gt; ve[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;m, &amp;n);</span><br><span class="line">    <span class="type">int</span> we = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a, b, c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">        ve[c].<span class="built_in">push_back</span>(<span class="built_in">node</span>(a, b));</span><br><span class="line">        we = <span class="built_in">max</span>(we, c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= we; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= m; j++)</span><br><span class="line">            dp[i][j] = <span class="number">-1e9</span>;</span><br><span class="line"></span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 遍历物品</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= we; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 遍历体积</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= m; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 遍历决策</span></span><br><span class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; ve[i].<span class="built_in">size</span>(); k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (ve[i][k].wei &lt;= j)</span><br><span class="line">                    dp[i][j] = <span class="built_in">max</span>(dp[i][j], dp[i - <span class="number">1</span>][j - ve[i][k].wei] + ve[i][k].val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= m; i++)</span><br><span class="line">        res = <span class="built_in">max</span>(res, dp[we][i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, res);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="有依赖的背包问题"><a href="#有依赖的背包问题" class="headerlink" title="有依赖的背包问题"></a>有依赖的背包问题</h2><blockquote>
-<p>这种背包问题的物品间存在某种“依赖”的关系。也就是说，i 依赖于 j ，表示若选物品 i ，则必须选物品 j 。</p>
-</blockquote>
-<p>比如：</p>
-<p><del>要求你加入集训队试训前，一定要刷完专题</del></p>
-<h3 id="题目大意-6"><a href="#题目大意-6" class="headerlink" title="题目大意"></a>题目大意</h3><p>给出每个物品的价格和重要度和是否是主件或者说是谁的附件，求最后选出的每件物品的价格与重要度乘积和的最大值，每个附件不再有附件。</p>
-<p>P1064 [NOIP2006 提高组] 金明的预算方案</p>
-<table>
-<thead>
-<tr>
-<th>主件</th>
-<th>附 件</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>电脑</td>
-<td>打印机，扫描仪</td>
-</tr>
-<tr>
-<td>书柜</td>
-<td>图书</td>
-</tr>
-<tr>
-<td>书桌</td>
-<td>台灯，文具</td>
-</tr>
-<tr>
-<td>工作椅</td>
-<td>无</td>
-</tr>
-</tbody></table>
-<p>一个主件和它的附件集合是几乎对于分组背包中的一个物品组。</p>
-<p>每个选择了主件又选择了若干附件的策略，对应这个物品组的中的一个物品。</p>
-<h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>我们可以将每个主件选附件的问题看成一个01背包问题，这样当我们知道给一个主件分配多少价钱的时候，就可以知道此时这个主件及其附件在对应的价钱可以获得的最大价值</p>
-<h3 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">4e3</span> + <span class="number">5</span>, M = <span class="number">65</span>;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; ve[M];</span><br><span class="line"><span class="type">int</span> wei[M], imp[M];<span class="comment">//价格和重要度</span></span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> dp[M][N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;m, &amp;n);</span><br><span class="line">    m /= <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;wei[i], &amp;imp[i], &amp;c);</span><br><span class="line">        wei[i] /= <span class="number">10</span>;</span><br><span class="line">        ve[c].<span class="built_in">push_back</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 先处理给出每个主件分配不同空间时对应获得的最大价值</span></span><br><span class="line">    <span class="comment">//  遍历各主件</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u = <span class="number">1</span>; u &lt;= n; u++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 01背包问题----(这里滚动了变成了一个维数组)</span></span><br><span class="line">        <span class="comment">// dp[u][j] 表示第 u 个背包，分配 j 体积 可以获得的最大价值</span></span><br><span class="line">        <span class="comment">//  遍历附件（物品数量)</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; ve[u].<span class="built_in">size</span>(); j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> to = ve[u][j];</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = m; k &gt;= wei[to]; k--)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[u][k] = <span class="built_in">max</span>(dp[u][k], dp[u][k - wei[to]] + imp[to] * wei[to] * <span class="number">10</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 整合</span></span><br><span class="line">    <span class="comment">// 遍历主件</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; ve[<span class="number">0</span>].<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> to = ve[<span class="number">0</span>][i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = m; j &gt;= wei[to]; j--)<span class="comment">//逆序！</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 遍历给当前主件的附件分配的空间</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = j - wei[to]; k &gt;= <span class="number">0</span>; k--)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[<span class="number">0</span>][j] = <span class="built_in">max</span>(dp[<span class="number">0</span>][j], dp[to][k] + imp[to] * wei[to] * <span class="number">10</span> + dp[<span class="number">0</span>][j - k - wei[to]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, dp[<span class="number">0</span>][m]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="较一般的题目"><a href="#较一般的题目" class="headerlink" title="较一般的题目"></a>较一般的题目</h3><p>依赖关系以图论中的 “森林” 形式给出，也就是说主件的附件依旧可以有自己的附件集合。</p>
-<p>刚刚那道题可以直接那么做，主要是因为附件没有附件，如果还有附件的话，就需要继续先计算出附件在面对各价格时可获得的最大值才可以。</p>
-<p>这种背包就是 <strong>树形背包</strong> （树形dp的一种），它的特点是每个父节点都需要对它的各个儿子的属性进行一次 dp 来求得自己相关的属性。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">4e3</span> + <span class="number">5</span>, M = <span class="number">65</span>;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; ve[M];</span><br><span class="line"><span class="type">int</span> wei[M], imp[M];</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> dp[M][N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//枚举物品</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; ve[u].<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> to = ve[u][i];</span><br><span class="line">        <span class="built_in">dfs</span>(to);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = m; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//枚举分给当前物品的体积</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = j; k &gt;= <span class="number">0</span>; k--)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (k - wei[to] &gt;= <span class="number">0</span>)</span><br><span class="line">                    dp[u][j] = <span class="built_in">max</span>(dp[u][j], dp[u][j - k] + dp[to][k - wei[to]] + imp[to] * wei[to] * <span class="number">10</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;m, &amp;n);</span><br><span class="line">    m /= <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;wei[i], &amp;imp[i], &amp;c);</span><br><span class="line">        wei[i] /= <span class="number">10</span>;</span><br><span class="line">        ve[c].<span class="built_in">push_back</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    res = dp[<span class="number">0</span>][m];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, res);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="背包问题的变化"><a href="#背包问题的变化" class="headerlink" title="背包问题的变化"></a>背包问题的变化</h2><h3 id="输出方案"><a href="#输出方案" class="headerlink" title="输出方案"></a>输出方案</h3><p>一般而言，背包问题是要求一个最优值，如果要求输出这个最优值的方案，可以参照一般动态规划问题输出方案的方法: 记录下每个状态的最优质是由状态转移方程的哪一项推出来的。然后就可以根据这个状态继续往前推导。</p>
-<h4 id="题目大意-7"><a href="#题目大意-7" class="headerlink" title="题目大意"></a>题目大意</h4><p>01背包问题，但是要求输出 <strong>字典序最小的方案数</strong> 。</p>
-<h4 id="思路-8"><a href="#思路-8" class="headerlink" title="思路"></a>思路</h4><p>求具体方案其实就是判断每个物品是否被选，求方案其实就是从<code>dp[n][m]</code>倒推出来每一个 i 是否选择</p>
-<p>需要根据转移方程来判断是否选择第 i 个物品，所以不能滚动。</p>
-<p>这里要求字典序最小，所以采用贪心的策略</p>
-<p>然后对于每一个物品来说可能有三种情况</p>
-<ul>
-<li>只能选 —— 必选</li>
-<li>只能不选 —— 必不选</li>
-<li>可选可不选 —— 一定要选</li>
-</ul>
-<p>显然求字典序最小的时候，我们需要优先考虑编号小的物品，但是找方案的时候，又是从 <code>dp[n][m] </code> 开始回推的，所以我们在求解 01 背包的时候，从后往前推，就可以从 <code>dp[1][m]</code>始往前推了，这样的话，就和求字典序最小的顺序一致了。</p>
-<h4 id="实现-4"><a href="#实现-4" class="headerlink" title="实现"></a>实现</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long int</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> dp[maxn][maxn], n, m, w[maxn], c[maxn];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n;++i)</span><br><span class="line">        cin &gt;&gt; c[i] &gt;&gt; w[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n; i &gt;= <span class="number">1</span>;--i)<span class="comment">//逆序，使得编号小的可以从编号大的推算而出</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= m;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][j] = dp[i + <span class="number">1</span>][j];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(j&gt;=c[i])</span><br><span class="line">                dp[i][j] = <span class="built_in">max</span>(dp[i][j], dp[i + <span class="number">1</span>][j - c[i]] + w[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> j = m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(j-c[i]&gt;=<span class="number">0</span>&amp;&amp;dp[i][j]==dp[i+<span class="number">1</span>][j-c[i]]+w[i])<span class="comment">//分治</span></span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">            j -= c[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//std::ios::sync_with_stdio(false);</span></span><br><span class="line"><span class="comment">//cin.tie(0);</span></span><br><span class="line"><span class="comment">//cout.tie(0);</span></span><br><span class="line"><span class="built_in">solve</span>();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="求第K优解"><a href="#求第K优解" class="headerlink" title="求第K优解"></a>求第K优解</h3><h4 id="题目大意-8"><a href="#题目大意-8" class="headerlink" title="题目大意"></a>题目大意</h4><p>01背包问题，但是需要输出的是可以获得的第 K 大价值。</p>
-<h4 id="思路-9"><a href="#思路-9" class="headerlink" title="思路"></a>思路</h4><p>我们需要得到的是第 K 大价值，所以当我们得到一个当前为 K+1 大的价值时，就直接舍去。因为它一定不是第 K 大价值，然后我们又需要得到目前得到的 K 个价值具体是多少，所以我们在原来01背包的基础上再加一维</p>
-<p>定义<code>dp[i][j][k]</code>: 遍历到第 i 个物品，且体积不超过 j 可得到的第 k 大价值</p>
-<p>为了方便，滚动数组优化掉第一个维度，即状态变成<code>dp[i][j]</code>：体积不超过 i 时可以得到的第 j 大价值是多少</p>
-<p>01背包的状态转移方程:<code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-c[i]]+w[i])</code></p>
-<p>划分了当前选和不选，显然这里的选择会影响到当前状态的 k 个最大值</p>
-<p>所以我们取出这两种选法对应的 2*k 个数，排序成新的 k 个最大数</p>
-<h4 id="实现-5"><a href="#实现-5" class="headerlink" title="实现"></a>实现</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> dp[<span class="number">1005</span>][<span class="number">35</span>], wei[<span class="number">105</span>], val[<span class="number">105</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="type">int</span> n, v, k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;v, &amp;k);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;val[i]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;wei[i]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= v; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= k; j++)</span><br><span class="line">                dp[i][j] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = v; j &gt;= wei[i]; j--)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//a数组记录的是不选第 i 个物品的 k 个最大价值</span></span><br><span class="line">                <span class="comment">//b数组记录的是选第 i 个物品的 k 个最大价值</span></span><br><span class="line">                <span class="type">int</span> a[<span class="number">35</span>] = &#123;<span class="number">0</span>&#125;, b[<span class="number">35</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> l = <span class="number">1</span>; l &lt;= k; l++)</span><br><span class="line">                &#123;</span><br><span class="line">                    a[l] = dp[j][l];</span><br><span class="line">                    b[l] = dp[j - wei[i]][l] + val[i];</span><br><span class="line">                &#125;</span><br><span class="line">                a[k + <span class="number">1</span>] = b[k + <span class="number">1</span>] = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">                <span class="type">int</span> ai = <span class="number">1</span>, bi = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> l = <span class="number">1</span>; l &lt;= k &amp;&amp; (a[ai] != <span class="number">-1</span> || b[bi] != <span class="number">-1</span>); l++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (a[ai] &gt; b[bi])</span><br><span class="line">                        dp[j][l] = a[ai++];</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        dp[j][l] = b[bi++];</span><br><span class="line">                    <span class="comment">//相同的数算同一个</span></span><br><span class="line">                    <span class="keyword">if</span> (dp[j][l] == dp[j][l - <span class="number">1</span>])</span><br><span class="line">                        l--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, dp[v][k]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>题号</th>
-<th>标题</th>
-<th>题目类型</th>
-<th>难度评级</th>
-<th>题解</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>HDU 2602</td>
-<td>Bone collector</td>
-<td>01背包</td>
-<td>⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>P1060</td>
-<td>开心的金明</td>
-<td>01背包</td>
-<td>⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>P2871</td>
-<td>Charm Bracelet S</td>
-<td>01背包</td>
-<td>⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>P1156</td>
-<td>垃圾陷阱</td>
-<td>01背包</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>POJ 1276</td>
-<td>Cash Machine</td>
-<td>多重背包</td>
-<td>⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>POJ 1014</td>
-<td>Dividing</td>
-<td>多重背包</td>
-<td>⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>P5365</td>
-<td>英雄联盟</td>
-<td>多重背包</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>8</td>
-<td>P1776</td>
-<td>宝物筛选</td>
-<td>多重背包</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>P1853</td>
-<td>投资的最大效益</td>
-<td>多重背包</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>10</td>
-<td>P1782</td>
-<td>旅行商的背包</td>
-<td>混合背包</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>11</td>
-<td>P2851</td>
-<td>The Fewest Coins G</td>
-<td>混合背包</td>
-<td>⭐⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>12</td>
-<td>P1833</td>
-<td>樱花</td>
-<td>混合背包</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>13</td>
-<td>P1507</td>
-<td>NASA的食物计划</td>
-<td>二维费用背包</td>
-<td>⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>14</td>
-<td>HDU 1712</td>
-<td>ACboy needs your help</td>
-<td>分组背包</td>
-<td>⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>15</td>
-<td>P1757</td>
-<td>通天之分组背包</td>
-<td>分组背包</td>
-<td>⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>16</td>
-<td>P1064</td>
-<td>金明的预算方案</td>
-<td>有依赖背包</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>17</td>
-<td>P3961</td>
-<td>黄金矿工</td>
-<td>有依赖背包</td>
-<td>⭐⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>18</td>
-<td>POJ 1015</td>
-<td>Jury Compromise</td>
-<td>01背包+输出具体方案</td>
-<td>⭐⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>19</td>
-<td>HDU 2639</td>
-<td>Bone Collector  ||</td>
-<td>求第 k 优解</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-<tr>
-<td>20</td>
-<td>P1858</td>
-<td>多人背包</td>
-<td>求第 k 优解</td>
-<td>⭐⭐</td>
-<td></td>
-</tr>
-</tbody></table>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/dp/%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -640,7 +394,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -663,22 +417,36 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 21:58:20 / Modified: 21:58:40" itemprop="dateCreated datePublished" datetime="2024-05-30T21:58:20+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 21:58:20 / عُدل: 21:58:40" itemprop="dateCreated datePublished" datetime="2024-05-30T21:58:20+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -728,10 +496,14 @@
 <ul>
 <li>另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：</li>
 </ul>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -- test.txt</span><br></pre></td></tr></table></figure>
-
-<p><code>git checkout</code>其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/git/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -749,7 +521,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/css/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -772,32 +544,46 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
 
-              <time title="Created: 2024-05-30 21:57:33" itemprop="dateCreated datePublished" datetime="2024-05-30T21:57:33+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 21:57:33" itemprop="dateCreated datePublished" datetime="2024-05-30T21:57:33+08:00">2024-05-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-31 12:11:44" itemprop="dateModified" datetime="2024-05-31T12:11:44+08:00">2024-05-31</time>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2024-05-31 12:11:44" itemprop="dateModified" datetime="2024-05-31T12:11:44+08:00">2024-05-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -822,154 +608,15 @@
 </blockquote>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">标签名&#123;</span><br><span class="line">    属性<span class="number">1</span>: 属性值<span class="number">1</span>;</span><br><span class="line">    属性<span class="number">2</span>: 属性值<span class="number">2</span>;</span><br><span class="line">    属性<span class="number">3</span>: 属性值<span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4><blockquote>
-<p>如果想要差异化选择不同的标签，单独选一个或者某几个标签，可以选择<strong>类选择器</strong></p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.类名&#123;</span><br><span class="line">   属性<span class="number">1</span>: 属性值<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line">&lt;did class = &#x27;red&#x27;&gt; 变红色 &lt;/<span class="selector-tag">div</span>&gt; //结构需要用class属性来调用class类的意思</span><br><span class="line"><span class="selector-class">.red</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>类选择器使用 <code>.</code>进行标识，后面紧跟类名(自定义)</li>
-<li>长名词或词组可以使用中横线来为选择器命名</li>
-</ul>
-<h5 id="多类名"><a href="#多类名" class="headerlink" title="多类名"></a>多类名</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> = <span class="string">&quot;red font35&quot;</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在标签class属性中写多个类名</li>
-<li>多个类名中间必须用空格隔开</li>
-</ul>
-<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><blockquote>
-<p>id选择器可以为标有特定id的HTML元素指定特定的样式</p>
-</blockquote>
-<p>HTML元素以id属性来设置id选择器，CSS中id选择器以<code>#</code>来定义</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#id</span>名&#123;</span><br><span class="line">   属性<span class="number">1</span>: 属性值<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>*** id属性只能在每个HTML文档中出现一次***</p>
-<h5 id="id和类选择器的区别"><a href="#id和类选择器的区别" class="headerlink" title="id和类选择器的区别"></a>id和类选择器的区别</h5><ul>
-<li>类选择器可以被多次使用</li>
-<li>id选择器只能被使用一次</li>
-</ul>
-<h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h4><blockquote>
-<p>使用<code>*</code>定义，它表示选取页面中所有元素(标签)</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">   属性<span class="number">1</span>； 属性值<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="字体属性"><a href="#字体属性" class="headerlink" title="字体属性"></a>字体属性</h3><blockquote>
-<p>定义字体类型、大小、粗细和文字样式.</p>
-</blockquote>
-<h4 id="字体类型"><a href="#字体类型" class="headerlink" title="字体类型"></a>字体类型</h4><p>使用<code>font-family</code>属性定义文本的字体类型</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-family</span>: <span class="string">&quot;Microsoft Yahei&quot;</span>;&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h4><p>使用<code>font-size</code>属性定义字体大小</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">20</span>fx;&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>标题标签比较特殊，需要单独指定文字大小</li>
-</ul>
-<h4 id="字体粗细"><a href="#字体粗细" class="headerlink" title="字体粗细"></a>字体粗细</h4><p>使用<code>font-weight</code>属性设置文字粗细</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-weight</span>: <span class="number">700</span>;&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>normal</code>是默认值</li>
-<li><code>bold</code>定义粗体</li>
-<li>400等同于normal，而700等同于bold，数字后面都不跟单位</li>
-</ul>
-<h4 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h4><p>使用<code>font-style</code>属性设置文本的风格</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;<span class="attribute">font-style</span>: normal;&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>normal</code>默认值</li>
-<li><code>italic</code>会显示斜体的字体样式</li>
-</ul>
-<h4 id="字体的复合属性"><a href="#字体的复合属性" class="headerlink" title="字体的复合属性"></a>字体的复合属性</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">   <span class="attribute">font</span>: italic <span class="number">700</span> <span class="number">16px</span> <span class="string">&quot;Micarosoft yahei&quot;</span>;//style-&gt;weight-&gt;size-&gt;family</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>使用font属性时，必须按上面语法格式中的顺序书写，<strong>不能更换顺序</strong>，并且各个属性间以空格隔开</li>
-<li>不需要设置的属性可以省略(取默认值)，但<em><strong>必须保留<code>font-size</code>和<code>font-family</code>属性</strong></em>，否则font属性不起作用</li>
-</ul>
-<h3 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h3><h4 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>预定义的颜色值: red,green,blue</li>
-<li>十六进制: #FF0000, #FF6600</li>
-<li>RGB代码: rgb(255,0,0)</li>
-</ul>
-<h4 id="对其文本"><a href="#对其文本" class="headerlink" title="对其文本"></a>对其文本</h4><blockquote>
-<p>text-align属性用于设置元素内文本内容的水平对齐方式</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">   <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>left 左对齐(默认值)</li>
-<li>right 右对齐</li>
-<li>center 居中对齐</li>
-</ul>
-<h4 id="装饰文本"><a href="#装饰文本" class="headerlink" title="装饰文本"></a>装饰文本</h4><blockquote>
-<p>text-decoration属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>none 默认，没有装饰线</li>
-<li>underline 下划线。链接a自带下划线</li>
-<li>overline 上划线</li>
-<li>line-through 删除线</li>
-</ul>
-<h4 id="文本缩进"><a href="#文本缩进" class="headerlink" title="文本缩进"></a>文本缩进</h4><blockquote>
-<p>text-indent属性用来指定文本的第一行缩进，通常是将段落的首行缩进</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">text-indent</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>通过设置该属性，所有元素的第一行都可以缩进一个给定的长度，甚至该长度可以是负值</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line"><span class="attribute">text-indent</span>: <span class="number">2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>em</code>是一个相对单位，就是当前元素(font-size)1个文字的大小，如果当前元素没有设置大小，则会按照父元素的1个文字大小</p>
-</li>
-</ul>
-<h4 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h4><blockquote>
-<p>line-height属性用于设置行间的距离(行高)。可以控制文本行与行之间的距离</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">26px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h3><h4 id="CSS三种样式表"><a href="#CSS三种样式表" class="headerlink" title="CSS三种样式表"></a>CSS三种样式表</h4><p>按照书写的位置(引入的方式)</p>
-<ul>
-<li>行内样式表(行内式)</li>
-<li>内部样式表(嵌入式)</li>
-<li>外部样式表(链接式)</li>
-</ul>
-<h4 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h4><blockquote>
-<p>内部样式表是写到HTML内部，是将所有的CSS代码抽取出来，单独放到一个<code>&lt;style&gt;</code>标签中</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>&lt;style&gt;</code>标签理论上可以放在HTML文档的任何地方，但一般会放在文档的<code>&lt;head&gt;</code>标签中</li>
-</ul>
-<h4 id="行内样式表"><a href="#行内样式表" class="headerlink" title="行内样式表"></a>行内样式表</h4><blockquote>
-<p>行内样式表是在元素标签内部的style属性中设定CSS样式，适合于修改简单样式</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;color: red; font-size: 12px;&quot;</span>&gt;</span></span><br><span class="line">    青春不常在，抓紧谈恋爱</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="外部样式表-外链表或链接式引入"><a href="#外部样式表-外链表或链接式引入" class="headerlink" title="外部样式表(外链表或链接式引入)"></a><strong>外部样式表</strong>(外链表或链接式引入)</h4><blockquote>
-<p>适合样式较多的情况： 样式单独写到CSS文件中，之后把CSS文件引入到HTML页面中使用</p>
-</blockquote>
-<ol>
-<li><p>新建一个后缀名为<code>.css</code>的样式文件，把所有的CSS代码都放入此文件中</p>
-</li>
-<li><p>在HTML页面中，使用<code>&lt;link&gt;</code>标签引入这个文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css文件路径&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>rel 定义当前文档与被链接文档之间的关系，在这里需要指定为”stylesheet”，表示被链接的文档是一个样式表文件</li>
-<li>href 定义所链接外部样式表文件的URL，可以是相对路径，也可以是绝对路径</li>
-</ul>
-</li>
-</ol>
-
+<h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/css/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -987,7 +634,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1010,22 +657,36 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 21:55:12 / Modified: 21:56:00" itemprop="dateCreated datePublished" datetime="2024-05-30T21:55:12+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 21:55:12 / عُدل: 21:56:00" itemprop="dateCreated datePublished" datetime="2024-05-30T21:55:12+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -1051,224 +712,14 @@
 <p>在命令行中，以平铺的形式，展示当前工作目录(默认HOME目录)下的内容</p>
 </blockquote>
 <p>ls命令默认列出的是<code>Home</code>目录的内容</p>
-<ul>
-<li><code>Home</code>目录：每个Linux操作用户在Linux系统的个人账户目录</li>
-</ul>
-<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><blockquote>
-<p>选项可以组合使用</p>
-</blockquote>
-<ul>
-<li><code>-a</code>：all的意思，即列出全部文件(包含隐藏的文件&#x2F;文件夹) (以<code>.</code>开头的文件为隐藏文件)</li>
-<li><code>-l</code>：以列表(竖向排列)的形式展示内容，并展示更多信息</li>
-<li><code>-h</code>：<strong>需要和<code>-l</code>搭配使用</strong>，显示文件的大小单位</li>
-</ul>
-<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><blockquote>
-<p>切换当前所在的工作目录</p>
-</blockquote>
-<p><code>cd [Linux路径]</code></p>
-<ul>
-<li>cd命令无需选项，只有参数，表示要切换到哪个目录下</li>
-<li>cd命令直接执行，不写参数，表示回到用户的HOME目录</li>
-</ul>
-<h3 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h3><blockquote>
-<p>查看当前所在的工作目录</p>
-</blockquote>
-<p>特殊路径符</p>
-<p>* </p>
-<ul>
-<li><code>.</code>表示当前目录(<code>cd ./Desktop</code>表示切换到当前目录下的Desktop目录)</li>
-<li><code>..</code>表示上一级目录(<code>cd ..</code>即可切换到上一级目录，<code>cd ../..</code>切换到上两级目录)</li>
-<li><code>~</code>表示HOME目录，(<code>cd ~</code>即可切换到HOME目录，<code>cd ~.Desktop</code>切换到HOME内的Desktop目录)</li>
-</ul>
-<h3 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h3><blockquote>
-<p>创建新的目录(文件夹) MaKe DIRectory</p>
-</blockquote>
-<p><code>mkdir [-p] Linux路径</code></p>
-<ul>
-<li>参数必填，表示Linux路径，即要创建的文件夹的路径，相对路径或绝对路径都可</li>
-<li><code>-p</code>选项可选，表示自动创建不存在的父目录，适用于创建连续多层级的目录</li>
-</ul>
-<h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><blockquote>
-<p>创建文件</p>
-</blockquote>
-<p><code>touch Linux路径</code></p>
-<ul>
-<li>无选项，参数必填，表示要创建的文件路径</li>
-</ul>
-<h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><blockquote>
-<p>查看文件内容</p>
-</blockquote>
-<p><code>cat Linux路径</code></p>
-<ul>
-<li>无选项，参数必填，表示要创建的文件路径</li>
-</ul>
-<h3 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h3><blockquote>
-<p>查看文件内容</p>
-</blockquote>
-<ul>
-<li><code>cat</code>是直接把内容全部显示出来</li>
-<li><code>more</code>支持翻页，如果文件内容过多，可以一页页展示</li>
-<li>无选项，参数必填，表示要创建的文件路径、</li>
-<li>空格翻页，q退出</li>
-</ul>
-<h3 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h3><blockquote>
-<p>复制文件\文件夹</p>
-</blockquote>
-<p><code>cp [-r] 参数1 参数2</code></p>
-<ul>
-<li><code>-r</code>，可选，用于复制文件夹使用，表示递归</li>
-<li>参数1，Linux路径，表示被复制的文件或文件夹</li>
-<li>参数2，Linux路径，表示要复制去的地方</li>
-</ul>
-<h3 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h3><blockquote>
-<p>移动文件\文件夹</p>
-</blockquote>
-<p><code>mv 参数1 参数2</code></p>
-<ul>
-<li>参数1，Linux路径，表示被移动的文件或文件夹</li>
-<li>参数2，Linux路径，表示要移动去的地方，如果目标不存在，</li>
-</ul>
-<h3 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h3><blockquote>
-<p>删除文件、文件夹</p>
-</blockquote>
-<p><code>rm [-r -f] 参数1 ...</code> </p>
-<ul>
-<li><code>-f</code>表示强制删除</li>
-<li><code>rm</code>支持通配符<code>*</code>，用来做模糊匹配(<code>test*表示匹配以test开头</code>)</li>
-</ul>
-<h3 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h3><blockquote>
-<p>查找命令的程序文件</p>
-</blockquote>
-<p>Linux命令其实是一个个的二进制可执行程序</p>
-<p><code>which 要查找的命令</code></p>
-<h3 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h3><blockquote>
-<p>搜索指定文件</p>
-</blockquote>
-<h4 id="按照文件名搜索"><a href="#按照文件名搜索" class="headerlink" title="按照文件名搜索"></a>按照文件名搜索</h4><p><code>find 起始路径 -name &quot;被查找文件名&quot;</code></p>
-<ul>
-<li>支持通配符模糊查找</li>
-</ul>
-<h4 id="按照文件大小查找"><a href="#按照文件大小查找" class="headerlink" title="按照文件大小查找"></a>按照文件大小查找</h4><p><code>find 起始路径 -size +|-n[kMG]</code></p>
-<ul>
-<li>+、-表示大于和小于</li>
-<li>n表示大小数字</li>
-<li>kMG表示大小单位，k(小写字母)表示kb，M表示MB，G表示GB</li>
-</ul>
-<p>查找小于10KB的文件：<code>find / -size -10k</code></p>
-<h3 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h3><blockquote>
-<p>从文件中通过关键字过滤文件行</p>
-</blockquote>
-<p><code>grep [-n] 关键字 文件路径</code></p>
-<ul>
-<li>选项<code>-n</code>可选，表示在结果中显示匹配的行的行号</li>
-<li>参数，关键字，必填，表示过滤的关键字，带有空格或其他特殊符号，建议使用””将关键字包围起来</li>
-<li>参数，文件路径</li>
-</ul>
-<h3 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h3><blockquote>
-<p>统计文件的行数、单词数量等</p>
-</blockquote>
-<p><code>wc [-c -m -l -w] 文件路径</code></p>
-<ul>
-<li><code>-c</code>统计byte数量</li>
-<li><code>-m</code>统计字符数量</li>
-<li><code>-l</code>统计行数</li>
-<li><code>-w</code>统计单词数量</li>
-</ul>
-<h3 id="管道符"><a href="#管道符" class="headerlink" title="管道符 |"></a>管道符 |</h3><p>管道符左边命令的结果，作为右边命令的输入</p>
-<h3 id="echo命令"><a href="#echo命令" class="headerlink" title="echo命令"></a>echo命令</h3><blockquote>
-<p>在命令行输出指定内容</p>
-</blockquote>
-<p><code>echo 输出的内容</code></p>
-<h3 id="反引号"><a href="#反引号" class="headerlink" title="反引号 &#96;"></a>反引号 &#96;</h3><blockquote>
-<p>被反引号包围的内容，会被作为命令执行，而非普通字符</p>
-</blockquote>
-<p>echo `pwd`  把pwd命令的结果输出</p>
-<h3 id="重定向符"><a href="#重定向符" class="headerlink" title="重定向符"></a>重定向符</h3><p><code>&gt;</code>：将左侧命令的结果，<strong>覆盖</strong>写入符号右侧指定的文件中</p>
-<p><code>&gt;&gt;</code>： 将左侧命令的结果，<strong>追加</strong>写入到符号右侧指定的文件中(会自动换行)</p>
-<p><code>echo &quot;hello Linux&quot; &gt; tomato.txt</code></p>
-<h3 id="head命令"><a href="#head命令" class="headerlink" title="head命令"></a>head命令</h3><p><code>head -n 文件路径</code></p>
-<ul>
-<li><code>-n</code>为要查看的行数</li>
-</ul>
-<h3 id="tail命令"><a href="#tail命令" class="headerlink" title="tail命令"></a>tail命令</h3><p><code>tail [-n] 文件路径</code></p>
-<ul>
-<li><code>-n</code>为要查看的行数</li>
-</ul>
-<h3 id="chmod命令"><a href="#chmod命令" class="headerlink" title="chmod命令"></a>chmod命令</h3><blockquote>
-<p>修改文件、文件夹的权限信息</p>
-</blockquote>
-<p><code>chmod [-R] 权限 文件或文件夹</code></p>
-<ul>
-<li><code>-R</code>，对文件夹内的全部内容应用同样的操作</li>
-<li><code>chomd u=rwx,g=rx,o=x hello.txt</code></li>
-</ul>
-<p>u为user所属用户权限，g表示group组权限，o表示other其他用户权限</p>
-<p>![屏幕截图 2024-02-28 195336](C:\Users\Tomato\OneDrive\图片\屏幕快照\屏幕截图 2024-02-28 195336.png)</p>
-<p><code>chmod 751 1.txt</code></p>
-<h3 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h3><blockquote>
-<p>修改文件、文件夹的所属用户和用户组</p>
-</blockquote>
-<p><strong>普通用户无法修改所属为其它用户或组，所以此命令只适用于root用户执行</strong></p>
-<p><code>chown [-R] [用户] [:] [用户组] 文件或文件夹</code></p>
-<ul>
-<li><code>-R</code>，对文件夹内全部内容应用相同规则</li>
-<li>选项，用户，修改所属用户</li>
-<li>选项，用户组，修改所属用户组</li>
-<li><code>:</code>，用于分隔用户和用户组</li>
-</ul>
-<p><code>chown root:tomato hello.txt</code></p>
-<p><code>chown :tomato hello.txt</code></p>
-<h3 id="各类技巧快捷键"><a href="#各类技巧快捷键" class="headerlink" title="各类技巧快捷键"></a>各类技巧快捷键</h3><p><img src="C:\Users\Tomato\AppData\Roaming\Typora\typora-user-images\image-20240229101521839.png" alt="image-20240229101521839"></p>
-<h3 id="yum命令"><a href="#yum命令" class="headerlink" title="yum命令"></a>yum命令</h3><blockquote>
-<p>自动化安装配置Linux软件，并可以自动解决依赖问题</p>
-</blockquote>
-<p><code>yum [-y] [install | remove | search] 软件名称</code></p>
-<ul>
-<li><code>-y</code> ，自动确认，无需手动确认安装或卸载过程</li>
-<li>install： 安装</li>
-<li>remove： 卸载</li>
-<li>search： 搜索</li>
-<li>yum命令需要root权限，可以su切换到root，也可以使用sudo权限</li>
-<li>yum命令需要联网</li>
-</ul>
-<h3 id="systemctl命令"><a href="#systemctl命令" class="headerlink" title="systemctl命令"></a>systemctl命令</h3><blockquote>
-<p>控制软件的启动、停止、开机自启</p>
-</blockquote>
-<p><code>systemctl start | stop | status | enable | disable 服务名</code></p>
-<h3 id="ln命令"><a href="#ln命令" class="headerlink" title="ln命令"></a>ln命令</h3><blockquote>
-<p>在系统中创建软链接，将文件、文件夹链接到其他位置，类似于快捷方式</p>
-</blockquote>
-<p><code>ln -s 参数1 参数2</code></p>
-<ul>
-<li><code>-s</code>选项，创建软链接</li>
-<li>参数1：被链接的文件或文件夹</li>
-<li>参数2：要链接去的目的地</li>
-</ul>
-<h3 id="data命令"><a href="#data命令" class="headerlink" title="data命令"></a>data命令</h3><p><img src="C:\Users\Tomato\AppData\Roaming\Typora\typora-user-images\image-20240229130157674.png" alt="image-20240229130157674"></p>
-<p><img src="C:\Users\Tomato\AppData\Roaming\Typora\typora-user-images\image-20240229130504984.png" alt="image-20240229130504984"></p>
-<h3 id="ping命令"><a href="#ping命令" class="headerlink" title="ping命令"></a>ping命令</h3><blockquote>
-<p>检查指定的网络服务器是否是可联通状态</p>
-</blockquote>
-<p><code>ping [-c num] ip或主机名</code></p>
-<ul>
-<li><code>-c</code>检查的次数，不适用<code>-c</code>将无限次数持续检查</li>
-</ul>
-<h3 id="wget命令"><a href="#wget命令" class="headerlink" title="wget命令"></a>wget命令</h3><blockquote>
-<p>非交互式的文件下载器，可以在命令行内下载网络文件</p>
-</blockquote>
-<p><code>wget [-b] url</code></p>
-<ul>
-<li><code>-b</code>，可选，后台下载</li>
-<li>url，下载链接</li>
-</ul>
-<h3 id="curl命令"><a href="#curl命令" class="headerlink" title="curl命令"></a>curl命令</h3><blockquote>
-<p>发起网络请求</p>
-</blockquote>
-<p><code>curl [-O] url</code></p>
-<ul>
-<li><code>-O</code>用于下载使用</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/linux/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1286,7 +737,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/html/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1309,32 +760,46 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
 
-              <time title="Created: 2024-05-30 21:26:01" itemprop="dateCreated datePublished" datetime="2024-05-30T21:26:01+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 21:26:01" itemprop="dateCreated datePublished" datetime="2024-05-30T21:26:01+08:00">2024-05-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-31 12:12:05" itemprop="dateModified" datetime="2024-05-31T12:12:05+08:00">2024-05-31</time>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2024-05-31 12:12:05" itemprop="dateModified" datetime="2024-05-31T12:12:05+08:00">2024-05-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%89%8D%E7%AB%AF/html/" itemprop="url" rel="index"><span itemprop="name">html</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -1362,134 +827,15 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="HTML基本结构标签"><a href="#HTML基本结构标签" class="headerlink" title="HTML基本结构标签"></a>HTML基本结构标签</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>//HTML标签(页面中最大的标签，我们成为根标签)</span><br><span class="line">   <span class="tag">&lt;<span class="name">head</span>&gt;</span>//文档的头部(注意再head标签中我们必须要设置的标签是title)</span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>我的第一个页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span>//文档的标题(让页面拥有一个属于自己的网页标题)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span>//文档的主体(元素包含文档的全部内容，页面内容基本都是放到body里面的)</span><br><span class="line">        你我之间</span><br><span class="line">     <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span>//文档类型声明标签</span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span>//网站语言选择</span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span>//字符集</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>第一个页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    浮生若梦</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h2><h3 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> - <span class="tag">&lt;<span class="name">h6</span>&gt;</span>//六级标签</span><br></pre></td></tr></table></figure>
-
-<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>标题标签<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</code></pre>
-<h3 id="段落标签"><a href="#段落标签" class="headerlink" title="段落标签"></a>段落标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 第一段 <span class="tag">&lt;/<span class="name">p</span>&gt;</span> <span class="tag">&lt;<span class="name">p</span>&gt;</span> 第二段 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="换行标签"><a href="#换行标签" class="headerlink" title="换行标签"></a>换行标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span>//强制换行</span><br></pre></td></tr></table></figure>
-
-<h2 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">strong</span>&gt;</span>//加粗文字    <span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span>//加粗文字</span><br><span class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span>//倾斜文字            <span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>//倾斜文字</span><br><span class="line"><span class="tag">&lt;<span class="name">del</span>&gt;</span><span class="tag">&lt;/<span class="name">del</span>&gt;</span>//删除线            <span class="tag">&lt;<span class="name">s</span>&gt;</span><span class="tag">&lt;/<span class="name">s</span>&gt;</span>//删除线</span><br><span class="line"><span class="tag">&lt;<span class="name">ins</span>&gt;</span><span class="tag">&lt;/<span class="name">ins</span>&gt;</span>//下划线            <span class="tag">&lt;<span class="name">u</span>&gt;</span><span class="tag">&lt;/<span class="name">u</span>&gt;</span>//下划线</span><br></pre></td></tr></table></figure>
-
-<h2 id="和标签"><a href="#和标签" class="headerlink" title="和标签"></a><div>和<span>标签</h2><p>一个盒子，用来装内容的标签</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>这是头部<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>今日价格<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>div标签用来布局，但是现在一行只能放一个div，大盒子</li>
-<li>span标签用来布局，一行上可以多个span，小盒子</li>
-</ul>
-<h2 id="图像标签和路径"><a href="#图像标签和路径" class="headerlink" title="图像标签和路径"></a>图像标签和路径</h2><h3 id="图像标签"><a href="#图像标签" class="headerlink" title="图像标签"></a>图像标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;图像URL&quot;</span> /&gt;</span>//单标签<span class="tag">&lt;<span class="name">img</span>/&gt;</span>标签，src是标签的必须属性，它用于指定图像文件的路径和文件名</span><br></pre></td></tr></table></figure>
-
-<h4 id="图像标签的属性"><a href="#图像标签的属性" class="headerlink" title="图像标签的属性"></a>图像标签的属性</h4><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">src  必须属性，图片路径</span><br><span class="line">alt  替换文本，图像不能显示文字</span><br><span class="line">title  提示文本，鼠标放到图像上，显示的文字</span><br><span class="line">width  设置图像的宽度</span><br><span class="line">height 设置图像的高度</span><br><span class="line">border 设置图像的边框粗细</span><br></pre></td></tr></table></figure>
-
-<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img.jpg&quot;</span> /&gt;</span>//同一级路径</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;images/img.jpg&quot;</span> /&gt;</span>//下一级路径</span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">sec</span>=<span class="string">&quot;../baidu.gif&quot;</span> /&gt;</span>//上一级路径</span><br></pre></td></tr></table></figure>
-
-<h3 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;绝对路径&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h3><p>可以从一个页面链接到另一个页面</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;跳转目标&quot;</span> <span class="attr">target</span>=<span class="string">&quot;目标窗口的弹出方式&quot;</span>&gt;</span> 文本或图像 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>href为指定链接目标的url地址，为必须属性</li>
-<li>target用于指定链接页面的打开方式，其中_self为默认值，_blank为在新窗口中打开方式</li>
-</ul>
-<h4 id="超链接标签的分类"><a href="#超链接标签的分类" class="headerlink" title="超链接标签的分类"></a>超链接标签的分类</h4><ul>
-<li><p>外部链接</p>
-</li>
-<li><p>内部链接，网站内部页面之间的相互链接，直接链接内部页面即可，如<code>&lt;a href=&quot;index.html&quot;&gt; 首页 &lt;/a&gt;</code></p>
-</li>
-<li><p>空连接，把链接目标写成#即可</p>
-</li>
-<li><p>下载链接，如果href里面地址是一个文件或者压缩包，会下载这个文件</p>
-</li>
-<li><p>网页元素链接：在网页中的各种网页元素，如文本，图像，表格，音频，视频等都可以添加超链接</p>
-<p><code>&lt;a href=&quot;http://www.baidu.com&quot;&gt; &lt;img src=&quot;img.jpg&quot;/&gt; &lt;/a&gt;</code></p>
-</li>
-<li><p>锚点链接，点我们链接，可以快速定位到页面中的某个位置</p>
-<p>​            a.在链接文本的href属性中，设置属性值为<code>#名字</code>的形式，如<code>&lt;a href=&quot;#two&quot;&gt; 第二集 &lt;/a&gt;</code></p>
-<ol start="2">
-<li>找到目标位置标签，里面添加一个id属性&#x3D;刚才的名字，如<code>&lt;h3 id=&quot;two&quot;&gt; 第二集介绍 &lt;/h3&gt;h3&gt;</code></li>
-</ol>
-</li>
-</ul>
-<h2 id="注释和特殊字符"><a href="#注释和特殊字符" class="headerlink" title="注释和特殊字符"></a>注释和特殊字符</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><code>&lt;!--这是注释--&gt;</code></p>
-<h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><p><img src="C:\Users\李佳鑫\Desktop\html\微信图片_20231019093538.jpg"></p>
-<h3 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h3><p>表格用来显示数据，一般不用来布局</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span>//用于定义表格的标签</span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span>//用于定义表格中的行，必须嵌套在<span class="tag">&lt;<span class="name">table</span>&gt;</span>中</span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>单元格内的文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span>//定义表格中的单元格，必须嵌套在<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      ...</span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="表头单元格"><a href="#表头单元格" class="headerlink" title="表头单元格"></a>表头单元格</h4><p>一般表头单元格位于表格的第一行或第一列，表头单元格里面的文本内容加粗居中表示</p>
-<p><code>&lt;th&gt; &lt;/th&gt;</code></p>
-<h4 id="表格结构标签"><a href="#表格结构标签" class="headerlink" title="表格结构标签"></a>表格结构标签</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thread</span>&gt;</span> <span class="tag">&lt;/<span class="name">thread</span>&gt;</span>标签表格的头部区域</span><br><span class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span> <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span>标签表格的主题区域</span><br></pre></td></tr></table></figure>
-
-<p>可以更好的分清表格结构</p>
-<h4 id="合并单元格"><a href="#合并单元格" class="headerlink" title="合并单元格"></a>合并单元格</h4><p>目标单元格：写合并代码</p>
-<ul>
-<li>跨行：最上侧单元格为目标单元格，写合并代码<code>&lt;td rowspan = &quot;2&quot;&gt;&lt;/th&gt;</code></li>
-<li>跨列：最左侧单元格为目标单元格，写合并代码<code>&lt;td colspan = &quot;2&quot;&gt;&lt;/td&gt;</code></li>
-<li>记得要删除多余单元格</li>
-</ul>
-<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><p>分为无序列表，有序列表和自定义列表</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>没有顺序级别之分，是并列的</p>
-</li>
-<li><p><code>&lt;ul&gt;</code>中只能嵌套<code>&lt;li&gt;</code>，直接在<code>&lt;ul&gt;</code>标签中输入其他标签或文字的做法是不被允许的</p>
-</li>
-<li><p><code>&lt;li&gt;</code>相当于一个容器，可以容纳所有元素</p>
-</li>
-</ul>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>属性与无序列表相似</p>
-<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><p>自定义列表常用于对术语或名词进行解释和描述，定义列表的列表项前没有任何项目符号</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span> //用于定义描述列表（或定义列表），</span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>名词1<span class="tag">&lt;/<span class="name">dt</span>&gt;</span> //定义项目/名字</span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词1 解释1<span class="tag">&lt;/<span class="name">dd</span>&gt;</span> //描述每一个项目/名字</span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词1 解释2<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><code>&lt;dl&gt;</code>里面只能包含<code>&lt;dt&gt;</code>和<code>&lt;dd&gt;</code></p>
-</li>
-<li><p><code>&lt;dt&gt;</code>和<code>&lt;dd&gt;</code>里面可以放任何标签</p>
-</li>
-</ul>
-<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>为了收集客户信息</p>
-<h3 id="表单的组成"><a href="#表单的组成" class="headerlink" title="表单的组成"></a>表单的组成</h3><p>由表单域、表单控件(也称为表单元素)和提示信息三个部分组成</p>
-<h4 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h4><p>包含表单元素的区域</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;url地址&quot;</span> <span class="attr">method</span>=<span class="string">&quot;提交方式&quot;</span> <span class="attr">name</span>=<span class="string">&quot;表单域名称&quot;</span>&gt;</span> //method取值为get或post</span><br><span class="line">   各种表单元素控件</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="表单控件-表单元素"><a href="#表单控件-表单元素" class="headerlink" title="表单控件(表单元素)"></a>表单控件(表单元素)</h4><h5 id="input表单元素"><a href="#input表单元素" class="headerlink" title="input表单元素"></a>input表单元素</h5><p>收集用户信息</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;属性值&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><code>&lt;input /&gt;</code>标签为单标签</p>
-</li>
-<li><p>type属性设置不同的属性值用来指定不同的控件类型</p>
-<p><img src="C:\Users\李佳鑫\Desktop\html\微信图片_20231020125843.jpg"></p>
-</li>
-</ul>
-<p><img src="C:\Users\李佳鑫\Desktop\html\微信图片_20231020135217.jpg"></p>
-<h6 id="标签"><a href="#标签" class="headerlink" title="&lt;label&gt;标签"></a><code>&lt;label&gt;</code>标签</h6><p><code>&lt;label&gt;</code>标签为input元素定义标注(标签)</p>
-<p><code>&lt;label&gt;</code>标签用于绑定一个表单元素，当点击<code>&lt;label&gt;</code>标签内的文本时，浏览器就会自动将焦点(光标)转到或者选择对应的表单元素上，用来增加用户体验</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;sex&quot;</span>&gt;</span> 男 <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span>  <span class="attr">id</span>=<span class="string">&quot;sex&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>**<code>&lt;label&gt;</code>标签里面的for属性应当与相关元素的id属性相同</p>
-<h5 id="select表单元素"><a href="#select表单元素" class="headerlink" title="select表单元素"></a>select表单元素</h5><p>在页面中，如果有多个选项让用户选择，并且想要节约页面时，我们可以使用<code>&lt;select</code>&gt;标签控件定义下拉列表</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>选项1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>选项2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>选项3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><code>&lt;select&gt;</code>中至少包含一对<code>&lt;option&gt;</code></p>
-</li>
-<li><p>在<code>&lt;option&gt;</code>中定义selected &#x3D; “selected”时，当前项即为默认选中项</p>
-</li>
-</ul>
-<h5 id="textarea文本域元素"><a href="#textarea文本域元素" class="headerlink" title="textarea文本域元素"></a>textarea文本域元素</h5><p>当用户输入内容较多的情况下，我们就不能使用文本框表单了此时可以用<code>&lt;textarea&gt;</code>标签,用于定义多行文本输入的控件</p>
-<p>常见于留言板，评论</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">&quot;3&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;20&quot;</span>&gt;</span></span><br><span class="line">  文本内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="HTML基本结构标签"><a href="#HTML基本结构标签" class="headerlink" title="HTML基本结构标签"></a>HTML基本结构标签</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/html/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1507,7 +853,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/29/mini/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1530,28 +876,42 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
 
-              <time title="Created: 2024-05-29 22:32:46" itemprop="dateCreated datePublished" datetime="2024-05-29T22:32:46+08:00">2024-05-29</time>
+              <time title="أُنشأ: 2024-05-29 22:32:46" itemprop="dateCreated datePublished" datetime="2024-05-29T22:32:46+08:00">2024-05-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-30 21:54:05" itemprop="dateModified" datetime="2024-05-30T21:54:05+08:00">2024-05-30</time>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2024-05-30 21:54:05" itemprop="dateModified" datetime="2024-05-30T21:54:05+08:00">2024-05-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -1593,175 +953,14 @@
 </ul>
 </li>
 </ul>
-<h3 id="LLM"><a href="#LLM" class="headerlink" title="LLM"></a>LLM</h3><blockquote>
-<p>大型语言模型</p>
-<p>基于深度学习技术的自然语言处理模型，旨在生成和理解人类语言</p>
-</blockquote>
-<h3 id="主要技术和原理"><a href="#主要技术和原理" class="headerlink" title="主要技术和原理"></a>主要技术和原理</h3><ul>
-<li><p>神经网络架构</p>
-</li>
-<li><p>预训练和微调</p>
-<ul>
-<li>预训练：学习语言的基本结构和词汇的分布</li>
-<li>微调：预训练好的模型在特定任务或领域的小规模有监督数据集上进行微调，以适应特定应用场景</li>
-</ul>
-</li>
-<li><p>自监督学习</p>
-</li>
-<li><p>参数规模</p>
-</li>
-</ul>
-<h2 id="Graph-RAG"><a href="#Graph-RAG" class="headerlink" title="Graph RAG"></a>Graph RAG</h2><blockquote>
-<p>利用节点和边之间的关系将数据结构化</p>
-<p>这种结构通过使模型能够访问精确且上下文相关的数据，大大提高了LLMs生成知情响应的能力</p>
-<p>集成了图数据库</p>
-</blockquote>
-<p><strong><code>Graph RAG</code>的高度取决于基础<code>KG</code>的质量、深度和广度</strong></p>
-<h2 id="Vector-RAG"><a href="#Vector-RAG" class="headerlink" title="Vector RAG"></a>Vector RAG</h2><blockquote>
-<p>结合向量检索和生成模型的技术</p>
-</blockquote>
-<ul>
-<li><p>向量检索</p>
-<ul>
-<li>使用嵌入来表示文本、句子和文档，将他们转换为高维向量</li>
-</ul>
-</li>
-<li><p>增强生成</p>
-</li>
-</ul>
-<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><ol>
-<li>输入处理：<ol>
-<li>用户输入一个问题，系统首先将其转换为嵌入向量</li>
-</ol>
-</li>
-<li>向量检索<ol>
-<li>在预先构建的知识库中，通过向量相似度检索与输入向量最相似的向量，找到相关的文本片段或文档</li>
-<li>向量检索可以通过高效的索引结构加速</li>
-</ol>
-</li>
-<li>信息融合<ol>
-<li>检索到的相关信息呗传递给生成模型，生成模型将这些信息与原始输入结合，生成一个综合的、上下文相关的响应</li>
-</ol>
-</li>
-<li>生成输出<ol>
-<li>生成模型基于融合的信息生成最终的文本输出</li>
-</ol>
-</li>
-</ol>
-<h2 id="读取代码仓库加工生成代码仓库知识库"><a href="#读取代码仓库加工生成代码仓库知识库" class="headerlink" title="读取代码仓库加工生成代码仓库知识库"></a>读取代码仓库加工生成代码仓库知识库</h2><h4 id="获取代码仓库数据"><a href="#获取代码仓库数据" class="headerlink" title="获取代码仓库数据"></a>获取代码仓库数据</h4><p>通过API或直接克隆代码仓库获取代码库的所有文件和相关元数据</p>
-<h4 id="解析代码和文档"><a href="#解析代码和文档" class="headerlink" title="解析代码和文档"></a>解析代码和文档</h4><ul>
-<li>使用代码解析工具或库解析代码文件，提取函数、类、变量和注释等信息</li>
-<li>提取和解析代码库中的文档以获取更多上下文信息</li>
-</ul>
-<h4 id="生成知识库"><a href="#生成知识库" class="headerlink" title="生成知识库"></a>生成知识库</h4><ul>
-<li>创建结构化的数据存储以保存从代码库中提取的信息</li>
-<li>使用自然语言处理技术和嵌入模型将代码和文档转化为向量表示，以便于检索和分析</li>
-</ul>
-<p><strong>RAG技术可以用于最后的生成知识库步骤，可以显著提升系统的检索和生成增强响应</strong></p>
-<h2 id="AICP和知识库之间的联系"><a href="#AICP和知识库之间的联系" class="headerlink" title="AICP和知识库之间的联系"></a>AICP和知识库之间的联系</h2><blockquote>
-<p>在AICP系统中，知识库是一个关键主件，它存储和组织了大量的信息，帮助系统提供更只能和高效的客户支持和管理</p>
-</blockquote>
-<ol>
-<li>知识库构建</li>
-<li>将知识库集成到AICR系统<ol>
-<li>知识库接口<ol>
-<li>API接口：设计和实现API，使AICR系统能访问知识库</li>
-<li>查询语言：使用SQL或专门的查询语言来查询知识库</li>
-</ol>
-</li>
-<li>检索和增强生成<ol>
-<li>检索增强生成（RAG）：结合检索模型和生成模型，从知识库中检索相关信息，并生成回答</li>
-<li>检索模型：使用向量检索技术从知识库中找到最相关的文档</li>
-<li>生成模型：使用生成模型结合检索到的信息，生成上下文相关的回答</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>实现AICR系统中的应用<ol>
-<li>智能客服</li>
-<li>个性化推荐</li>
-</ol>
-</li>
-<li>维护反馈和优化</li>
-</ol>
-<h2 id="RAG-Graph-RAG"><a href="#RAG-Graph-RAG" class="headerlink" title="RAG &#x2F; Graph RAG"></a>RAG &#x2F; Graph RAG</h2><blockquote>
-<p>主要区别在于检索模型和数据结构的不同</p>
-<p>在Graph RAG中，知识库被表示为图结构，而一般的RAG中，知识库通常是文档集合或数据库</p>
-</blockquote>
-<ul>
-<li><p>更丰富的关系建模</p>
-<ul>
-<li>图结构：自然表达实体之间的复杂关系（层次关系，关联关系）</li>
-<li>上下文理解：捕捉实体之间的多跳关系</li>
-</ul>
-</li>
-<li><p>更高效的信息检索</p>
-<ul>
-<li>相关子图：可以通过子图提取，获取与查询直接相关的所有节点和边，避免了大规模文档检索的冗余信息</li>
-<li>结构化信息：可以获得结构化的信息片段</li>
-</ul>
-</li>
-<li><p>改进的生成质量</p>
-<ul>
-<li>综合信息：子图包含多层次、多角度的信息</li>
-<li>信息整合：生成模型可以将子图中的多个相关信息节点进行整合</li>
-</ul>
-</li>
-<li><p>知识库的动态更新和扩展</p>
-<ul>
-<li>节点和边的增删：允许动态地添加或删除节点和边</li>
-</ul>
-</li>
-<li><p>多模态信息整合</p>
-<ul>
-<li>多种数据类型：图结构能够整合文本、图像、视频等多种数据类型，通过节点和边的连接，提供更全面的回答</li>
-</ul>
-</li>
-</ul>
-<h2 id="RAG-Vector-RAG"><a href="#RAG-Vector-RAG" class="headerlink" title="RAG &#x2F; Vector RAG"></a>RAG &#x2F; Vector RAG</h2><blockquote>
-<p>在Vector RAG知识库中的文档或信息片段预先向量化，并存储在向量数据库中</p>
-<p>使用高效的向量检索方法在向量数据库中找到最相似的文档向量，通常在大规模检索中更高效</p>
-</blockquote>
-<h2 id="提高基础KG质量"><a href="#提高基础KG质量" class="headerlink" title="提高基础KG质量"></a>提高基础KG质量</h2><ol>
-<li><p>多样化数据来源</p>
-</li>
-<li><p>结构化数据</p>
-</li>
-<li><p>半结构化和非结构化数据</p>
-</li>
-<li><p>行业数据</p>
-<p>使用自动化数据收集，<strong>应用自然语言处理从非结构化文本中提取实体和关系</strong></p>
-</li>
-<li><p>数据质量提升</p>
-<ol>
-<li>数据清理和规范化<ol>
-<li>去除重复、错误、不完整的数据</li>
-<li>统一数据格式和标准</li>
-</ol>
-</li>
-<li>数据验证和校验</li>
-<li>实体消歧和实体合并</li>
-</ol>
-</li>
-<li><p>增强数据深度</p>
-<ol>
-<li>关系挖掘：通过文本分析、关系抽取发现新的实体关系</li>
-<li>多挑关系：构建多跳关系，使图谱能够表达复杂的知识结构</li>
-</ol>
-</li>
-<li><p>扩展数据广度</p>
-<ol>
-<li>跨领域数据集成</li>
-<li>多语言支持</li>
-</ol>
-</li>
-<li><p>图谱更新和维护</p>
-</li>
-<li><p>利用机械学习和深度学习等高级技术和工具</p>
-</li>
-<li></li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/29/mini/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1779,7 +978,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="الصفحة السابقة"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
   </nav>
 
 
@@ -1823,10 +1022,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          المحتويات
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          عام
         </li>
       </ul>
 
@@ -1848,23 +1047,28 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">57</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">20</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">التصنيفات</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">الوسوم</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/crayonxinxin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;crayonxinxin" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
 
 
 
@@ -1892,6 +1096,16 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Crayonxiaoxin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="مُجمل عدد الحروف">NaNm</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="مُجمل زمن القراءة">NaN:aN</span>
 </div>
 
         
@@ -1917,10 +1131,12 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
 
 
 
@@ -1928,6 +1144,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,14 +17,14 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"crayonxinxin.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"crayonxinxin.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://crayonxinxin.github.io/page/4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Crayonxiaoxin">
 <meta name="twitter:card" content="summary">
 
@@ -37,7 +37,7 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'en'
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -81,7 +81,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -99,6 +99,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -115,24 +116,51 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>الوسوم<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>التصنيفات<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">57</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات<span class="badge">57</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>بحث
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="بحث..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -142,6 +170,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -154,7 +183,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -177,30 +206,44 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:15:12 / Modified: 22:22:43" itemprop="dateCreated datePublished" datetime="2024-05-30T22:15:12+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:15:12 / عُدل: 22:22:43" itemprop="dateCreated datePublished" datetime="2024-05-30T22:15:12+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" itemprop="url" rel="index"><span itemprop="name">最短路径</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -228,14 +271,15 @@
 
 
 
-<h2 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h2><blockquote>
-<p>求解非负权图上单源最短路径的算法</p>
-</blockquote>
-<h3 id="暴力实现"><a href="#暴力实现" class="headerlink" title="暴力实现"></a>暴力实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span> &#123;</span><br><span class="line">  <span class="type">int</span> v, w;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">vector&lt;edge&gt; e[maxn];</span><br><span class="line"><span class="type">int</span> dis[maxn], vis[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dijkstra</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> s)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">memset</span>(dis, <span class="number">63</span>, <span class="built_in">sizeof</span>(dis));</span><br><span class="line">  dis[s] = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="type">int</span> u = <span class="number">0</span>, mind = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">      <span class="keyword">if</span> (!vis[j] &amp;&amp; dis[j] &lt; mind) u = j, mind = dis[j];</span><br><span class="line">    vis[u] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> ed : e[u]) &#123;</span><br><span class="line">      <span class="type">int</span> v = ed.v, w = ed.w;</span><br><span class="line">      <span class="keyword">if</span> (dis[v] &gt; dis[u] + w) dis[v] = dis[u] + w;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="优先队列实现"><a href="#优先队列实现" class="headerlink" title="优先队列实现"></a>优先队列实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span> &#123;</span><br><span class="line">  <span class="type">int</span> v, w;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> &#123;</span><br><span class="line">  <span class="type">int</span> dis, u;</span><br><span class="line"></span><br><span class="line">  <span class="type">bool</span> <span class="keyword">operator</span>&gt;(<span class="type">const</span> node&amp; a) <span class="type">const</span> &#123; <span class="keyword">return</span> dis &gt; a.dis; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">vector&lt;edge&gt; e[maxn];</span><br><span class="line"><span class="type">int</span> dis[maxn], vis[maxn];</span><br><span class="line">priority_queue&lt;node, vector&lt;node&gt;, greater&lt;node&gt; &gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dijkstra</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> s)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">memset</span>(dis, <span class="number">63</span>, <span class="built_in">sizeof</span>(dis));</span><br><span class="line">  dis[s] = <span class="number">0</span>;</span><br><span class="line">  q.<span class="built_in">push</span>(&#123;<span class="number">0</span>, s&#125;);</span><br><span class="line">  <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">    <span class="type">int</span> u = q.<span class="built_in">top</span>().u;</span><br><span class="line">    q.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">if</span> (vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">    vis[u] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> ed : e[u]) &#123;</span><br><span class="line">      <span class="type">int</span> v = ed.v, w = ed.w;</span><br><span class="line">      <span class="keyword">if</span> (dis[v] &gt; dis[u] + w) &#123;</span><br><span class="line">        dis[v] = dis[u] + w;</span><br><span class="line">        q.<span class="built_in">push</span>(&#123;dis[v], v&#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<h2 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -253,7 +297,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E5%88%86%E5%B1%82%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -276,30 +320,44 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:15:03 / Modified: 22:19:47" itemprop="dateCreated datePublished" datetime="2024-05-30T22:15:03+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:15:03 / عُدل: 22:19:47" itemprop="dateCreated datePublished" datetime="2024-05-30T22:15:03+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" itemprop="url" rel="index"><span itemprop="name">最短路径</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -318,9 +376,14 @@
 
 <h2 id="2-对于每个点都可以选择下一条边是否赋予权值为0-那么我们就可以将图画出k-1层1"><a href="#2-对于每个点都可以选择下一条边是否赋予权值为0-那么我们就可以将图画出k-1层1" class="headerlink" title="2.对于每个点都可以选择下一条边是否赋予权值为0,那么我们就可以将图画出k+1层1"></a>2.对于每个点都可以选择下一条边是否赋予权值为0,那么我们就可以将图画出k+1层1</h2><p> 代码实现：</p>
 <p>我们可以将dis数组开成二维dis[i][j]表示<strong>到达i号结点,用了j次免费操作</strong>!<br>比如dis[2][0]表示到达2号结点,没有用免费操作,也就是在第一层图移动。 比如dis[2][3],到达2号结点用了3次免费操作,那么**下一次移动应该在第3&#x2F;4层图进行!**、</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">5e4</span>+<span class="number">10</span>;</span><br><span class="line">vector&lt;PII&gt;se[maxn];</span><br><span class="line"><span class="type">int</span> dis[maxn][<span class="number">20</span>];</span><br><span class="line"><span class="type">bool</span> vis[maxn][<span class="number">20</span>];</span><br><span class="line"><span class="type">int</span> n,m,k,s,t;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> id,v,used;<span class="comment">//used使用了几次免费券,id为目标点，v为付出</span></span><br><span class="line">	<span class="built_in">node</span>()&#123;&#125;</span><br><span class="line">	<span class="built_in">node</span>(<span class="type">int</span> id,<span class="type">int</span> v,<span class="type">int</span> used): <span class="built_in">id</span>(id),<span class="built_in">v</span>(v),<span class="built_in">used</span>(used)&#123;&#125;<span class="comment">//构造器</span></span><br><span class="line">	<span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> node&amp; a) <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> a.v&lt;v;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dj</span><span class="params">(<span class="type">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="built_in">memset</span>(dis,<span class="number">0x3f3f3f3f</span>,<span class="built_in">sizeof</span>(dis));</span><br><span class="line">   priority_queue&lt;node&gt;qu;</span><br><span class="line">   qu.<span class="built_in">push</span>(<span class="built_in">node</span>(u,<span class="number">0</span>,<span class="number">0</span>));</span><br><span class="line">   dis[u][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">   <span class="keyword">while</span>(!qu.<span class="built_in">empty</span>())</span><br><span class="line">   &#123;</span><br><span class="line">      node tt=qu.<span class="built_in">top</span>();</span><br><span class="line">	  qu.<span class="built_in">pop</span>();</span><br><span class="line">	  <span class="type">int</span> q=tt.id;<span class="comment">//now</span></span><br><span class="line">	  <span class="type">int</span> p=tt.used;<span class="comment">//目前层数</span></span><br><span class="line">	  <span class="keyword">if</span>(vis[q][p])</span><br><span class="line">	  <span class="keyword">continue</span>;</span><br><span class="line">	  vis[q][p]=<span class="number">1</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;se[q].<span class="built_in">size</span>();++i)</span><br><span class="line">	   &#123;</span><br><span class="line">		<span class="type">int</span> next=se[q][i].first;<span class="comment">//下一个连接点</span></span><br><span class="line">		<span class="type">int</span> val=se[q][i].second;<span class="comment">//代价</span></span><br><span class="line">		<span class="comment">//两种i情况。用免费和不用免费</span></span><br><span class="line">		<span class="comment">//不用免费</span></span><br><span class="line">		<span class="keyword">if</span>(dis[next][p]&gt;dis[q][p]+val)</span><br><span class="line">		&#123;</span><br><span class="line">			dis[next][p]=dis[q][p]+val;</span><br><span class="line">			qu.<span class="built_in">push</span>(<span class="built_in">node</span>(next,dis[next][p],p));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//用免费券</span></span><br><span class="line">		<span class="keyword">if</span>(p+<span class="number">1</span>&lt;=k&amp;&amp;dis[next][p+<span class="number">1</span>]&gt;dis[q][p]+<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			dis[next][p+<span class="number">1</span>]=dis[q][p];</span><br><span class="line">			qu.<span class="built_in">push</span>(<span class="built_in">node</span>(next,dis[next][p+<span class="number">1</span>],p+<span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">	   &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m&gt;&gt;k&gt;&gt;s&gt;&gt;t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> a,b,c;</span><br><span class="line">		cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">        se[a].<span class="built_in">push_back</span>(&#123;b,c&#125;);</span><br><span class="line">		se[b].<span class="built_in">push_back</span>(&#123;a,c&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">dj</span>(s);</span><br><span class="line">	<span class="type">int</span> ans=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=k;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		ans=<span class="built_in">min</span>(ans,dis[t][i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E5%88%86%E5%B1%82%E5%9B%BE/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -338,7 +401,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E6%9D%83%E5%8C%B9%E9%85%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -361,30 +424,44 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:14:54 / Modified: 22:19:13" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:54+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:14:54 / عُدل: 22:19:13" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:54+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%8C%B9%E9%85%8D/" itemprop="url" rel="index"><span itemprop="name">图的匹配</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -404,6 +481,14 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">505</span>;</span><br><span class="line"><span class="type">int</span> line[N][N];</span><br><span class="line"><span class="type">int</span> girl[N],used[N];</span><br><span class="line"><span class="type">int</span> k,m,n;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">found</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(line[x][i]&amp;&amp;!used[i])</span><br><span class="line">        &#123;</span><br><span class="line">            used[i]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(girl[i]==<span class="number">0</span>||<span class="built_in">found</span>(girl[i]))</span><br><span class="line">            &#123;</span><br><span class="line">                girl[i]=x;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x,y;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;k)&amp;&amp;k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;m,&amp;n);</span><br><span class="line">        <span class="built_in">memset</span>(line,<span class="number">0</span>,<span class="built_in">sizeof</span>(line));</span><br><span class="line">        <span class="built_in">memset</span>(girl,<span class="number">0</span>,<span class="built_in">sizeof</span>(girl));</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;k; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">            line[x][y]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;=m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">memset</span>(used,<span class="number">0</span>,<span class="built_in">sizeof</span>(used));</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">found</span>(i)) sum++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E6%9D%83%E5%8C%B9%E9%85%8D/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -421,7 +506,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -444,30 +529,44 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:14:37 / Modified: 22:18:48" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:37+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:14:37 / عُدل: 22:18:48" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:37+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%8C%B9%E9%85%8D/" itemprop="url" rel="index"><span itemprop="name">图的匹配</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -486,6 +585,14 @@
 <h2 id="增广路算法"><a href="#增广路算法" class="headerlink" title="增广路算法"></a>增广路算法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">augment_path</span> &#123;</span><br><span class="line">  vector&lt;vector&lt;<span class="type">int</span>&gt; &gt; g;</span><br><span class="line">  vector&lt;<span class="type">int</span>&gt; pa;  <span class="comment">// 匹配</span></span><br><span class="line">  vector&lt;<span class="type">int</span>&gt; pb;</span><br><span class="line">  vector&lt;<span class="type">int</span>&gt; vis;  <span class="comment">// 访问</span></span><br><span class="line">  <span class="type">int</span> n, m;         <span class="comment">// 两个点集中的顶点数量</span></span><br><span class="line">  <span class="type">int</span> dfn;          <span class="comment">// 时间戳记</span></span><br><span class="line">  <span class="type">int</span> res;          <span class="comment">// 匹配数</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">augment_path</span>(<span class="type">int</span> _n, <span class="type">int</span> _m) : <span class="built_in">n</span>(_n), <span class="built_in">m</span>(_m) &#123;</span><br><span class="line">    <span class="built_in">assert</span>(<span class="number">0</span> &lt;= n &amp;&amp; <span class="number">0</span> &lt;= m);</span><br><span class="line">    pa = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">-1</span>);</span><br><span class="line">    pb = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(m, <span class="number">-1</span>);</span><br><span class="line">    vis = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n);</span><br><span class="line">    g.<span class="built_in">resize</span>(n);</span><br><span class="line">    res = <span class="number">0</span>;</span><br><span class="line">    dfn = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> from, <span class="type">int</span> to)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">assert</span>(<span class="number">0</span> &lt;= from &amp;&amp; from &lt; n &amp;&amp; <span class="number">0</span> &lt;= to &amp;&amp; to &lt; m);</span><br><span class="line">    g[from].<span class="built_in">push_back</span>(to);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> v)</span> </span>&#123;</span><br><span class="line">    vis[v] = dfn;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u : g[v]) &#123;</span><br><span class="line">      <span class="keyword">if</span> (pb[u] == <span class="number">-1</span>) &#123;</span><br><span class="line">        pb[u] = v;</span><br><span class="line">        pa[v] = u;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u : g[v]) &#123;</span><br><span class="line">      <span class="keyword">if</span> (vis[pb[u]] != dfn &amp;&amp; <span class="built_in">dfs</span>(pb[u])) &#123;</span><br><span class="line">        pa[v] = u;</span><br><span class="line">        pb[u] = v;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      dfn++;</span><br><span class="line">      <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pa[i] == <span class="number">-1</span> &amp;&amp; <span class="built_in">dfs</span>(i)) &#123;</span><br><span class="line">          cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (cnt == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      res += cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -503,7 +610,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -526,30 +633,44 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:14:26 / Modified: 22:18:01" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:26+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:14:26 / عُدل: 22:18:01" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:26+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">树上问题</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -567,6 +688,14 @@
 <h2 id="Tarjan算法"><a href="#Tarjan算法" class="headerlink" title="Tarjan算法"></a>Tarjan算法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">&quot;\n&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 500005</span></span><br><span class="line"><span class="type">int</span> head[N], to[N&lt;&lt;<span class="number">1</span>], nex[N&lt;&lt;<span class="number">1</span>], cnt ;</span><br><span class="line"><span class="type">int</span> visit[N], fa[N];</span><br><span class="line"><span class="type">int</span> qhead[N&lt;&lt;<span class="number">1</span>], qnex[N&lt;&lt;<span class="number">1</span>], qcnt = <span class="number">1</span>, qid[N&lt;&lt;<span class="number">1</span>], ans[N], qto[N&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add_edge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">	to[cnt] = y;</span><br><span class="line">	nex[cnt] = head[x];</span><br><span class="line">	head[x] = cnt++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add_query</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> w)</span></span>&#123;</span><br><span class="line">	qto[qcnt] = y;</span><br><span class="line">	qnex[qcnt] = qhead[x];</span><br><span class="line">	qid[qcnt] = w;</span><br><span class="line">	qhead[x] = qcnt++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findx</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(fa[x] == x)&#123;</span><br><span class="line">		<span class="keyword">return</span> x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> fa[x] = <span class="built_in">findx</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">tarjan</span><span class="params">(<span class="type">int</span> rt, <span class="type">int</span> f)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = head[rt]; i; i = nex[i])&#123;</span><br><span class="line">		<span class="keyword">if</span>(to[i] == f)<span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">tarjan</span>(to[i], rt);</span><br><span class="line">		fa[to[i]] = rt;</span><br><span class="line">	&#125;</span><br><span class="line">	visit[rt] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = qhead[rt]; i; i = qnex[i])&#123;</span><br><span class="line">		<span class="keyword">if</span>(visit[qto[i]] == <span class="number">0</span>)<span class="keyword">continue</span>; </span><br><span class="line">		ans[qid[i]] = <span class="built_in">findx</span>(qto[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	<span class="type">int</span> n, m, s;</span><br><span class="line">	<span class="keyword">while</span>(cin &gt;&gt; n &gt;&gt; m &gt;&gt; s)&#123;</span><br><span class="line">		<span class="type">int</span> x, y;</span><br><span class="line">		<span class="built_in">memset</span>(head, <span class="number">0</span>, <span class="built_in">sizeof</span>(head));</span><br><span class="line">		cnt = <span class="number">1</span>, qcnt = <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">memset</span>(qhead, <span class="number">0</span>, <span class="built_in">sizeof</span>(qhead));</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">			cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">			<span class="built_in">add_edge</span>(x, y);</span><br><span class="line">			<span class="built_in">add_edge</span>(y, x);</span><br><span class="line">			fa[i] = i;</span><br><span class="line">		&#125;</span><br><span class="line">		fa[n] = n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</span><br><span class="line">			cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">			<span class="built_in">add_query</span>(x, y, i);</span><br><span class="line">			<span class="built_in">add_query</span>(y, x, i);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">tarjan</span>(s, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</span><br><span class="line">			cout &lt;&lt; ans[i] &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -584,7 +713,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -607,30 +736,44 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:14:12 / Modified: 22:17:34" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:12+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:14:12 / عُدل: 22:17:34" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:12+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">树上问题</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -652,6 +795,14 @@
 <li>在一棵树上添加或删除一个叶子，那么它的重心最多只移动一条边的距离</li>
 </ul>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -669,7 +820,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -692,30 +843,44 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:14:04 / Modified: 22:17:07" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:04+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:14:04 / عُدل: 22:17:07" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:04+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">树上问题</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -737,14 +902,14 @@
 <p>如果需要求出一条直径上所有节点，则可以在第二次DFS的过程中，记录每个点的前序节点，即可从直径的一端一路向前，遍历直径上所有的节点</p>
 <h2 id="树形dp"><a href="#树形dp" class="headerlink" title="树形dp"></a>树形dp</h2><h3 id="实现1"><a href="#实现1" class="headerlink" title="实现1"></a>实现1</h3><p><code>d1</code>和<code>d2</code>分别为每个节点作为字树的根向下，所能延伸的最长路径长度<code>d1</code>与此长路径<code>d2</code>，那么直径就是对于每个点，该点<code>d1+d2</code>所能取到的值中的最大值</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, d = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> d1[N], d2[N];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; E[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">  d1[u] = d2[u] = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> v : E[u]) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(v, u);</span><br><span class="line">    <span class="type">int</span> t = d1[v] + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (t &gt; d1[u])</span><br><span class="line">      d2[u] = d1[u], d1[u] = t;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (t &gt; d2[u])</span><br><span class="line">      d2[u] = t;</span><br><span class="line">  &#125;</span><br><span class="line">  d = <span class="built_in">max</span>(d, d1[u] + d2[u]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="type">int</span> u, v;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;u, &amp;v);</span><br><span class="line">    E[u].<span class="built_in">push_back</span>(v), E[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="实现2"><a href="#实现2" class="headerlink" title="实现2"></a>实现2</h3><p><code>dp[u]</code>:以u为根的子树中，从u出发的最长路径。</p>
-<p>转移方程：<code>dp[u] = max(dp[u],dp[v]+w(u,v)) , w(u,v)表示所经过边的权重</code> </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, d = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> dp[N];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; E[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> v : E[u]) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(v, u);</span><br><span class="line">    d = <span class="built_in">max</span>(d, dp[u] + dp[v] + <span class="number">1</span>);</span><br><span class="line">    dp[u] = <span class="built_in">max</span>(dp[u], dp[v] + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="type">int</span> u, v;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;u, &amp;v);</span><br><span class="line">    E[u].<span class="built_in">push_back</span>(v), E[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -762,7 +927,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/z%E5%87%BD%E6%95%B0-%E6%89%A9%E5%B1%95kmp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -785,26 +950,40 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:10:21 / Modified: 22:13:30" itemprop="dateCreated datePublished" datetime="2024-05-30T22:10:21+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:10:21 / عُدل: 22:13:30" itemprop="dateCreated datePublished" datetime="2024-05-30T22:10:21+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -823,6 +1002,14 @@
 <h2 id="字符串整周期"><a href="#字符串整周期" class="headerlink" title="字符串整周期"></a>字符串整周期</h2><p>给定一个长度为 n  的字符串 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="s">，找到其最短的整周期，即寻找一个最短的字符串 t ，使得 s  可以被若干个 t  拼接而成的字符串表示。</p>
 <p>考虑计算 s  的 Z 函数，则其整周期的长度为最小的 n  的因数 i ，满足 i  + z[i] &#x3D; n。</p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/z%E5%87%BD%E6%95%B0-%E6%89%A9%E5%B1%95kmp/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -840,7 +1027,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -863,26 +1050,40 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:09:41 / Modified: 22:12:53" itemprop="dateCreated datePublished" datetime="2024-05-30T22:09:41+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:09:41 / عُدل: 22:12:53" itemprop="dateCreated datePublished" datetime="2024-05-30T22:09:41+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -905,6 +1106,14 @@
 
 
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/kmp/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -922,7 +1131,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -945,26 +1154,40 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
               
 
-              <time title="Created: 2024-05-30 22:09:35 / Modified: 22:12:31" itemprop="dateCreated datePublished" datetime="2024-05-30T22:09:35+08:00">2024-05-30</time>
+              <time title="أُنشأ: 2024-05-30 22:09:35 / عُدل: 22:12:31" itemprop="dateCreated datePublished" datetime="2024-05-30T22:09:35+08:00">2024-05-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
                 </span>
-                  , 
+                  ، 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="عدد الحروف في المقال">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">عدد الحروف في المقال: </span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="زمن القراءة">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">زمن القراءة &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -989,27 +1212,14 @@
 
 <p><img src="https://img2020.cnblogs.com/blog/1593693/202005/1593693-20200516230446086-779182765.png" alt="img"></p>
 <p>假如我们现在有文本串ABCDBC</p>
-<p>我们用文本串在Trie上匹配，刚开始会经过2、3、4号点，发现到4，成功匹配了一个模式串，然后就不能在继续匹配了，这时我们还要重新从根开始匹配吗？</p>
-<p>这样效率太慢了。这时我们就要借用KMP的思想，从Trie上的某个点继续匹配</p>
-<p>这时我们就应该确定从哪个点继续匹配？我们称i匹配失败后继续从j开始匹配，j是i的Fail(失配指针)</p>
-<h2 id="求Fail"><a href="#求Fail" class="headerlink" title="求Fail"></a><strong>求Fail</strong></h2><p>首先我们可以确定，每一个点i的Fail指针指向的点的深度一定是比i小的。（Fail指的是后缀啊）</p>
-<p>第一层的Fail一定指的是root。（比深度11还浅的只有root了）</p>
-<p>设点i的父亲fa的Fail指针指的是fafail，那么如果fafail有和i值相同的儿子j，那么i的Fail就指向j。这里可能比较难理解一点，建议画图理解，不过等会转换成代码就很好理解了。</p>
-<p>由于我们在处理i的情况必须要先处理好fa的情况，所以求Fail我们使用BFS来实现。</p>
-<p><strong>实现的一些细节</strong></p>
-<ul>
-<li>1、刚开始我们不是要初始化第一层的fail指针为root，其实我们可以建一个虚节点00号节点，将00的<strong>所有儿子</strong>指向root（root编号为11，记得初始化)，然后root的fail指向00就OK了。效果是一样的。</li>
-<li>2、如果不存在一个节点i，那么我们可以将那个节点设为fafail的**((值和i相同)的儿子)**。保证存在性，就算是00也可以成功返回到根，因为00的所有儿子都是根。</li>
-<li>3、无论fafail存不存在和i值相同的儿子j，我们都可以将i的fail指向j。因为在处理i的时候j已经处理好了，如果出现这种情况，j的值是第22种情况，也是有实际值的，所以没有问题。</li>
-<li>4、实现时不记父亲，我们直接让父亲更新儿子</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">getFail</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;++i)</span><br><span class="line">    trie[<span class="number">0</span>].son[i]=<span class="number">1</span>;<span class="comment">//初始化0的所有儿子都是0</span></span><br><span class="line">    q.<span class="built_in">push</span>(<span class="number">1</span>);<span class="comment">//将根节点压入队列</span></span><br><span class="line">    trie[<span class="number">1</span>].fail=<span class="number">0</span>;<span class="comment">//1为root，将1的fail指向0</span></span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())<span class="comment">//bfs</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> v=trie[u].son[i];<span class="comment">//其子节点</span></span><br><span class="line">            <span class="type">int</span> Fail=trie[u].fail;</span><br><span class="line">            <span class="keyword">if</span>(!v)<span class="comment">//表示不存在该节点</span></span><br><span class="line">            &#123;</span><br><span class="line">                trie[u].son[i]=trie[Fail].son[i];</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            trie[v].fail=trie[Fail].son[i];</span><br><span class="line">            q.<span class="built_in">push</span>(v);<span class="comment">//存在实节点就压入队列</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">note</span>&#123;</span><br><span class="line">    <span class="type">int</span> son[<span class="number">26</span>];<span class="comment">//26个英文字母</span></span><br><span class="line">    <span class="type">int</span> flag;<span class="comment">//标记是否是末端</span></span><br><span class="line">    <span class="type">int</span> fail;<span class="comment">//fail指针</span></span><br><span class="line">&#125;trie[maxn];</span><br><span class="line"><span class="type">int</span> n,cnt;</span><br><span class="line">string s;</span><br><span class="line">queue&lt;<span class="type">int</span>&gt;q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(string s)</span><span class="comment">//构建trie</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> u=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">length</span>();++i)</span><br><span class="line">    &#123;</span><br><span class="line">       <span class="type">int</span> v=s[i]-<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">       <span class="keyword">if</span>(!trie[u].son[v])</span><br><span class="line">       trie[u].son[v]=++cnt;</span><br><span class="line">       u=trie[u].son[v];</span><br><span class="line">    &#125;</span><br><span class="line">    trie[u].flag++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getFail</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;++i)</span><br><span class="line">    trie[<span class="number">0</span>].son[i]=<span class="number">1</span>;<span class="comment">//初始化0的所有儿子都是0</span></span><br><span class="line">    q.<span class="built_in">push</span>(<span class="number">1</span>);<span class="comment">//将根节点压入队列</span></span><br><span class="line">    trie[<span class="number">1</span>].fail=<span class="number">0</span>;<span class="comment">//1为root，将1的fail指向0</span></span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())<span class="comment">//bfs</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> v=trie[u].son[i];<span class="comment">//其子节点</span></span><br><span class="line">            <span class="type">int</span> Fail=trie[u].fail;</span><br><span class="line">            <span class="keyword">if</span>(!v)<span class="comment">//表示不存在该节点</span></span><br><span class="line">            &#123;</span><br><span class="line">                trie[u].son[i]=trie[Fail].son[i];</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            trie[v].fail=trie[Fail].son[i];</span><br><span class="line">            q.<span class="built_in">push</span>(v);<span class="comment">//存在实节点就压入队列</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(string s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="type">int</span> u=<span class="number">1</span>,ans=<span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">length</span>();++i)</span><br><span class="line">   &#123;</span><br><span class="line">    <span class="type">int</span> v=s[i]-<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">    <span class="type">int</span> k=trie[u].son[v];</span><br><span class="line">    <span class="keyword">while</span>(k&gt;<span class="number">1</span>&amp;&amp;trie[k].flag!=<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ans+=trie[k].flag;</span><br><span class="line">        trie[k].flag=<span class="number">-1</span>;<span class="comment">//标记已经找过了</span></span><br><span class="line">        k=trie[k].fail;</span><br><span class="line">    &#125;</span><br><span class="line">    u=trie[u].son[v];<span class="comment">//到下一个儿子</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cnt=<span class="number">1</span>;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;s;</span><br><span class="line">        <span class="built_in">insert</span>(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">getFail</span>();</span><br><span class="line">    cin&gt;&gt;s;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">query</span>(s)&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1027,7 +1237,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="الصفحة السابقة"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="الصفحة التالية"></i></a>
   </nav>
 
 
@@ -1071,10 +1281,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          المحتويات
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          عام
         </li>
       </ul>
 
@@ -1096,23 +1306,28 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">57</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">20</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">التصنيفات</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">الوسوم</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/crayonxinxin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;crayonxinxin" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
 
 
 
@@ -1140,6 +1355,16 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Crayonxiaoxin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="مُجمل عدد الحروف">NaNm</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="مُجمل زمن القراءة">NaN:aN</span>
 </div>
 
         
@@ -1165,10 +1390,12 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
 
 
 
@@ -1176,6 +1403,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
