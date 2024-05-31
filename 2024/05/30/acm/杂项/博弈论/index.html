@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"crayonxinxin.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="博弈论公平组合游戏 由两名玩家交替行动 在游戏进程的任意时刻，可以执行的合法行动与轮到哪名玩家无关 游戏中的同一个状态不可能多次抵达，游戏以玩家无法行动为结束，且游戏一定会在有限步后以非平局结束  尼姆游戏 给定 N堆物品，第 i 堆物品有 $a_i$个。两名玩家轮流行动，每次可以任选一堆，取走任意多个物品，可把一堆取光，但不能不取。取走最后一件物品者获胜。两人都采取最优策略，问先手是否必胜  结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论">
+<meta property="og:url" content="http://crayonxinxin.github.io/2024/05/30/acm/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="博弈论公平组合游戏 由两名玩家交替行动 在游戏进程的任意时刻，可以执行的合法行动与轮到哪名玩家无关 游戏中的同一个状态不可能多次抵达，游戏以玩家无法行动为结束，且游戏一定会在有限步后以非平局结束  尼姆游戏 给定 N堆物品，第 i 堆物品有 $a_i$个。两名玩家轮流行动，每次可以任选一堆，取走任意多个物品，可把一堆取光，但不能不取。取走最后一件物品者获胜。两人都采取最优策略，问先手是否必胜  结">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210218211729494.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200104104613957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMjc3MjM5,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2024-05-30T14:07:09.000Z">
+<meta property="article:modified_time" content="2024-05-30T14:08:31.785Z">
+<meta property="article:author" content="Crayonxiaoxin">
+<meta property="article:tag" content="acm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210218211729494.png">
+
+<link rel="canonical" href="http://crayonxinxin.github.io/2024/05/30/acm/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%BC%88%E8%AE%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>博弈论 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">57</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%BC%88%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
+      <meta itemprop="name" content="Crayonxiaoxin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          博弈论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-05-30 22:07:09 / Modified: 22:08:31" itemprop="dateCreated datePublished" datetime="2024-05-30T22:07:09+08:00">2024-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="博弈论"><a href="#博弈论" class="headerlink" title="博弈论"></a>博弈论</h1><h2 id="公平组合游戏"><a href="#公平组合游戏" class="headerlink" title="公平组合游戏"></a>公平组合游戏</h2><ul>
+<li>由两名玩家交替行动</li>
+<li>在游戏进程的任意时刻，可以执行的合法行动与轮到哪名玩家无关</li>
+<li>游戏中的同一个状态不可能多次抵达，游戏以玩家无法行动为结束，且游戏一定会在有限步后以非平局结束</li>
+</ul>
+<h2 id="尼姆游戏"><a href="#尼姆游戏" class="headerlink" title="尼姆游戏"></a>尼姆游戏</h2><blockquote>
+<p>给定 N堆物品，第 i 堆物品有 $a_i$个。两名玩家轮流行动，每次可以任选一堆，取走任意多个物品，可把一堆取光，但不能不取。取走最后一件物品者获胜。两人都采取最优策略，问先手是否必胜</p>
+</blockquote>
+<p>结论：定义 Nim 和为$a_1\oplus a_2\oplus a_3…\oplus a_n$,当且仅当 Nim和为 0 时，该状态为先手必败状态 否则该状态为先手必胜状态	</p>
+<h2 id="巴什博弈"><a href="#巴什博弈" class="headerlink" title="巴什博弈"></a>巴什博弈</h2><blockquote>
+<p>有 1 堆石子，总个数是 n ，两名玩家轮流在石子堆中拿石子，每次至少取 1 个，至多取 m 个。取走最后一个石子的玩家为胜者。判定先手和后手谁胜。</p>
+</blockquote>
+<p>结论： 若 <code>n%(m+1)==0</code> ，则先手获胜，否则后手获胜</p>
+<h2 id="威佐夫博弈"><a href="#威佐夫博弈" class="headerlink" title="威佐夫博弈"></a>威佐夫博弈</h2><blockquote>
+<p>有两堆石子，石子数可以不同。两人轮流取石子，每次可以在一堆中取，或者从两堆中取走相同个数的石子，数量不限，取走最后一个石头的人获胜。判定先手是否必胜。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b)</span><br><span class="line">        <span class="built_in">swap</span>(a, b);</span><br><span class="line">    <span class="type">int</span> ans = (b - a) * ((<span class="number">1.0</span> + <span class="built_in">sqrt</span>(<span class="number">5.0</span>)) / <span class="number">2.0</span>);</span><br><span class="line">    <span class="keyword">if</span> (ans == a)</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="斐波那契博弈"><a href="#斐波那契博弈" class="headerlink" title="斐波那契博弈"></a>斐波那契博弈</h2><blockquote>
+<p>有一堆个数为 n ( n ≥ 2 ) n(n\ge 2)n(n≥2)的石子，游戏双方轮流取石子，规则如下：</p>
+<p>先手不能在第一次把所有的石子取完，至少取 1 11 颗；</p>
+<p>之后每次可以取的石子数至少为 1 11，至多为对手刚取的石子数的 2 22 倍。</p>
+<p>约定取走最后一个石子的人为赢家，求必败态</p>
+</blockquote>
+<p>结论：先手必败，当且仅当石子数为斐波那契数</p>
+<h2 id="SG函数"><a href="#SG函数" class="headerlink" title="SG函数"></a>SG函数</h2><h3 id="Mex运算"><a href="#Mex运算" class="headerlink" title="Mex运算"></a>Mex运算</h3><p>设 S 表示一个非负整数集合。定义 mex(S) 为求出不属于集合 S 的最小非负整数的运算。</p>
+<h3 id="SG函数-1"><a href="#SG函数-1" class="headerlink" title="SG函数"></a>SG函数</h3><p>SG(终点) &#x3D; 0</p>
+<p><img src="https://img-blog.csdnimg.cn/20210218211729494.png" alt="img"></p>
+<p>若SG(x)   &#x3D; 0则为必败状态，若SG(x) !&#x3D; 0,则为必胜状态</p>
+<ul>
+<li>对于任意的局面，如果它的SG值为0，那么他的任何一个后继局面的SG值不为0</li>
+<li>对于任意的局面，如果它的SG值不为0，那么她一定有一个后继局面的SG值为0</li>
+</ul>
+<h3 id="SG定理"><a href="#SG定理" class="headerlink" title="SG定理"></a>SG定理</h3><p>有一般胜利下的公平组合游戏都能转化成尼姆数表达的尼姆堆博弈，一个博弈的 尼姆值 定义为这个博弈的等价尼姆数，即：对于当前游戏 X ，它可以拆分成若干个子游戏 $x_1,x_2,x_3…x_n$，那么$SG(X) &#x3D; SG(X_1)\oplus SG(X_2)\oplus SG(X_3)\oplus …\oplus SG(X_N)$	</p>
+<p>对于由 n nn 个有向图游戏组成的组合游戏 设它们的起点分别为$x_1,x_2,x_3…x_n$，那么仅当$SG(X_1)\oplus SG(X_2)\oplus SG(X_3)\oplus …\oplus SG(N) ！&#x3D; 0$时，这个游戏为先手必胜</p>
+<h3 id="有向图游戏的和"><a href="#有向图游戏的和" class="headerlink" title="有向图游戏的和"></a>有向图游戏的和</h3><blockquote>
+<p>设$G_1,G_2,…G_n$是 n 个有向图游戏。定义有向图游戏 G， 他的行动规则是任选某个有向图$G_i$，并在$G_i$上行动一步。G被称为有向图游戏</p>
+</blockquote>
+<p>有向图游戏的和的SG函数值等于它包含的各个子游戏SG函数值的异或和</p>
+<p>$SG(G) &#x3D; SG(G_1)\oplus SG(G_2)\oplus SG(G_3)\oplus …\oplus SG(G_N)$</p>
+<ul>
+<li>有向图游戏的某个局面必胜，当且仅当该局面对应节点的SG函数值大于0</li>
+<li>有向图游戏的某个局面必败，当且仅当该局面对应节点的SG函数值等于0</li>
+</ul>
+<h3 id="sample"><a href="#sample" class="headerlink" title="sample"></a>sample</h3><blockquote>
+<p>给定n堆石子以及一个由k个不同正整数构成的数字<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%9B%86%E5%90%88&spm=1001.2101.3001.7020">集合</a>S。现在有两位玩家轮流操作，每次操作可以从任意一堆石子中拿取石子，每次拿取的石子数量必须包含于集合S，最后无法进行操作的人视为失败。问如果两人都采用最优策略，先手是否必胜。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200104104613957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMjc3MjM5,size_16,color_FFFFFF,t_70" alt="img"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> s[<span class="number">105</span>],f[<span class="number">10005</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sg</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(f[x] != <span class="number">-1</span>)  <span class="keyword">return</span> f[x];</span><br><span class="line">    unordered_set&lt;<span class="type">int</span>&gt; S;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; m;i++)&#123;</span><br><span class="line">        <span class="type">int</span> sum = s[i];</span><br><span class="line">        <span class="keyword">if</span>(x &gt;= sum)    S.<span class="built_in">insert</span>(<span class="built_in">sg</span>(x - sum));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!S.<span class="built_in">count</span>(i)) <span class="keyword">return</span> f[x] = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;m;<span class="comment">//m个数量选择</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; m;i++)    cin&gt;&gt;s[i];</span><br><span class="line">    cin&gt;&gt;n;<span class="comment">//n堆石子</span></span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="number">-1</span>,<span class="keyword">sizeof</span> f);</span><br><span class="line">    <span class="type">int</span> x,res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line">        res ^= <span class="built_in">sg</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">if</span>(res) <span class="built_in">puts</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span>    <span class="built_in">puts</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SG游戏及其变形"><a href="#SG游戏及其变形" class="headerlink" title="SG游戏及其变形"></a>SG游戏及其变形</h2><h3 id="Anti-SG-游戏（走完最后一步者输）"><a href="#Anti-SG-游戏（走完最后一步者输）" class="headerlink" title="Anti-SG 游戏（走完最后一步者输）"></a>Anti-SG 游戏（走完最后一步者输）</h3><h4 id="Anti-Nim"><a href="#Anti-Nim" class="headerlink" title="Anti-Nim"></a>Anti-Nim</h4><blockquote>
+<p>有 n 堆石子，两个人可以从任意一堆石子中拿任意多个石子(不能不拿)，拿走最后一个石子的人失败。问谁会胜利</p>
+</blockquote>
+<p>结论：先手必胜当且仅当</p>
+<ul>
+<li>所有堆的石子数都为 1且游戏的SG值为 0</li>
+<li>有些堆的石子数大于 1且游戏的SG值不为 0</li>
+</ul>
+<h4 id="Anti-SG"><a href="#Anti-SG" class="headerlink" title="Anti-SG"></a>Anti-SG</h4><blockquote>
+<p>决策集合为空的游戏者获胜，也可以理解将所有集合变为空的游戏者即为失败。</p>
+<p>其余规则与普通的 SG 游戏相同。</p>
+</blockquote>
+<p>SJ定理：先手必胜当且仅当</p>
+<ul>
+<li><strong>游戏的 SG 函数值不为 0 且游戏中某个单一游戏的 SG 函数值大于 1</strong></li>
+<li>**游戏的SG函数值为 0 且游戏中没有任意一个单一游戏的SG函数值大于 1 **</li>
+</ul>
+<h3 id="Multi-SG"><a href="#Multi-SG" class="headerlink" title="Multi-SG"></a>Multi-SG</h3><blockquote>
+<p>可以将一堆石子分成多堆</p>
+</blockquote>
+<h4 id="Multi-Nim"><a href="#Multi-Nim" class="headerlink" title="Multi-Nim"></a>Multi-Nim</h4><blockquote>
+<p>有 n 堆石子，两个人可以从任意一堆石子中拿任意多个石子（不能不拿）或者可以把一堆数量不少于 2石子堆分为两堆不为空的石子堆，没法拿的人失败。问谁会胜利。</p>
+</blockquote>
+<p>性质：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x%<span class="number">4</span>==<span class="number">0</span>)</span><br><span class="line"><span class="built_in">SG</span>(x) = x<span class="number">-1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(x%<span class="number">4</span>==<span class="number">1</span>||x%<span class="number">2</span>==<span class="number">2</span>)</span><br><span class="line"><span class="built_in">SG</span>(x)=x;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(x%<span class="number">4</span>==<span class="number">3</span>)</span><br><span class="line"><span class="built_in">SG</span>(x)=x+<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Multi-SG-1"><a href="#Multi-SG-1" class="headerlink" title="Multi-SG"></a>Multi-SG</h4><blockquote>
+<p>每次操作能将一个当前的单一游戏分为多个单一游戏，也就是将当前这个堆石子分为多堆石子的特殊游戏。</p>
+</blockquote>
+<h2 id="翻硬币游戏"><a href="#翻硬币游戏" class="headerlink" title="翻硬币游戏"></a>翻硬币游戏</h2><p>N 枚硬币排成一排，有的正面朝上，有的反面朝上。我们从左开始对硬币按1 到N 编号。</p>
+<p>第一，游戏者根据某些约束翻硬币，但他所翻动的硬币中，<strong>最右边那个硬币的必须是从正面翻到反面</strong>。例如，只能翻3个硬币的情况，那么第三个硬币必须是从正面翻到反面。如果局面是正正反，那就不能翻硬币了，因为第三个是反的。</p>
+<p>第二，谁不能翻谁输。</p>
+<p>有这样的结论：局面的SG 值为局面中每个正面朝上的棋子单一存在时的SG 值的异或和。即一个有k个硬币朝上，朝上硬币位置分布在的翻硬币游戏中，<strong>SG值是等于k个独立的开始时只有一个硬币朝上的翻硬币游戏的SG值异或和</strong>。比如THHTTH这个游戏中，2号、3号、6号位是朝上的，它等价于TH、TTH、TTTTTH三个游戏和，即sg[THHTTH]&#x3D;sg[TH]⨁sg[TTH]⨁sg[TTTTTH]��[������]&#x3D;��[��]⨁��[���]⨁��[������].我们的重点就可以放在单个硬币朝上时的SG值的求法。</p>
+<p><strong>约束条件一：每次只能翻一个硬币。</strong></p>
+<p>一般规则中，所翻硬币的最右边必须是从正面翻到反面，因为这题是只能翻一个硬币，那么这个硬币就是最右边的硬币，所以，每次操作是挑选一个正面的硬币翻成背面。</p>
+<p>对于任意一个正面的硬币，SG值为1。</p>
+<p>有奇数个正面硬币，局面的SG值 &#x3D;&#x3D; 1，先手必胜，有偶数个正面硬币，局面的SG值 &#x3D;&#x3D; 0，先手必败</p>
+<p><strong>约束条件二：每次能翻转一个或两个硬币。(不用连续)</strong></p>
+<p>每个硬币的SG值为它的编号，初始编号为1，可以转化为<strong>NIM游戏</strong></p>
+<p>如果对于一个局面，把正面硬币的SG值异或起来不等于0，既a1 ^ a2 ^ a3 ^ … ^ an &#x3D;&#x3D; x,</p>
+<p>那么玩家必然可以通过翻转一个或两个硬币使得异或和为0<br>证明：不妨设x的二进制表示中最高一位1在第k位，那么在a1,a2,…,an中，必然有一个数ai，它的第k位是1，且ai’ &#x3D; ai ^ x&lt;ai，</p>
+<p>如果 ai’ &#x3D;&#x3D; 0，意思就是说，把 ai 这个值从式子中去掉就可以了。对应游戏，就是把编号为ai’的正面硬币翻成背面就可以了。</p>
+<p>如果ai’ !&#x3D;0，意思就是说，把 ai 这个值从式子中去掉后再在式子中加上ai’。对应游戏，去掉ai’就是把编号为ai的正面硬币翻成背面，加上ai’ ，如果编号为ai’ 的硬币是正面，我们就把它翻成背面，是背面就翻成正面，总之，就是翻转编号为ai’ 的硬币。</p>
+<p><strong>约束条件三：每次必须连续翻转k个硬币。</strong></p>
+<p>可以转化为<strong>巴什博弈</strong></p>
+<p>我们计算的是个数为N的硬币中，当中最后一个硬币为正面朝上,的sg值。</p>
+<p>当N&#x3D;&#x3D;1时。硬币为：正，先手必输，所以sg[1]&#x3D;0。</p>
+<p>当N&#x3D;&#x3D;2时，硬币为：反正。先手必输，所以sg[2]&#x3D;0。</p>
+<p>当N&#x3D;&#x3D;3时，硬币为：反反正，先手必胜。所以sg[3]&#x3D;1。</p>
+<p>当N&#x3D;&#x3D;4时，硬币为：反反反正。先手操作后为：反正正反，子状态局面的SG&#x3D;0^1&#x3D;1，那么sg[4]&#x3D;0。</p>
+<p>当N&#x3D;&#x3D;5时，硬币为：反反反反正。先手操作后为：反反正正反。子状态局面的SG&#x3D;1^0&#x3D;1。那么sg[5]&#x3D;0。</p>
+<p>当N&#x3D;&#x3D;6时，硬币为：反反反反反正。先手操作后为：反反反正正反。子状态局面的SG&#x3D;0^0&#x3D;0。那么sg[6]&#x3D;1。</p>
+<p>依据观察，能够知道:从编号为1开始，sg值为：001 001 001 001……</p>
+<p>依据观察，能够知道，sg的形式为000…01 000…01，当中一小段0的个数为k-1。</p>
+<p><strong>约束条件4：每次翻动一个硬币后。必须翻动其左侧三个硬币中的一个，即翻动第x个硬币后。必须选择x-1。x-2，x-3中的当中一个硬币进行翻动，除非x是小于等于3的。（Subtraction Games）</strong></p>
+<p>还是可以转化为类似<strong>巴什博弈</strong>的模型</p>
+<p>当N &#x3D;&#x3D; 1时，硬币为：正，先手必赢，所以sg[1]&#x3D;1。</p>
+<p>当N &#x3D;&#x3D; 2时。硬币为：反正，先手必赢，由于先手能够翻成反反或正反。可能性为2。所以sg[2] &#x3D;&#x3D; 2。</p>
+<p>当N &#x3D;&#x3D; 3时，硬币为：反反正，先手操作后能够为：反正</p>
+<p>位置x：1 2 3 4 5 6 7 8 9 10 11 12 13 14…</p>
+<p>sg[x]： 1 2 3 0 1 2 3 0 1 2 3 0 1 2…</p>
+<p>这个与每次最多仅仅能取3个石子的取石子游戏的SG分布一样，相同还有相似的这类游戏，约束条件5也是一样。</p>
+<p><strong>约束条件5：每次必须翻动两个硬币，并且这两个硬币的距离要在可行集S&#x3D;{1,2,3}中。硬币序号从0开始。(Twins游戏)</strong></p>
+<p>当N &#x3D;&#x3D; 1时，硬币为：正，先手必输，所以sg[0]&#x3D;0。</p>
+<p>当N &#x3D;&#x3D; 2时，硬币为：反正，先手必赢。所以sg[1]&#x3D;1。</p>
+<p>当N &#x3D;&#x3D; 3时。硬币为：反反正。先手必赢，所以sg[2]&#x3D;2。</p>
+<p>当N &#x3D;&#x3D; 4时，硬币为：反反反正，先手必赢，所以sg[3]&#x3D;3。</p>
+<p>当N &#x3D;&#x3D; 5时。硬币为：反反反反正，先手必输，所以sg[4]&#x3D;0。</p>
+<p>位置x：0 1 2 3 4 5 6 7 8 9 10 11 12 13 14…</p>
+<p>sg[x]： 0 1 2 3 0 1 2 3 0 1 2 3 0 1 2…</p>
+<p><strong>约束条件6：每次能够翻动一个、二个或三个硬币（Mock Turtles游戏）</strong></p>
+<p>初始编号从0开始。</p>
+<p>当N&#x3D;&#x3D;1时。硬币为：正，先手必胜，所以sg[0]&#x3D;1.</p>
+<p>当N&#x3D;&#x3D;2时，硬币为：反正，先手必赢，先手操作后可能为：反反或正反，方案数为2，所以sg[1]&#x3D;2。</p>
+<p>当N&#x3D;&#x3D;3时，硬币为：反反正。先手必赢，先手操作后可能为：反反反、反正反、正反正、正正反。方案数为4。所以sg[2]&#x3D;4。</p>
+<p>位置x：0 1 2 3 4 5 6 7 8 9 10 11 12 13 14…</p>
+<p>sg[x]： 1 2 4 7 8 11 13 14 16 19 21 22 25 26 28…</p>
+<p>看上去sg值为2x或者2x+1。</p>
+<p>下面引入一个概念：我们称一个非负整数为odious，当且仅当该数的二进制形式的1出现的次数是奇数，否则称作evil。</p>
+<p>所以1，2，4，7是odious，因为它们的二进制形式是1,10,100,111。而0,3,5,6是evil，由于它们的二进制形式是0,11,101,110。</p>
+<p>而上面那个表中。貌似sg值都是odious数。所以当2x为odious时，sg值是2x，当2x是evil时。sg值是2x+1.</p>
+<p>这样怎么证明呢？我们会发现发现：</p>
+<p> evil ^ evil &#x3D; odious ^ odious &#x3D; evil</p>
+<p> evil ^ odious &#x3D; odious ^ evil &#x3D; odious</p>
+<p>如果刚才的假说是成立的，我们想证明下一个sg值为下一个odious数。注意到我们总能够在第x位置翻转硬币到达sg为0的情况；通过翻转第x位置的硬币和两个其他硬币。我们能够移动到全部较小的evil数，由于每一个非零的evil数都能够由两个odious数异或得到。可是我们不能移动到下一个odious数，由于不论什么两个odious数的异或都是evil数。</p>
+<p>假设在一个Mock Turtles游戏中的首正硬币位置x1,x2,…,xn是个P局面。即sg[x1]…sg[xn]&#x3D;0.那么无可置疑的是n必然是偶数，由于奇数个odious数的异或是odious数，不可能等于0。而由上面可知sg[x]是2x或者2x+1，sg[x]又是偶数个，那么x1 ^ x 2 ^ …^ xn &#x3D; 0。相反，假设x1 ^ x 2 ^ … ^ xn &#x3D; 0且n是偶数，那么sg[x1] ^ … ^ sg[xn]&#x3D;0。这个假设不太理解的话，我们能够先这么看下：2x在二进制其中相当于把x所有左移一位，然后补零，比方说2的二进制是10。那么4的二进制就是100。而2x+1在二进制其中相当于把x所有左移一位，然后补1，比方说2的二进制是10，5的二进制是101。如今看下sg[x1] ^ … ^ sg[xn]&#x3D;0，由于sg[x]是2x或者2x+1。所以式子中的2x+1必须是偶数个（由于2x的最后一位都是0,2x+1的最后一位都是1，要最后异或为0,2x+1必须出现偶数次），所以:MT游戏其中的P局面是拥有偶数堆石子的Nim游戏的P局面。</p>
+<p><strong>其实只需要记住MT游戏中每个位置的sg为对应的odious数（2x或2x+1）即可</strong></p>
+<p><strong>约束条件7：每次能够连续翻动随意个硬币，至少翻一个。（Ruler游戏）</strong></p>
+<p>初始编号从1开始。</p>
+<p>那么这个游戏的SG函数是g(n)&#x3D;mex{0,g(n-1),g(n-1) ^ g(n-2),…,g(n-1) ^ … ^ g(1)}</p>
+<p>依据SG函数能够得到SG值表例如下：</p>
+<p>位置x：1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16…</p>
+<p>g(x): 1 2 1 4 1 2 1 8 1 2 1 4 1 2 1 16…</p>
+<p>所以sg值为x的因数其中2的能达到的最大次幂。比方14&#x3D;2 * 7，最大1次幂。即2；16&#x3D;2 * 2 * 2 * 2。最大4次幂，即16。</p>
+<p>这个游戏成为尺子游戏是由于SG函数非常像尺子上的刻度。</p>
+<p><strong>约束条件8：每次必须翻转4个对称的硬币，最左与最右的硬币都必须是从正翻到反。（开始的时候两端都是正面）（Grunt游戏）</strong></p>
+<p>这是Grundy游戏的变种，初始编号从0开始。</p>
+<p>当正硬币位置为0,1,2时是terminal局面，即 终结局面，sg值都是0。当正硬币位置n大于等于3的时候的局面能够通过翻0,x,n-x,n四个位置得到(当中x&lt;n&#x2F;2可保证胜利)。</p>
+<p>这就像是把一堆石子分成两堆不同大小石子的游戏，也就是Grundy游戏。<br><strong>小结：</strong><br>遇到翻硬币问题，如果找不到现成的模型，可以尝试往现有的模型（如nim游戏、巴什博弈等转化），不行就暴力打表sg函数找规律即可</p>
+<h2 id="无向图删边"><a href="#无向图删边" class="headerlink" title="无向图删边"></a>无向图删边</h2><h3 id="一、树的删边游戏"><a href="#一、树的删边游戏" class="headerlink" title="一、树的删边游戏"></a>一、树的删边游戏</h3><p>给出一棵有根树，两人轮流操作，每人每次可以选择一条边删去，不与根节点相连的部分将被移走。无法操作者输。</p>
+<p><strong>结论：</strong>叶子节点的 SGSG 值为 00；中间节点的 SGSG 值为它的所有子节点的「SGSG 值加 11」的异或和。这样就可以推出根节点的 SGSG 值。<a target="_blank" rel="noopener" href="https://img2020.cnblogs.com/blog/1859218/202012/1859218-20201221150704676-1599213390.png">证明</a>。</p>
+<h3 id="二、POJ-3710-Christmas-Game"><a href="#二、POJ-3710-Christmas-Game" class="headerlink" title="二、POJ 3710 Christmas Game"></a>二、POJ 3710 Christmas Game</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>有 n 个局部连通的图，两人轮流操作，每人每次可以选择一条边删去，不与根节点相连的部分将被移走。无法操作者输。（图是通过从基础树上加一些边得到的，环与环之间无公共边，且只与基础树有一个公共点。）</p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><p>与「树的删边游戏」不同的在于图中 <strong>出现了环</strong>。所以环可以单独考虑。</p>
+<p>分析环的性质：环保证不共用边，且只与基础树有一个公共点。因此所有的环都是从树中某一个点连出又连回同一个点的简单环。</p>
+<ul>
+<li><p>对于长度为奇数的环，去掉其中任意一条边后，剩下的两个链长度 <strong>同奇偶</strong>，异或之后的 SG 值不可能为奇数，并且可能为 00。所以进行 mex 运算后它的 SG 值为 11。</p>
+</li>
+<li><p>对于长度为奇数的环，去掉其中任意一条边后，剩下的两个链长度 <strong>不同奇偶</strong>，异或之后的 SG 值不可能为 0。所以进行 mex 运算后它的 SG 值为 0。实际上它并没有贡献。</p>
+</li>
+</ul>
+<p>所以可以去掉所有的偶环，将所有的奇环变为长度为 1 的链，转化为「树的删边游戏」的模型。</p>
+<p>算出每一棵树的 SG 值，再把所有根节点的 SG 值异或起来即可。</p>
+<p>具体实现时，不需要做「将所有的奇环变为长度为 1 的链」的操作，只需考虑奇环的贡献。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> t,n,m,x,y,cnt,hd[N],to[N&lt;&lt;<span class="number">1</span>],nxt[N&lt;&lt;<span class="number">1</span>],top,s[N],sg[N],vis[N],ans;    <span class="comment">//vis=0: 未访问过  vis=1: 访问过且不是某个环上的点（不考虑树上的点）  vis=-1: 访问过且是某个环上的点 </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">    to[++cnt]=y,nxt[cnt]=hd[x],hd[x]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> fa)</span></span>&#123;</span><br><span class="line">    s[++top]=x,vis[x]=<span class="number">1</span>,sg[x]=<span class="number">0</span>;</span><br><span class="line">    <span class="type">bool</span> flag=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=hd[x];i;i=nxt[i])&#123;</span><br><span class="line">        <span class="type">int</span> y=to[i];</span><br><span class="line">        <span class="keyword">if</span>(y==fa&amp;&amp;!flag)&#123;flag=<span class="number">1</span>;<span class="keyword">continue</span>;&#125;     <span class="comment">//第一次连向父节点 </span></span><br><span class="line">        <span class="keyword">if</span>(vis[y]==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="type">int</span> cnt=<span class="number">1</span>,now=x;</span><br><span class="line">            <span class="keyword">while</span>(now!=y) cnt++,vis[now]=<span class="number">-1</span>,now=s[--top];</span><br><span class="line">            <span class="keyword">if</span>(cnt&amp;<span class="number">1</span>) sg[y]^=<span class="number">1</span>;    <span class="comment">//奇环 </span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!vis[y])&#123;</span><br><span class="line">            <span class="built_in">dfs</span>(y,x);</span><br><span class="line">            <span class="keyword">if</span>(~vis[y]) sg[x]^=(sg[y]+<span class="number">1</span>);    <span class="comment">//不在环上的才能更新 </span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(~vis[x]) --top;    <span class="comment">//非环上的，及时出栈 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;t))&#123;</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;m),cnt=top=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) hd[i]=vis[i]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">                <span class="built_in">add</span>(x,y),<span class="built_in">add</span>(y,x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>),ans^=sg[<span class="number">1</span>];    <span class="comment">//根节点的 SG 值异或起来 </span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">puts</span>(ans?<span class="string">&quot;Sally&quot;</span>:<span class="string">&quot;Harry&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/acm/" rel="tag"># acm</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/05/30/acm/%E6%9D%82%E9%A1%B9/%E6%99%AE%E9%80%9A%E8%8E%AB%E9%98%9F%E7%AE%97%E6%B3%95/" rel="prev" title="普通莫队算法">
+      <i class="fa fa-chevron-left"></i> 普通莫队算法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/05/30/acm/%E6%9D%82%E9%A1%B9/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/" rel="next" title="分数规划">
+      分数规划 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">博弈论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F"><span class="nav-number">1.1.</span> <span class="nav-text">公平组合游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%BC%E5%A7%86%E6%B8%B8%E6%88%8F"><span class="nav-number">1.2.</span> <span class="nav-text">尼姆游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B4%E4%BB%80%E5%8D%9A%E5%BC%88"><span class="nav-number">1.3.</span> <span class="nav-text">巴什博弈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A8%81%E4%BD%90%E5%A4%AB%E5%8D%9A%E5%BC%88"><span class="nav-number">1.4.</span> <span class="nav-text">威佐夫博弈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%8D%9A%E5%BC%88"><span class="nav-number">1.5.</span> <span class="nav-text">斐波那契博弈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SG%E5%87%BD%E6%95%B0"><span class="nav-number">1.6.</span> <span class="nav-text">SG函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mex%E8%BF%90%E7%AE%97"><span class="nav-number">1.6.1.</span> <span class="nav-text">Mex运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SG%E5%87%BD%E6%95%B0-1"><span class="nav-number">1.6.2.</span> <span class="nav-text">SG函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SG%E5%AE%9A%E7%90%86"><span class="nav-number">1.6.3.</span> <span class="nav-text">SG定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE%E6%B8%B8%E6%88%8F%E7%9A%84%E5%92%8C"><span class="nav-number">1.6.4.</span> <span class="nav-text">有向图游戏的和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sample"><span class="nav-number">1.6.5.</span> <span class="nav-text">sample</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SG%E6%B8%B8%E6%88%8F%E5%8F%8A%E5%85%B6%E5%8F%98%E5%BD%A2"><span class="nav-number">1.7.</span> <span class="nav-text">SG游戏及其变形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Anti-SG-%E6%B8%B8%E6%88%8F%EF%BC%88%E8%B5%B0%E5%AE%8C%E6%9C%80%E5%90%8E%E4%B8%80%E6%AD%A5%E8%80%85%E8%BE%93%EF%BC%89"><span class="nav-number">1.7.1.</span> <span class="nav-text">Anti-SG 游戏（走完最后一步者输）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Anti-Nim"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">Anti-Nim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Anti-SG"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">Anti-SG</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-SG"><span class="nav-number">1.7.2.</span> <span class="nav-text">Multi-SG</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Multi-Nim"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">Multi-Nim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Multi-SG-1"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">Multi-SG</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BF%BB%E7%A1%AC%E5%B8%81%E6%B8%B8%E6%88%8F"><span class="nav-number">1.8.</span> <span class="nav-text">翻硬币游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E5%90%91%E5%9B%BE%E5%88%A0%E8%BE%B9"><span class="nav-number">1.9.</span> <span class="nav-text">无向图删边</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A0%91%E7%9A%84%E5%88%A0%E8%BE%B9%E6%B8%B8%E6%88%8F"><span class="nav-number">1.9.1.</span> <span class="nav-text">一、树的删边游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81POJ-3710-Christmas-Game"><span class="nav-number">1.9.2.</span> <span class="nav-text">二、POJ 3710 Christmas Game</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.9.2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution"><span class="nav-number">1.9.2.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Crayonxiaoxin"
+      src="/images/crayonxiaoxin.jpg">
+  <p class="site-author-name" itemprop="name">Crayonxiaoxin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Crayonxiaoxin</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
