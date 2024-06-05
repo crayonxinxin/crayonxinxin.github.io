@@ -159,48 +159,70 @@
   <entry>
     <title>git</title>
     <url>/2024/05/30/git/</url>
-    <content><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><ul>
-<li><p>文件提交到仓库</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ git add readme.txt</span><br><span class="line"></span><br><span class="line">$ git commit -m &quot;wrote a readme file&quot;//引号内为注释</span><br><span class="line">‘</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> learngit</span><br><span class="line"><span class="built_in">cd</span> learngit</span><br><span class="line">pow</span><br><span class="line"></span><br><span class="line">git init//把这个目录变成Git可管理的仓库</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><code>commit</code>可以一次提交很多文件，所以你可以多次<code>add</code>不同的文件</p>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p><code>git states</code>可以查看状态</p>
+<p><code>git log</code>命令显示从最近到最远的提交日志</p>
+<blockquote>
+<p>在 Git 中，用<code>HEAD</code>表示当前版本，上一个版本就是<code>HEAD^</code>,上上个版本就是<code>HEAD^^</code></p>
+</blockquote>
+<p><code>git reset --hard HEAD^</code>把当前版本回退到上一个版本</p>
+<p><strong><code>git reflog</code>用来记录每一次命令</strong></p>
+<h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><p><code>git add</code>是把文件修改添加到暂存区</p>
+<p><code>git commit</code>是把暂存区的所有内容提交到当前分支</p>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><blockquote>
+<p>乱改了工作区的某个文件的内容，想直接丢弃工作区的修改</p>
+</blockquote>
+<p><code>git checkout -- readme.txt</code></p>
+<ul>
+<li>修改后未被放到暂存区，撤销修改后就回到和版本库一模一样的状态</li>
+<li>已经被添加到暂存区，又作了修改，撤销修改就回到添加到暂存区后的状态</li>
+</ul>
+<blockquote>
+<p>乱改了工作区的某个文件内容，还添加到了暂存区，想丢弃修改</p>
+</blockquote>
+<p><code>git reset HEAD &lt;file&gt;</code>可以以把暂存区的修改撤销掉，重新放回工作区，就回到了上面的场景，接着可以按上面场景修改</p>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> rest.txt</span><br><span class="line">git commit -m <span class="string">&quot;remove&quot;</span>//确实要从版本库中删除文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:michaelliao/learngit.git</span><br><span class="line">git push -u origin master </span><br><span class="line"></span><br><span class="line">//只要本地作了提交，就可以通过命令将本地master分支的最新修改推送至GitHub</span><br><span class="line">git push origin master</span><br><span class="line">//master分支是主分支，需要时刻同步</span><br><span class="line">//dev是开发分支，也需要时刻同步</span><br><span class="line">//bug分支只用于在本地修复bug，不需要推送</span><br><span class="line">//feature分支是否推送，取决于是否需要合作开发</span><br><span class="line">git remote -v//查看远程库的详细信息</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch//查看分支</span><br><span class="line">git branch dev//创建dev分支</span><br><span class="line">git switch dev 或者 git checkout dev//切换dev分支</span><br><span class="line">git switch -c dev 或者 git checkout -b dev//创建+切换分支</span><br><span class="line">git merge dev//合并指定分支到当前分支</span><br><span class="line">git branch -d dev//删除分支</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h3><p><code>git stash</code>可以把当前工作区存储起来，使用之后查看工作区就是干净的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout master//假定需要在master分支上修复bug</span><br><span class="line">git checkout -b issue-101//在master创建临时分支</span><br><span class="line">git add readme.txt</span><br><span class="line">git commit -m <span class="string">&quot;fix bug 101&quot;</span></span><br><span class="line">git switch master//切换到master分支并完成合并</span><br><span class="line">git merge --no-ff -m <span class="string">&quot;merged bug fix 101&quot;</span> issue-101</span><br><span class="line"></span><br><span class="line">git switch dev</span><br><span class="line">git stash list//可以查看存储地方</span><br><span class="line"></span><br><span class="line">1.git stash apply//恢复后，stash内容并不删除，需要用git stash drop 删除</span><br><span class="line">2. git stash pop//恢复的同时把stash内容也删了</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Feature分支"><a href="#Feature分支" class="headerlink" title="Feature分支"></a>Feature分支</h3><blockquote>
+<p>开发一个新 feature ，最好新建一个分支</p>
+</blockquote>
+<p>如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D &lt;name&gt;</code>强行删除</p>
+<h3 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> ...//默认情况只能看到本地的master分支</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致</p>
 </li>
-<li><p>版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用<code>git log</code>命令查看</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ git log</span><br><span class="line">commit <span class="number">1094</span>adb7b9b3807259d8cb349e7df1d4d6477073 (HEAD -&gt; master)</span><br><span class="line"><span class="function">Author: <span class="title">Michael</span> <span class="title">Liao</span> &lt;<span class="title">askxuefeng</span>@<span class="title">gmail.com</span>&gt;</span></span><br><span class="line"><span class="function"><span class="title">Date</span>:   <span class="title">Fri</span> <span class="title">May</span> 18 21:06:15 2018 +0800</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">append</span> <span class="title">GPL</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">commit</span> <span class="title">e475afc93c209a690c39c13a46716e8fa000c366</span></span></span><br><span class="line"><span class="function"><span class="title">Author</span>: <span class="title">Michael</span> <span class="title">Liao</span> &lt;<span class="title">askxuefeng</span>@<span class="title">gmail.com</span>&gt;</span></span><br><span class="line"><span class="function"><span class="title">Date</span>:   <span class="title">Fri</span> <span class="title">May</span> 18 21:03:36 2018 +0800</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">add</span> <span class="title">distributed</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">commit</span> <span class="title">eaadf4e385e865d25c48e7ca9c8395c3f7dfaef0</span></span></span><br><span class="line"><span class="function"><span class="title">Author</span>: <span class="title">Michael</span> <span class="title">Liao</span> &lt;<span class="title">askxuefeng</span>@<span class="title">gmail.com</span>&gt;</span></span><br><span class="line"><span class="function"><span class="title">Date</span>:   <span class="title">Fri</span> <span class="title">May</span> 18 20:59:18 2018 +0800</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">wrote</span> <span class="title">a</span> <span class="title">readme</span> <span class="title">file</span></span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>​         如果嫌输出信息太多，看得眼花缭乱的，可以试试加上<code>--pretty=oneline</code>参数</p>
-<ul>
-<li><p>我们要把当前版本<code>append GPL</code>回退到上一个版本<code>add distributed</code>，就可以使用<code>git reset</code>命令</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>HEAD</code>指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。</li>
-</ul>
+<li><p>建立本地分支和远程分支的关联，使用<code>git branch --set-upstream branch-name origin/branch-name</code></p>
+</li>
+<li><p>从远程抓取分支，使用<code>git pull</code>，如果有冲突，要先处理冲突</p>
 </li>
 </ul>
-<ul>
-<li>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</li>
-<li>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</li>
-</ul>
-<ul>
-<li><p>命令<code>git checkout -- readme.txt</code>意思就是，把<code>readme.txt</code>文件在工作区的修改全部撤销，这里有两种情况：</p>
-<p>一种是<code>readme.txt</code>自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</p>
-<p>一种是<code>readme.txt</code>已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</p>
-<p>总之，就是让这个文件回到最近一次<code>git commit</code>或<code>git add</code>时的状态</p>
-</li>
-</ul>
-<p>​      删除文件</p>
-<ul>
-<li>一是确实要从版本库中删除该文件，那就用命令<code>git rm</code>删掉，并且<code>git commit</code></li>
-</ul>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ git rm test.txt</span><br><span class="line">rm &#x27;test.txt&#x27;</span><br><span class="line"></span><br><span class="line">$ git commit -m &quot;remove test.txt&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><h3 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout master//首先切换到需要打标签的分支</span><br><span class="line">git tag v1.0</span><br><span class="line">git tag -a v0.1 -,m <span class="string">&quot;version 0.1 released&quot;</span> 1094abd//-a指定标签名，-m指定说明文字</span><br><span class="line">git tag//查看所有标签</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：</li>
-</ul>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">$ git checkout -- test.txt</span><br></pre></td></tr></table></figure>
+<p>默认标签十大在最新提交的commit上的，如果之前的commit忘记打标签，可以找到历史提交的commit id，然后打上</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=oneline --abbrev-commit</span><br><span class="line">git tag v0.9 f52c633</span><br></pre></td></tr></table></figure>
 
-<p><code>git checkout</code>其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+
+
+<h3 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h3><blockquote>
+<p>创建的标签只会存储在本地，不会自动推送到远程</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag -d v0.1//删除标签</span><br><span class="line">git push origin v1.0//如果要推送某个标签到远程</span><br><span class="line">git push origin --tags//一次性推送全部尚未推送到远程的本地标签</span><br><span class="line">//如果要删除远程标签</span><br><span class="line">git tag -d v0.9//先删除本地标签</span><br><span class="line">git push origin :refs/tags/v0.9//删除远程</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>git</category>
@@ -450,216 +472,6 @@
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mini</title>
-    <url>/2024/05/29/mini/mini/</url>
-    <content><![CDATA[<h1 id="腾讯mini"><a href="#腾讯mini" class="headerlink" title="腾讯mini"></a>腾讯mini</h1><h2 id="AICR"><a href="#AICR" class="headerlink" title="AICR"></a>AICR</h2><blockquote>
-<p>自动化客户关系管理</p>
-</blockquote>
-<p><strong>需要关注数据隐私和安全，确保系统的可靠性和用户友好性</strong></p>
-<h2 id="RAG"><a href="#RAG" class="headerlink" title="RAG"></a>RAG</h2><blockquote>
-<p>检索增强生成</p>
-</blockquote>
-<ol>
-<li>信息检索(检索模型)：从外部知识库中检索相关信息或文档</li>
-<li>文本生成(生成模型)：将检索到的信息与生成模型结合，生成更准确和信息丰富的响应</li>
-</ol>
-<h2 id="AICR-RAG知识库"><a href="#AICR-RAG知识库" class="headerlink" title="AICR RAG知识库"></a>AICR RAG知识库</h2><blockquote>
-<p>结合了AICR和RAG技术，以创建一个智能化和高效的客户关系管理系统</p>
-</blockquote>
-<ul>
-<li><p>优势</p>
-<ul>
-<li>响应准确性</li>
-<li>个性化用户体验</li>
-<li>效率提升</li>
-<li>知识共享和更新</li>
-</ul>
-</li>
-<li><p>挑战</p>
-<ul>
-<li>数据隐私和安全</li>
-<li>技术复杂性</li>
-<li>系统更新与维护</li>
-</ul>
-</li>
-</ul>
-<h3 id="LLM"><a href="#LLM" class="headerlink" title="LLM"></a>LLM</h3><blockquote>
-<p>大型语言模型</p>
-<p>基于深度学习技术的自然语言处理模型，旨在生成和理解人类语言</p>
-</blockquote>
-<h3 id="主要技术和原理"><a href="#主要技术和原理" class="headerlink" title="主要技术和原理"></a>主要技术和原理</h3><ul>
-<li><p>神经网络架构</p>
-</li>
-<li><p>预训练和微调</p>
-<ul>
-<li>预训练：学习语言的基本结构和词汇的分布</li>
-<li>微调：预训练好的模型在特定任务或领域的小规模有监督数据集上进行微调，以适应特定应用场景</li>
-</ul>
-</li>
-<li><p>自监督学习</p>
-</li>
-<li><p>参数规模</p>
-</li>
-</ul>
-<h2 id="Graph-RAG"><a href="#Graph-RAG" class="headerlink" title="Graph RAG"></a>Graph RAG</h2><blockquote>
-<p>利用节点和边之间的关系将数据结构化</p>
-<p>这种结构通过使模型能够访问精确且上下文相关的数据，大大提高了LLMs生成知情响应的能力</p>
-<p>集成了图数据库</p>
-</blockquote>
-<p><strong><code>Graph RAG</code>的高度取决于基础<code>KG</code>的质量、深度和广度</strong></p>
-<h2 id="Vector-RAG"><a href="#Vector-RAG" class="headerlink" title="Vector RAG"></a>Vector RAG</h2><blockquote>
-<p>结合向量检索和生成模型的技术</p>
-</blockquote>
-<ul>
-<li><p>向量检索</p>
-<ul>
-<li>使用嵌入来表示文本、句子和文档，将他们转换为高维向量</li>
-</ul>
-</li>
-<li><p>增强生成</p>
-</li>
-</ul>
-<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><ol>
-<li>输入处理：<ol>
-<li>用户输入一个问题，系统首先将其转换为嵌入向量</li>
-</ol>
-</li>
-<li>向量检索<ol>
-<li>在预先构建的知识库中，通过向量相似度检索与输入向量最相似的向量，找到相关的文本片段或文档</li>
-<li>向量检索可以通过高效的索引结构加速</li>
-</ol>
-</li>
-<li>信息融合<ol>
-<li>检索到的相关信息呗传递给生成模型，生成模型将这些信息与原始输入结合，生成一个综合的、上下文相关的响应</li>
-</ol>
-</li>
-<li>生成输出<ol>
-<li>生成模型基于融合的信息生成最终的文本输出</li>
-</ol>
-</li>
-</ol>
-<h2 id="读取代码仓库加工生成代码仓库知识库"><a href="#读取代码仓库加工生成代码仓库知识库" class="headerlink" title="读取代码仓库加工生成代码仓库知识库"></a>读取代码仓库加工生成代码仓库知识库</h2><h4 id="获取代码仓库数据"><a href="#获取代码仓库数据" class="headerlink" title="获取代码仓库数据"></a>获取代码仓库数据</h4><p>通过API或直接克隆代码仓库获取代码库的所有文件和相关元数据</p>
-<h4 id="解析代码和文档"><a href="#解析代码和文档" class="headerlink" title="解析代码和文档"></a>解析代码和文档</h4><ul>
-<li>使用代码解析工具或库解析代码文件，提取函数、类、变量和注释等信息</li>
-<li>提取和解析代码库中的文档以获取更多上下文信息</li>
-</ul>
-<h4 id="生成知识库"><a href="#生成知识库" class="headerlink" title="生成知识库"></a>生成知识库</h4><ul>
-<li>创建结构化的数据存储以保存从代码库中提取的信息</li>
-<li>使用自然语言处理技术和嵌入模型将代码和文档转化为向量表示，以便于检索和分析</li>
-</ul>
-<p><strong>RAG技术可以用于最后的生成知识库步骤，可以显著提升系统的检索和生成增强响应</strong></p>
-<h2 id="AICP和知识库之间的联系"><a href="#AICP和知识库之间的联系" class="headerlink" title="AICP和知识库之间的联系"></a>AICP和知识库之间的联系</h2><blockquote>
-<p>在AICP系统中，知识库是一个关键主件，它存储和组织了大量的信息，帮助系统提供更只能和高效的客户支持和管理</p>
-</blockquote>
-<ol>
-<li>知识库构建</li>
-<li>将知识库集成到AICR系统<ol>
-<li>知识库接口<ol>
-<li>API接口：设计和实现API，使AICR系统能访问知识库</li>
-<li>查询语言：使用SQL或专门的查询语言来查询知识库</li>
-</ol>
-</li>
-<li>检索和增强生成<ol>
-<li>检索增强生成（RAG）：结合检索模型和生成模型，从知识库中检索相关信息，并生成回答</li>
-<li>检索模型：使用向量检索技术从知识库中找到最相关的文档</li>
-<li>生成模型：使用生成模型结合检索到的信息，生成上下文相关的回答</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>实现AICR系统中的应用<ol>
-<li>智能客服</li>
-<li>个性化推荐</li>
-</ol>
-</li>
-<li>维护反馈和优化</li>
-</ol>
-<h2 id="RAG-Graph-RAG"><a href="#RAG-Graph-RAG" class="headerlink" title="RAG &#x2F; Graph RAG"></a>RAG &#x2F; Graph RAG</h2><blockquote>
-<p>主要区别在于检索模型和数据结构的不同</p>
-<p>在Graph RAG中，知识库被表示为图结构，而一般的RAG中，知识库通常是文档集合或数据库</p>
-</blockquote>
-<ul>
-<li><p>更丰富的关系建模</p>
-<ul>
-<li>图结构：自然表达实体之间的复杂关系（层次关系，关联关系）</li>
-<li>上下文理解：捕捉实体之间的多跳关系</li>
-</ul>
-</li>
-<li><p>更高效的信息检索</p>
-<ul>
-<li>相关子图：可以通过子图提取，获取与查询直接相关的所有节点和边，避免了大规模文档检索的冗余信息</li>
-<li>结构化信息：可以获得结构化的信息片段</li>
-</ul>
-</li>
-<li><p>改进的生成质量</p>
-<ul>
-<li>综合信息：子图包含多层次、多角度的信息</li>
-<li>信息整合：生成模型可以将子图中的多个相关信息节点进行整合</li>
-</ul>
-</li>
-<li><p>知识库的动态更新和扩展</p>
-<ul>
-<li>节点和边的增删：允许动态地添加或删除节点和边</li>
-</ul>
-</li>
-<li><p>多模态信息整合</p>
-<ul>
-<li>多种数据类型：图结构能够整合文本、图像、视频等多种数据类型，通过节点和边的连接，提供更全面的回答</li>
-</ul>
-</li>
-</ul>
-<h2 id="RAG-Vector-RAG"><a href="#RAG-Vector-RAG" class="headerlink" title="RAG &#x2F; Vector RAG"></a>RAG &#x2F; Vector RAG</h2><blockquote>
-<p>在Vector RAG知识库中的文档或信息片段预先向量化，并存储在向量数据库中</p>
-<p>使用高效的向量检索方法在向量数据库中找到最相似的文档向量，通常在大规模检索中更高效</p>
-</blockquote>
-<h2 id="提高基础KG质量"><a href="#提高基础KG质量" class="headerlink" title="提高基础KG质量"></a>提高基础KG质量</h2><ol>
-<li><p>多样化数据来源</p>
-</li>
-<li><p>结构化数据</p>
-</li>
-<li><p>半结构化和非结构化数据</p>
-</li>
-<li><p>行业数据</p>
-<p>使用自动化数据收集，<strong>应用自然语言处理从非结构化文本中提取实体和关系</strong></p>
-</li>
-<li><p>数据质量提升</p>
-<ol>
-<li>数据清理和规范化<ol>
-<li>去除重复、错误、不完整的数据</li>
-<li>统一数据格式和标准</li>
-</ol>
-</li>
-<li>数据验证和校验</li>
-<li>实体消歧和实体合并</li>
-</ol>
-</li>
-<li><p>增强数据深度</p>
-<ol>
-<li>关系挖掘：通过文本分析、关系抽取发现新的实体关系</li>
-<li>多挑关系：构建多跳关系，使图谱能够表达复杂的知识结构</li>
-</ol>
-</li>
-<li><p>扩展数据广度</p>
-<ol>
-<li>跨领域数据集成</li>
-<li>多语言支持</li>
-</ol>
-</li>
-<li><p>图谱更新和维护</p>
-</li>
-<li><p>利用机械学习和深度学习等高级技术和工具</p>
-</li>
-<li></li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>mini</tag>
       </tags>
   </entry>
   <entry>
@@ -1294,7 +1106,108 @@
 <p><code>reduce</code>把一个函数作用在一个序列上，这个函数必须接收两个参数，<code>reduce</code>把结果继续和序列的下一个元素做累积计算，其效果就是</p>
 <p><code>reduce(f,[x1,x2,x3]) = f(f(x1,x2),x3)</code></p>
 <h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><p><code>filter</code>接收一个函数和一个序列，把传入的函数依次作用于每个元素，然后根据返回值是<code>True</code>还是<code>False</code>决定保留还是丢弃该元素</p>
-<h4 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h4>]]></content>
+<h4 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h4><blockquote>
+<p>排序算法</p>
+</blockquote>
+<p><code>sorted([1,4,2],key=abs)</code></p>
+<p>它可以接收一个key函数来实现自定义的排序</p>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><blockquote>
+<p><code>list(map(lambda x:x*x,[1,2,3]))</code></p>
+<p>]关键字<code>lambda</code>表示匿名函数，冒号前面的x表示函数参数</p>
+</blockquote>
+<h3 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span>(<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line"><span class="built_in">int</span>(<span class="string">&#x27;123&#x27;</span>,base=<span class="number">8</span>)//转为<span class="number">8</span>进制整数</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><h3 id="类和实例"><a href="#类和实例" class="headerlink" title="类和实例"></a>类和实例</h3><blockquote>
+<p>类是抽象的模板，而实例是根据类创建出来的一个个具体的对象</p>
+</blockquote>
+<p><code>class Student(Object)</code>类名通常是大写开头的单词，括号里的是从哪个类继承下来的，一般使用object类</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">	<span class="keyword">def</span>  <span class="title function_">__init__</span>(<span class="params">self,name,score</span>):</span><br><span class="line">		self.name = name</span><br><span class="line">		self.score = score</span><br></pre></td></tr></table></figure>
+
+<p><code>_init_</code>方法的第一个参数永远是<code>self</code>，表示创建实例本身</p>
+<h3 id="访问限制"><a href="#访问限制" class="headerlink" title="访问限制"></a>访问限制</h3><blockquote>
+<p>实例的变量名如果以<code>__</code>开头，就变成了一个私有变量</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">	<span class="keyword">def</span>  <span class="title function_">__init__</span>(<span class="params">self,name,score</span>):</span><br><span class="line">		self.__name = name</span><br><span class="line">		self.__score = score</span><br></pre></td></tr></table></figure>
+
+<h3 id="继承和多态"><a href="#继承和多态" class="headerlink" title="继承和多态"></a>继承和多态</h3><blockquote>
+<p>继承可以把父类的所有功能都直接拿过来，这样就不必重零做起，子类只需要新增自己特有的方法，也可以把父类不适合的方法覆盖重写</p>
+</blockquote>
+<h3 id="获取对象信息"><a href="#获取对象信息" class="headerlink" title="获取对象信息"></a>获取对象信息</h3><h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><blockquote>
+<p>判断对象类型</p>
+</blockquote>
+<h4 id="isinstance"><a href="#isinstance" class="headerlink" title="isinstance"></a>isinstance</h4><blockquote>
+<p>判断对象类型，还可以判断class的继承关系</p>
+</blockquote>
+<p><code>isinstance(d,Dogs)</code></p>
+<p>还可以判断一个变量是否是某些类型中的一种</p>
+<p><code>isinstance([1,2],(list,tuple))//true</code></p>
+<p><code>isinstance((1,2),(list,tuple))//true</code></p>
+<h4 id="使用dir"><a href="#使用dir" class="headerlink" title="使用dir"></a>使用dir</h4><blockquote>
+<p>要获得一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的 list</p>
+</blockquote>
+<h3 id="实例属性和类属性"><a href="#实例属性和类属性" class="headerlink" title="实例属性和类属性"></a>实例属性和类属性</h3><blockquote>
+<p>直接在class中定义属性，这种属性是类属性，归类所有</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">	name = <span class="string">&#x27;Student&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(Student.name)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="面向对象高级编程"><a href="#面向对象高级编程" class="headerlink" title="面向对象高级编程"></a>面向对象高级编程</h2><h3 id="使用-slots"><a href="#使用-slots" class="headerlink" title="使用__slots__"></a>使用<code>__slots__</code></h3><blockquote>
+<p>限制实例的属性；比如只允许对Student实例添加 name 和  age 属性</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">	__slots__ = (<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;age&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>__slots__</code><strong>定义的属性仅对当前实例起作用，对继承的子类不起作用</strong></p>
+<h3 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span>(Mammal,Runnable):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="定制类"><a href="#定制类" class="headerlink" title="定制类"></a>定制类</h3><h4 id="str"><a href="#str" class="headerlink" title="__str__"></a><code>__str__</code></h4><blockquote>
+<p>打印实例</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Stu</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&#x27;Stu object (name: %s)&#x27;</span> % self.name</span><br><span class="line"><span class="built_in">print</span>(Stu(<span class="string">&#x27;abc&#x27;</span>))//Stu <span class="built_in">object</span> (name: abc)</span><br></pre></td></tr></table></figure>
+
+<h4 id="iter"><a href="#iter" class="headerlink" title="__iter__"></a><code>__iter__</code></h4><blockquote>
+<p>一个类想被用于<code>for in</code>循环，就需要实现一个<code>__iter__</code>方法，该方法返回一个迭代对象，然后，py的 for 循环就会不断调用该迭代对象的<code>__next__</code>方法拿到循环的下一个值</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Fib</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.a, self.b = <span class="number">0</span>, <span class="number">1</span> <span class="comment"># 初始化两个计数器a，b</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__iter__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self <span class="comment"># 实例本身就是迭代对象，故返回自己</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__next__</span>(<span class="params">self</span>):</span><br><span class="line">        self.a, self.b = self.b, self.a + self.b <span class="comment"># 计算下一个值</span></span><br><span class="line">        <span class="keyword">if</span> self.a &gt; <span class="number">100000</span>: <span class="comment"># 退出循环的条件</span></span><br><span class="line">            <span class="keyword">raise</span> StopIteration()</span><br><span class="line">        <span class="keyword">return</span> self.a <span class="comment"># 返回下一个值</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="getitem"><a href="#getitem" class="headerlink" title="__getitem__"></a><code>__getitem__</code></h3><blockquote>
+<p>需要按照下标取出元素，需要实现<code>__getitem__</code>方法</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Fib</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, n</span>):</span><br><span class="line">        a, b = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            a, b = b, a + b</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line"></span><br><span class="line">f= Fib()</span><br><span class="line">f[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">f[<span class="number">2</span>] = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> enum inport Enum</span><br><span class="line"><span class="meta">@unique//装饰器可以帮助我们检查保证没有重复值</span></span><br><span class="line">Month = Enum(<span class="string">&#x27;Month&#x27;</span>, (<span class="string">&#x27;Jan&#x27;</span>, <span class="string">&#x27;Feb&#x27;</span>, <span class="string">&#x27;Mar&#x27;</span>, <span class="string">&#x27;Apr&#x27;</span>, <span class="string">&#x27;May&#x27;</span>, <span class="string">&#x27;Jun&#x27;</span>, <span class="string">&#x27;Jul&#x27;</span>, <span class="string">&#x27;Aug&#x27;</span>, <span class="string">&#x27;Sep&#x27;</span>, <span class="string">&#x27;Oct&#x27;</span>, <span class="string">&#x27;Nov&#x27;</span>, <span class="string">&#x27;Dec&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name,menber <span class="keyword">in</span> Month.__member__.items():</span><br><span class="line">    <span class="built_in">print</span>(name,member,member.value)//value属性默认从<span class="number">1</span>开始计数</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">//访问</span><br><span class="line">day1 = Month.Jan</span><br><span class="line">day1 = Month[<span class="string">&#x27;Jan&#x27;</span>]</span><br><span class="line">day1v = Month.Jan.value</span><br><span class="line">Month(<span class="number">1</span>) = Month.Jan</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="错误、调试和测试"><a href="#错误、调试和测试" class="headerlink" title="错误、调试和测试"></a>错误、调试和测试</h2><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	...</span><br><span class="line">execpt ...://发生不同类型的错误，应该由不同的<span class="keyword">except</span>语句块处理</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">finally</span>://<span class="keyword">finally</span>一定会执行</span><br><span class="line">	...</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="IO编程"><a href="#IO编程" class="headerlink" title="IO编程"></a>IO编程</h2><h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><h4 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h4><p><code>f = open(&#39;/.../.../..txt&#39;,&#39;r&#39;)</code></p>
+<p><code>f.read()</code>一次读取文件的全部内容</p>
+<p><code>f.close()</code>文件使用完毕后必须关闭</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	f = <span class="built_in">open</span>(<span class="string">&#x27;/.../.../..txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">	<span class="built_in">print</span>(f.read())</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">	<span class="keyword">if</span> f:</span><br><span class="line">		f.close()</span><br><span class="line">        </span><br><span class="line">等价于：</span><br><span class="line">	<span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;/.../.../..txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="built_in">print</span>(f.read())</span><br></pre></td></tr></table></figure>
+
+<p>调用read会一次性读取文件的全部内存，如果文件过大，内存就爆了，因此在读取文件时，可以反复调用<code>read(size)</code>方法，每次最多读取 size 个字节的内容。另外调用<code>readline()</code>可以每次读取一行内容。</p>
+<h4 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h4><blockquote>
+<p>读取二进制文件，比如图片、视频等，用 rb 模式打开文件</p>
+</blockquote>
+<p><code>f = open(&#39;/.../..jpg&#39;,&#39;rb)</code></p>
+<h4 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h4><blockquote>
+<p>写文件和读文件是一样的，区别主要是在open函数中需要传入标识符<code>w</code>或<code>wb</code>表示写二进制文件</p>
+</blockquote>
+<p><strong>写文件时不会立刻把数据写入磁盘，而是放到内存缓存起来，只有调用<code>close()</code>方法时，操作系统才保证把没有写入的数据全部写入磁盘</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;/.../..txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="StringIO-和-BytesIO"><a href="#StringIO-和-BytesIO" class="headerlink" title="StringIO 和 BytesIO"></a>StringIO 和 BytesIO</h3><h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><h3 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h3>]]></content>
       <categories>
         <category>python</category>
       </categories>
