@@ -118,17 +118,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">8</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">59</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">60</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -182,6 +182,105 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
+      <meta itemprop="name" content="Crayonxiaoxin">
+      <meta itemprop="description" content="成名在望">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">拓扑排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-05-30 22:15:44 / Modified: 22:21:30" itemprop="dateCreated datePublished" datetime="2024-05-30T22:15:44+08:00">2024-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>893</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><blockquote>
+<p> 给一个有向无环图排序</p>
+<p> 每次删除一个入度边个数为 0 的点，并刷新其他点的出度边个数</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">2e4</span>+<span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> p 80112002</span></span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt;se[maxn];</span><br><span class="line"><span class="type">int</span> in[maxn],out[maxn];</span><br><span class="line">queue&lt;<span class="type">int</span>&gt;line;</span><br><span class="line">ll dp[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">   &#123;</span><br><span class="line">    <span class="type">int</span> a,b;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    se[b].<span class="built_in">push_back</span>(a);</span><br><span class="line">    ++in[a];<span class="comment">//入度</span></span><br><span class="line">    ++out[b];<span class="comment">//出度</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">   &#123;</span><br><span class="line">    <span class="keyword">if</span>(!in[i])</span><br><span class="line">    &#123;</span><br><span class="line">    dp[i] = <span class="number">1</span>;</span><br><span class="line">    line.<span class="built_in">push</span>(i);<span class="comment">//放入度为0的点</span></span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="keyword">while</span>(!line.<span class="built_in">empty</span>())</span><br><span class="line">   &#123;</span><br><span class="line">    <span class="type">int</span> now = line.<span class="built_in">front</span>();</span><br><span class="line">    line.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;se[now].<span class="built_in">size</span>();++i)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="type">int</span> next = se[now][i];</span><br><span class="line">      --in[next];</span><br><span class="line">      dp[next] = (dp[now] + dp[next])%p;</span><br><span class="line">      <span class="keyword">if</span>(!in[next])</span><br><span class="line">      &#123;</span><br><span class="line">        line.<span class="built_in">push</span>(next);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   ll sum=<span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">   &#123;</span><br><span class="line">    <span class="keyword">if</span>(!out[i])</span><br><span class="line">    &#123;</span><br><span class="line">      sum = (sum+dp[i])%p;</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   cout&lt;&lt;sum&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -639,111 +738,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E6%9D%83%E5%8C%B9%E9%85%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
-      <meta itemprop="name" content="Crayonxiaoxin">
-      <meta itemprop="description" content="成名在望">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E6%9D%83%E5%8C%B9%E9%85%8D/" class="post-title-link" itemprop="url">二分图最大权匹配</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2024-05-30 22:14:54 / Modified: 22:19:13" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:54+08:00">2024-05-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%8C%B9%E9%85%8D/" itemprop="url" rel="index"><span itemprop="name">图的匹配</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>943</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="二分图最大权匹配"><a href="#二分图最大权匹配" class="headerlink" title="二分图最大权匹配"></a>二分图最大权匹配</h1><blockquote>
-<p>二分图中边权和最大的匹配</p>
-</blockquote>
-<h2 id="匈牙利算法"><a href="#匈牙利算法" class="headerlink" title="匈牙利算法"></a>匈牙利算法</h2><blockquote>
-<p>n个顶点，算法复杂度为O（nnn）</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">505</span>;</span><br><span class="line"><span class="type">int</span> line[N][N];</span><br><span class="line"><span class="type">int</span> girl[N],used[N];</span><br><span class="line"><span class="type">int</span> k,m,n;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">found</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(line[x][i]&amp;&amp;!used[i])</span><br><span class="line">        &#123;</span><br><span class="line">            used[i]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(girl[i]==<span class="number">0</span>||<span class="built_in">found</span>(girl[i]))</span><br><span class="line">            &#123;</span><br><span class="line">                girl[i]=x;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x,y;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;k)&amp;&amp;k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;m,&amp;n);</span><br><span class="line">        <span class="built_in">memset</span>(line,<span class="number">0</span>,<span class="built_in">sizeof</span>(line));</span><br><span class="line">        <span class="built_in">memset</span>(girl,<span class="number">0</span>,<span class="built_in">sizeof</span>(girl));</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;k; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">            line[x][y]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;=m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">memset</span>(used,<span class="number">0</span>,<span class="built_in">sizeof</span>(used));</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">found</span>(i)) sum++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E6%9D%83%E5%8C%B9%E9%85%8D/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -815,20 +809,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -869,12 +863,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">122k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:51</span>
 </div>
 
         

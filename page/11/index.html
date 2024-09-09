@@ -118,17 +118,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">8</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">59</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">60</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -182,6 +182,114 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/dp/%E6%95%B0%E4%BD%8Ddp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
+      <meta itemprop="name" content="Crayonxiaoxin">
+      <meta itemprop="description" content="成名在望">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/30/acm/dp/%E6%95%B0%E4%BD%8Ddp/" class="post-title-link" itemprop="url">数位dp</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-05-30 22:05:01 / Modified: 22:06:13" itemprop="dateCreated datePublished" datetime="2024-05-30T22:05:01+08:00">2024-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="数位dp"><a href="#数位dp" class="headerlink" title="数位dp"></a>数位dp</h1><blockquote>
+<ul>
+<li>要求统计满足一定条件的数的数量</li>
+<li>这些条件经过转化后可以使用数位的思想去理解和判断</li>
+<li>输入会提供一个数字区间来作为统计的限制</li>
+<li>上界很大，暴力枚举验证会超时</li>
+</ul>
+</blockquote>
+<h2 id="sample1"><a href="#sample1" class="headerlink" title="sample1"></a>sample1</h2><p>求<code>a~b</code>中不包含49的数的个数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a, b, shu[<span class="number">20</span>], dp[<span class="number">20</span>][<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> len, <span class="type">bool</span> if4, <span class="type">bool</span> shangxian)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (!shangxian &amp;&amp; dp[len][if4])   <span class="comment">//为什么要返回呢？可以画图理解当我们搜到3XXX时，程序运行到1XXX时就已经把3XXX之后的搜索完了，记忆化也是这个用意.</span></span><br><span class="line">        <span class="keyword">return</span> dp[len][if4];</span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>, maxx = (shangxian ? shu[len] : <span class="number">9</span>);<span class="comment">//找到每一位的上限</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= maxx; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (if4 &amp;&amp; i == <span class="number">9</span>)<span class="comment">//如果上一位是4且这一位是9则跳过</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        cnt += <span class="built_in">dfs</span>(len - <span class="number">1</span>, i == <span class="number">4</span>, shangxian &amp;&amp; i == maxx);  <span class="comment">//只有之前有限制现在的达到了上限才能构成限制</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> shangxian ? cnt : dp[len][if4] = cnt; <span class="comment">//如果有限制，那么就不能记忆化，否则记忆的是个错误的数.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(shu, <span class="number">0</span>, <span class="built_in">sizeof</span>(shu));</span><br><span class="line">    <span class="type">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x)</span><br><span class="line">    &#123;</span><br><span class="line">        shu[++k] = x % <span class="number">10</span>;  <span class="comment">//保存a,b的数</span></span><br><span class="line">        x /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">dfs</span>(k, <span class="literal">false</span>, <span class="literal">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">solve</span>(b) - <span class="built_in">solve</span>(a - <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">//while (1);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="sample2"><a href="#sample2" class="headerlink" title="sample2"></a>sample2</h2><p>求<code>a~b</code>之间有多少个不含前导0且相邻两个数字之差至少为2的正整数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long int</span></span><br><span class="line"><span class="type">int</span> shu[<span class="number">100</span>];</span><br><span class="line">ll dp[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line"><span class="function">ll <span class="title">dfs</span><span class="params">(ll pos,<span class="type">bool</span> limit,<span class="type">bool</span> zero,<span class="type">int</span> last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pos==<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(!limit&amp;&amp;!zero&amp;&amp;dp[pos][last]+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> dp[pos][last];</span><br><span class="line">    <span class="type">int</span> up;</span><br><span class="line">    <span class="keyword">if</span>(limit)</span><br><span class="line">    up=shu[pos];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    up=<span class="number">9</span>;</span><br><span class="line">    ll tem=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=up;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">abs</span>(last-i)&lt;<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span>(zero&amp;&amp;i==<span class="number">0</span>)</span><br><span class="line">        tem+=<span class="built_in">dfs</span>(pos<span class="number">-1</span>,limit&amp;&amp;i==up,<span class="number">1</span>,<span class="number">-22</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        tem+=<span class="built_in">dfs</span>(pos<span class="number">-1</span>,limit&amp;&amp;i==up,<span class="number">0</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!limit&amp;&amp;!zero)</span><br><span class="line">    dp[pos][last]=tem;</span><br><span class="line">    <span class="keyword">return</span> tem;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">(ll t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">-1</span>,<span class="built_in">sizeof</span>(dp));</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(t)</span><br><span class="line">    &#123;</span><br><span class="line">        shu[ans++]=t%<span class="number">10</span>;</span><br><span class="line">        t/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">dfs</span>(ans<span class="number">-1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll a,b;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,<span class="built_in">solve</span>(b)-<span class="built_in">solve</span>(a<span class="number">-1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/dp/%E6%95%B0%E4%BD%8Ddp/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -613,110 +721,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
-      <meta itemprop="name" content="Crayonxiaoxin">
-      <meta itemprop="description" content="成名在望">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/30/git/" class="post-title-link" itemprop="url">git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-05-30 21:58:20" itemprop="dateCreated datePublished" datetime="2024-05-30T21:58:20+08:00">2024-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-08-28 14:20:24" itemprop="dateModified" datetime="2024-08-28T14:20:24+08:00">2024-08-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.8k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> learngit</span><br><span class="line"><span class="built_in">cd</span> learngit</span><br><span class="line">pow</span><br><span class="line"></span><br><span class="line">git init//把这个目录变成Git可管理的仓库</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p><code>git status</code>可以查看状态</p>
-<p><code>git log</code>命令显示从最近到最远的提交日志</p>
-<blockquote>
-<p>在 Git 中，用<code>HEAD</code>表示当前版本，上一个版本就是<code>HEAD^</code>,上上个版本就是<code>HEAD^^</code></p>
-</blockquote>
-<p><code>git reset --hard HEAD^</code>把当前版本回退到上一个版本</p>
-<p><code>git reset --hard 版本号</code>回退到目标版本</p>
-<p>版本号可以通过<code>git log</code>查看</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/30/git/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -788,20 +792,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -842,12 +846,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">122k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:51</span>
 </div>
 
         

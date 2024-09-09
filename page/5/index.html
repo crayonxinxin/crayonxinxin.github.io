@@ -118,17 +118,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">8</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">59</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">60</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -182,6 +182,109 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
+      <meta itemprop="name" content="Crayonxiaoxin">
+      <meta itemprop="description" content="成名在望">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/" class="post-title-link" itemprop="url">最大公约数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-05-30 22:25:12 / Modified: 22:28:58" itemprop="dateCreated datePublished" datetime="2024-05-30T22:25:12+08:00">2024-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>909</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="最大公约数"><a href="#最大公约数" class="headerlink" title="最大公约数"></a>最大公约数</h1><h2 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h2><blockquote>
+<p>求出a和b的最大公约数</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (b != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="type">int</span> tmp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = tmp % b;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更相减损术"><a href="#更相减损术" class="headerlink" title="更相减损术"></a>更相减损术</h3><blockquote>
+<p>大整数取模的时间复杂度较高，而加减法时间复杂度较低。针对大整数，我们可以用加减代替乘除求出最大公约数。</p>
+</blockquote>
+<p>$gcd(a,b)\ &#x3D; \ gcd(a-b,b)$</p>
+<h2 id="多个数的最大公约数"><a href="#多个数的最大公约数" class="headerlink" title="多个数的最大公约数"></a>多个数的最大公约数</h2><p>答案一定是每个数的约数，那么也一定是每相邻两个数的约数。我们采用归纳法，可以证明，每次取出两个数求出答案后再放回去，不会对所需要的答案造成影响。</p>
+<h2 id="最小公倍数"><a href="#最小公倍数" class="headerlink" title="最小公倍数"></a>最小公倍数</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -575,107 +678,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
-      <meta itemprop="name" content="Crayonxiaoxin">
-      <meta itemprop="description" content="成名在望">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/" class="post-title-link" itemprop="url">乘法逆元</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2024-05-30 22:24:40 / Modified: 22:27:11" itemprop="dateCreated datePublished" datetime="2024-05-30T22:24:40+08:00">2024-05-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>420</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h1><p>给定正整数a，b，如果有 $ax\ \equiv \ 1\ (mod\ b)$​，且a与b互质，则称x的最小正整数解为a模b的逆元，（可以理解为倒数)。模n意义下，1个数a如果有逆元x，那么除以a相当于乘以x。</p>
-<blockquote>
-<p>如果一个线性同余方程$ax\ \equiv \ 1\ (mod\ b)$,则x称为a mod b的逆元</p>
-</blockquote>
-<h2 id="扩展欧几里得法"><a href="#扩展欧几里得法" class="headerlink" title="扩展欧几里得法"></a>扩展欧几里得法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">exgcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span>&amp; x, <span class="type">int</span>&amp; y)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">    x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">exgcd</span>(b, a % b, y, x);</span><br><span class="line">  y -= a / b * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="快速幂法"><a href="#快速幂法" class="headerlink" title="快速幂法"></a>快速幂法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">qpow</span><span class="params">(<span class="type">long</span> <span class="type">long</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">  a = (a % p + p) % p;</span><br><span class="line">  <span class="keyword">for</span> (; b; b &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (b &amp; <span class="number">1</span>) ans = (a * ans) % p;</span><br><span class="line">    a = (a * a) % p;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -747,20 +749,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -801,12 +803,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">122k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:51</span>
 </div>
 
         

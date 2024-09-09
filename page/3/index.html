@@ -118,17 +118,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">8</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">22</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">59</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">60</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -182,6 +182,105 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/st%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
+      <meta itemprop="name" content="Crayonxiaoxin">
+      <meta itemprop="description" content="成名在望">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/30/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/st%E8%A1%A8/" class="post-title-link" itemprop="url">st表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-05-30 22:31:54 / Modified: 22:48:12" itemprop="dateCreated datePublished" datetime="2024-05-30T22:31:54+08:00">2024-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="st表"><a href="#st表" class="headerlink" title="st表"></a>st表</h1><blockquote>
+<p>询问特定区间的最大&#x2F;最小值</p>
+<p>先进行初始化，每次询问的复杂度为O(1)</p>
+</blockquote>
+<h2 id="询问区间的极差-最大值-最小值"><a href="#询问区间的极差-最大值-最小值" class="headerlink" title="询问区间的极差(最大值-最小值)"></a>询问区间的极差(最大值-最小值)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: </span></span><br><span class="line"><span class="comment"> * @Author: CrayonXiaoxin</span></span><br><span class="line"><span class="comment"> * @Date: 2024-01-26 10:46:31</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2024-05-22 20:53:39</span></span><br><span class="line"><span class="comment"> * @LastEditors:  </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long int</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line">ll max_xy[maxn][<span class="number">22</span>], min_xy[maxn][<span class="number">22</span>];</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">st</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> s = <span class="built_in">log2</span>(r - l + <span class="number">1</span>), x, y;</span><br><span class="line">    x = <span class="built_in">max</span>(max_xy[l][s], max_xy[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);<span class="comment">//区间最大</span></span><br><span class="line">    y = <span class="built_in">min</span>(min_xy[l][s], min_xy[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);<span class="comment">//区间最小</span></span><br><span class="line">    <span class="keyword">return</span> x - y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; max_xy[i][<span class="number">0</span>];</span><br><span class="line">        min_xy[i][<span class="number">0</span>] = max_xy[i][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">21</span>;++i)<span class="comment">//这个循环的上界决定于数据的大小，即2的21次方大于数据</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k + (<span class="number">1</span> &lt;&lt; i) &lt;= n + <span class="number">1</span>;++k)</span><br><span class="line">        &#123;</span><br><span class="line">            max_xy[k][i] = <span class="built_in">max</span>(max_xy[k][i - <span class="number">1</span>], max_xy[k + (<span class="number">1</span> &lt;&lt; (i - <span class="number">1</span>))][i - <span class="number">1</span>]);</span><br><span class="line">            min_xy[k][i] = <span class="built_in">min</span>(min_xy[k][i - <span class="number">1</span>], min_xy[k + (<span class="number">1</span> &lt;&lt; (i - <span class="number">1</span>))][i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> l, r;</span><br><span class="line">        cin &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        cout &lt;&lt; <span class="built_in">st</span>(l, r) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//std::ios::sync_with_stdio(false);</span></span><br><span class="line"><span class="comment">//cin.tie(0);</span></span><br><span class="line"><span class="comment">//cout.tie(0);</span></span><br><span class="line"><span class="type">int</span> t=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//cin&gt;&gt;t;</span></span><br><span class="line"><span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/st%E8%A1%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -601,102 +700,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E5%BF%AB%E9%80%9F%E5%B9%82/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
-      <meta itemprop="name" content="Crayonxiaoxin">
-      <meta itemprop="description" content="成名在望">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="post-title-link" itemprop="url">快速幂</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2024-05-30 22:26:09 / Modified: 22:31:01" itemprop="dateCreated datePublished" datetime="2024-05-30T22:26:09+08:00">2024-05-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>230</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算a的b次方mod m</span></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">binpow</span><span class="params">(<span class="type">long</span> <span class="type">long</span> a, <span class="type">long</span> <span class="type">long</span> b, <span class="type">long</span> <span class="type">long</span> m)</span> </span>&#123;</span><br><span class="line">  a %= m;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> res = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (b &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (b &amp; <span class="number">1</span>) res = res * a % m;</span><br><span class="line">    a = a * a % m;</span><br><span class="line">    b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>根据费马小定理，如果 m 是一个质数，我们可以计算 $a^{b\ mod\ (m-1)}$ 来加速算法过程</strong></p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/30/acm/%E6%95%B0%E8%AE%BA/%E5%BF%AB%E9%80%9F%E5%B9%82/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -768,20 +771,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -822,12 +825,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">122k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:51</span>
 </div>
 
         
