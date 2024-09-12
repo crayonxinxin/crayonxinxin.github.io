@@ -118,7 +118,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">60</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">61</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -182,6 +182,110 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E5%88%86%E5%B1%82%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
+      <meta itemprop="name" content="Crayonxiaoxin">
+      <meta itemprop="description" content="成名在望">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E5%88%86%E5%B1%82%E5%9B%BE/" class="post-title-link" itemprop="url">分层图</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-05-30 22:15:03 / Modified: 22:19:47" itemprop="dateCreated datePublished" datetime="2024-05-30T22:15:03+08:00">2024-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" itemprop="url" rel="index"><span itemprop="name">最短路径</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="分层图"><a href="#分层图" class="headerlink" title="分层图"></a>分层图</h1><p>当我们要进行图的遍历的时候，有时会进行状态的变化，此时我们可以开多个维度的图，每种维度代表一种状态，当状态改变时就可以转移到另一个维度进行推进；</p>
+<h2 id="1-wyh的吃鸡"><a href="#1-wyh的吃鸡" class="headerlink" title="1.wyh的吃鸡"></a>1.wyh的吃鸡</h2><p>  假设地图为n*n的一个图，图中有且仅有一块X的联通快代表安全区域，有一个起点S代表缩圈的时候的起点，图中C代表的是车（保证车的数量小于等于100），标记为.的代表空地，可以任意通过，O代表障碍物不能通过。每次没有车的时候2s可以走一个格（只能走自己的上下左右4个方向），有车的话时间为1s走一个格  </p>
+<p> 现在告诉你最多能坚持的时间为t秒，问你在t秒内（含t秒）能否从s点到达安全区域，能的话输出YES，并且输出最短时间，不能的话输出NO。</p>
+<p>此题为<strong>bfs</strong>，同时使用<strong>优先队列</strong>优化，我们需要把时间较小的放到队列前面，同时需要注意状态的改变。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LL long long</span></span><br><span class="line">LL <span class="type">int</span> n,k;</span><br><span class="line"><span class="type">int</span> sx,sy;</span><br><span class="line"><span class="type">char</span> ju[<span class="number">105</span>][<span class="number">105</span>];<span class="comment">//保存图形</span></span><br><span class="line"><span class="type">bool</span> ask[<span class="number">3</span>][<span class="number">105</span>][<span class="number">105</span>];<span class="comment">//标记（第一个维度为不同状态，后面两个维度为坐标）</span></span><br><span class="line"><span class="type">bool</span> pd[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">note</span>&#123;</span><br><span class="line">    <span class="type">int</span> x,y;<span class="comment">//坐标</span></span><br><span class="line">    <span class="type">int</span> s;<span class="comment">//时间</span></span><br><span class="line">    <span class="type">int</span> c;<span class="comment">//状态</span></span><br><span class="line">    <span class="keyword">inline</span> <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> note&amp; p) <span class="type">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> s&gt;p.s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//方向</span></span><br><span class="line"><span class="type">int</span> ax[<span class="number">5</span>],ay[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Clear</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(pd,<span class="number">0</span>,<span class="keyword">sizeof</span> pd);</span><br><span class="line">    <span class="built_in">memset</span>(ask,<span class="number">0</span>,<span class="keyword">sizeof</span> ask);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ax[<span class="number">1</span>]=<span class="number">-1</span>,ay[<span class="number">1</span>]=<span class="number">0</span>;<span class="comment">//zuo</span></span><br><span class="line">    ax[<span class="number">2</span>]=<span class="number">1</span>,ay[<span class="number">2</span>]=<span class="number">0</span>;<span class="comment">//you</span></span><br><span class="line">    ax[<span class="number">3</span>]=<span class="number">0</span>,ay[<span class="number">3</span>]=<span class="number">-1</span>;<span class="comment">//shang</span></span><br><span class="line">    ax[<span class="number">4</span>]=<span class="number">0</span>,ay[<span class="number">4</span>]=<span class="number">1</span>;<span class="comment">//xia</span></span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">Clear</span>();</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">            cin&gt;&gt;ju[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(ju[i][j]==<span class="string">&#x27;S&#x27;</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    sx=i;</span><br><span class="line">                    sy=j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> sum=<span class="number">1e9</span>;</span><br><span class="line">        priority_queue&lt;note&gt;q;</span><br><span class="line">        q.<span class="built_in">push</span>(note&#123;sx,sy,<span class="number">0</span>,<span class="number">2</span>&#125;);</span><br><span class="line">        <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())<span class="comment">//bfs</span></span><br><span class="line">        &#123;</span><br><span class="line">            note tmp=q.<span class="built_in">top</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="type">int</span> x=tmp.x, y=tmp.y;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(ask[tmp.c][x][y]||ju[x][y]==<span class="string">&#x27;O&#x27;</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(x&lt;<span class="number">0</span>||x&gt;=n||y&lt;<span class="number">0</span>||y&gt;=n) </span><br><span class="line">                <span class="keyword">continue</span>;<span class="comment">//cout&lt;&lt;tmp.c&lt;&lt;&quot; &quot;&lt;&lt;x&lt;&lt;&quot; &quot;&lt;&lt;y&lt;&lt;&quot; &quot;&lt;&lt;tmp.s&lt;&lt;endl;</span></span><br><span class="line">            <span class="keyword">if</span>(ju[x][y]==<span class="string">&#x27;X&#x27;</span>)&#123;</span><br><span class="line">                sum=<span class="built_in">min</span>(sum,tmp.s);<span class="comment">//找到更小的</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ask[tmp.c][x][y]=<span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> c=<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(ju[x][y]==<span class="string">&#x27;C&#x27;</span>)</span><br><span class="line">                c=<span class="number">1</span>;<span class="comment">//状态改变</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;++i)&#123;</span><br><span class="line">                <span class="type">int</span> tx=x+ax[i], ty=y+ay[i];</span><br><span class="line">                q.<span class="built_in">push</span>(&#123;tx,ty,tmp.s+<span class="built_in">min</span>(tmp.c,c),<span class="built_in">min</span>(tmp.c,c)&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(sum&lt;=k)</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;YES&quot;</span>&lt;&lt;<span class="string">&quot;\n&quot;</span>&lt;&lt;sum&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;NO&quot;</span>&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-对于每个点都可以选择下一条边是否赋予权值为0-那么我们就可以将图画出k-1层1"><a href="#2-对于每个点都可以选择下一条边是否赋予权值为0-那么我们就可以将图画出k-1层1" class="headerlink" title="2.对于每个点都可以选择下一条边是否赋予权值为0,那么我们就可以将图画出k+1层1"></a>2.对于每个点都可以选择下一条边是否赋予权值为0,那么我们就可以将图画出k+1层1</h2><p> 代码实现：</p>
+<p>我们可以将dis数组开成二维dis[i][j]表示<strong>到达i号结点,用了j次免费操作</strong>!<br>比如dis[2][0]表示到达2号结点,没有用免费操作,也就是在第一层图移动。 比如dis[2][3],到达2号结点用了3次免费操作,那么**下一次移动应该在第3&#x2F;4层图进行!**、</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E5%88%86%E5%B1%82%E5%9B%BE/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -601,117 +705,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
-      <meta itemprop="name" content="Crayonxiaoxin">
-      <meta itemprop="description" content="成名在望">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/" class="post-title-link" itemprop="url">树的直径</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2024-05-30 22:14:04 / Modified: 22:17:07" itemprop="dateCreated datePublished" datetime="2024-05-30T22:14:04+08:00">2024-05-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">树上问题</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="树的直径"><a href="#树的直径" class="headerlink" title="树的直径"></a>树的直径</h1><blockquote>
-<p>树上任意两节点之间最长的简单路径即为树的直径</p>
-</blockquote>
-<h2 id="两次DFS"><a href="#两次DFS" class="headerlink" title="两次DFS"></a>两次DFS</h2><blockquote>
-<p>若存在负权边，则无法使用两次DFS的方式求解直径</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, c, d[N];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; E[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> v : E[u]) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    d[v] = d[u] + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (d[v] &gt; d[c]) c = v;</span><br><span class="line">    <span class="built_in">dfs</span>(v, u);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="type">int</span> u, v;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;u, &amp;v);</span><br><span class="line">    E[u].<span class="built_in">push_back</span>(v), E[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">  d[c] = <span class="number">0</span>, <span class="built_in">dfs</span>(c, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d[c]);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果需要求出一条直径上所有节点，则可以在第二次DFS的过程中，记录每个点的前序节点，即可从直径的一端一路向前，遍历直径上所有的节点</p>
-<h2 id="树形dp"><a href="#树形dp" class="headerlink" title="树形dp"></a>树形dp</h2><h3 id="实现1"><a href="#实现1" class="headerlink" title="实现1"></a>实现1</h3><p><code>d1</code>和<code>d2</code>分别为每个节点作为字树的根向下，所能延伸的最长路径长度<code>d1</code>与此长路径<code>d2</code>，那么直径就是对于每个点，该点<code>d1+d2</code>所能取到的值中的最大值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, d = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> d1[N], d2[N];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; E[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">  d1[u] = d2[u] = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> v : E[u]) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(v, u);</span><br><span class="line">    <span class="type">int</span> t = d1[v] + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (t &gt; d1[u])</span><br><span class="line">      d2[u] = d1[u], d1[u] = t;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (t &gt; d2[u])</span><br><span class="line">      d2[u] = t;</span><br><span class="line">  &#125;</span><br><span class="line">  d = <span class="built_in">max</span>(d, d1[u] + d2[u]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="type">int</span> u, v;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;u, &amp;v);</span><br><span class="line">    E[u].<span class="built_in">push_back</span>(v), E[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/30/acm/%E5%9B%BE%E8%AE%BA/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -779,7 +776,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -792,7 +789,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

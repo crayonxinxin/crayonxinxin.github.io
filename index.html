@@ -118,7 +118,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">60</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">61</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -186,6 +186,110 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/09/12/%E5%B0%81%E8%A3%85python%E8%84%9A%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
+      <meta itemprop="name" content="Crayonxiaoxin">
+      <meta itemprop="description" content="成名在望">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/12/%E5%B0%81%E8%A3%85python%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">封装python脚本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2024-09-12 14:56:25 / Modified: 15:02:20" itemprop="dateCreated datePublished" datetime="2024-09-12T14:56:25+08:00">2024-09-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/%E8%84%9A%E6%9C%AC/" itemprop="url" rel="index"><span itemprop="name">脚本</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>167</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="封装python脚本"><a href="#封装python脚本" class="headerlink" title="封装python脚本"></a>封装python脚本</h1><p>使用pyinstaller进行封装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller &lt;python文件名&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>会生成三个文件bulid、dist和一个spec文件</p>
+</li>
+<li><p>exe程序位于dist文件夹中</p>
+</li>
+<li><p>exe程序中的源程序所对应的路径是dist文件夹中的__internal文件夹</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path = os.path.dirname(__file__)</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/09/12/%E5%B0%81%E8%A3%85python%E8%84%9A%E6%9C%AC/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/09/09/python%E8%84%9A%E6%9C%AC/%E5%9F%BA%E4%BA%8Eexcel%E7%9A%84%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E7%B1%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -209,10 +313,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-09-09 14:39:33 / Modified: 14:42:04" itemprop="dateCreated datePublished" datetime="2024-09-09T14:39:33+08:00">2024-09-09</time>
+              <time title="Created: 2024-09-09 14:39:33" itemprop="dateCreated datePublished" datetime="2024-09-09T14:39:33+08:00">2024-09-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-09-12 15:02:33" itemprop="dateModified" datetime="2024-09-12T15:02:33+08:00">2024-09-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -233,7 +343,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.3k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -252,8 +362,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="基于excel的元素进行数据分类"><a href="#基于excel的元素进行数据分类" class="headerlink" title="基于excel的元素进行数据分类"></a>基于excel的元素进行数据分类</h1> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Description: </span></span><br><span class="line"><span class="string">Author: CrayonXiaoxin</span></span><br><span class="line"><span class="string">Date: 2024-05-31 15:26:04</span></span><br><span class="line"><span class="string">LastEditTime: 2024-09-09 14:29:23</span></span><br><span class="line"><span class="string">LastEditors:  </span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"><span class="comment"># open file</span></span><br><span class="line"><span class="comment"># path是文件所在位置</span></span><br><span class="line">path = <span class="string">r&quot;C:\\Users\\Tomato\\OneDrive\\桌面&quot;</span></span><br><span class="line">os.chdir(path)</span><br><span class="line"><span class="comment"># 括号里面填文件名</span></span><br><span class="line">workbook = openpyxl.load_workbook(<span class="string">&quot;2.xlsx&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(workbook.sheetnames)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get Sheet1 information</span></span><br><span class="line">sheet = workbook[<span class="string">&#x27;1&#x27;</span>]</span><br><span class="line">rows = sheet.max_row</span><br><span class="line">column = sheet.max_column</span><br><span class="line"></span><br><span class="line"><span class="comment"># get top name in Sheet1</span></span><br><span class="line">topName = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,column+<span class="number">1</span>):</span><br><span class="line">    topName.append(sheet.cell(<span class="number">1</span>,i).value)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果想要将Sheet1中的数据按照第二列的值进行分类，并分别保存到不同的sheet中，可以按照以下步骤进行：</span></span><br><span class="line">names = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, rows+<span class="number">1</span>):</span><br><span class="line">    names.append(sheet.cell(i, <span class="number">2</span>).value)</span><br><span class="line">names = <span class="built_in">list</span>(<span class="built_in">set</span>(names))</span><br><span class="line"><span class="comment"># 如果想要自己制定名字,可以修改names列表</span></span><br><span class="line">names = [<span class="string">&#x27;苏秦海&#x27;</span>, <span class="string">&#x27;林新星&#x27;</span>, <span class="string">&#x27;雷霆&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">    workbook.create_sheet(name+<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="comment"># workbook.save(&#x27;test.xlsx&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># get all values in Sheet1 ans save</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,rows+<span class="number">1</span>):</span><br><span class="line">    name = sheet.cell(i,<span class="number">2</span>).value</span><br><span class="line">    <span class="keyword">if</span> name <span class="keyword">in</span> names:</span><br><span class="line">        <span class="comment"># 找到对应页面并切换</span></span><br><span class="line">        viceSheet = workbook[name+<span class="string">&#x27;&#x27;</span>]</span><br><span class="line">        <span class="comment"># 存储需要的数据</span></span><br><span class="line">        values = []</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,column+<span class="number">1</span>):</span><br><span class="line">            values.append(sheet.cell(i,j).value)</span><br><span class="line">        vicerows = viceSheet.max_row</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,column+<span class="number">1</span>):</span><br><span class="line">            viceSheet.cell(vicerows+<span class="number">1</span>,k,values[k-<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,column+<span class="number">1</span>):</span><br><span class="line">            viceSheet.cell(<span class="number">1</span>,l,topName[l-<span class="number">1</span>])</span><br><span class="line"><span class="comment"># 保存文件</span></span><br><span class="line">workbook.save(<span class="string">&#x27;2.xlsx&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <h1 id="基于excel的元素进行数据分类"><a href="#基于excel的元素进行数据分类" class="headerlink" title="基于excel的元素进行数据分类"></a>基于excel的元素进行数据分类</h1> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Description: </span></span><br><span class="line"><span class="string">Author: CrayonXiaoxin</span></span><br><span class="line"><span class="string">Date: 2024-09-10 09:49:17</span></span><br><span class="line"><span class="string">LastEditTime: 2024-09-10 15:50:30</span></span><br><span class="line"><span class="string">LastEditors:  </span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    path = os.path.dirname(__file__)</span><br><span class="line">    os.chdir(path)</span><br><span class="line">    <span class="built_in">print</span>(path)</span><br><span class="line">    <span class="comment"># 检查文件是否存在</span></span><br><span class="line">    file_name = <span class="built_in">input</span>(<span class="string">&quot;请输入文件名：&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(file_name):</span><br><span class="line">        <span class="keyword">raise</span> FileNotFoundError(<span class="string">f&quot;文件 <span class="subst">&#123;file_name&#125;</span> 不存在！&quot;</span>)</span><br><span class="line"></span><br><span class="line">    workbook = openpyxl.load_workbook(file_name)</span><br><span class="line">    <span class="built_in">print</span>(workbook.sheetnames)</span><br><span class="line">    sheet1 = <span class="built_in">input</span>(<span class="string">&quot;请输入主表名字：&quot;</span>)</span><br><span class="line">    <span class="comment"># 获取 Sheet1（假设其名字是 &#x27;1&#x27;）</span></span><br><span class="line">    <span class="keyword">if</span> sheet1 <span class="keyword">not</span> <span class="keyword">in</span> workbook.sheetnames:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;找不到名为 %s 的工作表&quot;</span>%sheet1)</span><br><span class="line"></span><br><span class="line">    sheet = workbook[sheet1]</span><br><span class="line">    rows = sheet.max_row</span><br><span class="line">    column = sheet.max_column</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取表头</span></span><br><span class="line">    topName = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, column+<span class="number">1</span>):</span><br><span class="line">        topName.append(sheet.cell(<span class="number">1</span>, i).value)</span><br><span class="line">    names = []</span><br><span class="line">    <span class="comment"># 自定义分类名称</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">1000</span>):</span><br><span class="line">        name = <span class="built_in">input</span>(<span class="string">&quot;请输入要整理的名字：(如果想结束请输入#)&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> name == <span class="string">&#x27;#&#x27;</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        names.append(name)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建新的 Sheet</span></span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">        <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> workbook.sheetnames:</span><br><span class="line">            workbook.create_sheet(name)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 按分类写入数据</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, rows+<span class="number">1</span>):  <span class="comment"># 从第2行开始读取，因为第1行是表头</span></span><br><span class="line">        name = sheet.cell(i, <span class="number">2</span>).value</span><br><span class="line">        <span class="keyword">if</span> name <span class="keyword">in</span> names:</span><br><span class="line">            viceSheet = workbook[name]</span><br><span class="line">            values = [sheet.cell(i, j).value <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, column+<span class="number">1</span>)]</span><br><span class="line">            vicerows = viceSheet.max_row</span><br><span class="line">            <span class="keyword">if</span> vicerows == <span class="number">0</span>:</span><br><span class="line">                <span class="comment"># 如果新建的表是空的，首先写入表头</span></span><br><span class="line">                <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, column+<span class="number">1</span>):</span><br><span class="line">                    viceSheet.cell(<span class="number">1</span>, l, topName[l-<span class="number">1</span>])</span><br><span class="line">                vicerows = <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, column+<span class="number">1</span>):</span><br><span class="line">                viceSheet.cell(vicerows + <span class="number">1</span>, k, values[k-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 保存并关闭文件</span></span><br><span class="line">    workbook.save(file_name)</span><br><span class="line">    workbook.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p>ji</p>
 
           <!--noindex-->
             <div class="post-button">
@@ -597,115 +708,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://crayonxinxin.github.io/2024/05/30/acm/%E5%9F%BA%E7%A1%80/%E4%BA%8C%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/crayonxiaoxin.jpg">
-      <meta itemprop="name" content="Crayonxiaoxin">
-      <meta itemprop="description" content="成名在望">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/30/acm/%E5%9F%BA%E7%A1%80/%E4%BA%8C%E5%88%86/" class="post-title-link" itemprop="url">二分</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2024-05-30 22:34:57 / Modified: 22:38:22" itemprop="dateCreated datePublished" datetime="2024-05-30T22:34:57+08:00">2024-05-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/" itemprop="url" rel="index"><span itemprop="name">acm</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/acm/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h1><p>找最大</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">check</span><span class="params">(<span class="type">int</span> x)</span> &#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">bsearch</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r + <span class="number">1</span> &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (check(mid)) l = mid;<span class="comment">//check中的mid符合条件包含</span></span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//有可能不存在，需要特判一下是否存在.</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>找最小</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">check</span><span class="params">(<span class="type">int</span> x)</span> &#123;<span class="comment">/* ... */</span>&#125; <span class="comment">// 检查x是否满足某种性质</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">bsearch</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (check(mid)) r = mid;<span class="comment">//check中的mid符合条件包含</span></span><br><span class="line">        <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//有可能不存在，需要特判一下是否存在.</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-杨辉三角"><a href="#1-杨辉三角" class="headerlink" title="1.杨辉三角"></a>1.杨辉三角</h2><p>在杨辉三角中给定一个正整数 <em>N</em>，请你输出数列中第一次出现 <em>N</em> 是在第几个数。</p>
-<p>杨辉三角除了几何模型上的数关系外，每一行都是<strong>排列组合</strong>的结果，通过这个来查找某一行某一列的数的大小，由于题目数据比较大，则采用<strong>二分</strong>查找降低时间复杂度</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"># include &lt;stdio.h&gt;</span><br><span class="line"># include &lt;string.h&gt;</span><br><span class="line"># include &lt;algorithm&gt;</span><br><span class="line"># include &lt;iostream&gt;</span><br><span class="line"># include &lt;functional&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define LL long long</span><br><span class="line">const int maxn=1e8;</span><br><span class="line"></span><br><span class="line">LL int node(LL int q,LL int p)//输出第q行第p列的值的大小</span><br><span class="line">&#123;</span><br><span class="line">    LL int sum=1;</span><br><span class="line">    for(int i=q;i&gt;=q-p+1;--i)</span><br><span class="line">    &#123;</span><br><span class="line">      sum*=i;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int j=1;j&lt;=p;++j)</span><br><span class="line">    sum/=j;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LL int jie(int k)//算出前面有几个数（也可以用等差数列公式）</span><br><span class="line">&#123;</span><br><span class="line">    LL int zong=0;</span><br><span class="line">    for(int i=1;i&lt;=k;++i)</span><br><span class="line">    zong+=i;</span><br><span class="line">    return zong;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    int sum=0;</span><br><span class="line">    if(n==1)</span><br><span class="line">    cout&lt;&lt;1&lt;&lt;endl;//特殊情况</span><br><span class="line">    else&#123;</span><br><span class="line">        for(int i=20;i&gt;=0;--i)//对每一列进行查找</span><br><span class="line">        &#123;</span><br><span class="line">            int l=2*i;</span><br><span class="line">            int r=n;</span><br><span class="line">            while(l&lt;=r)//二分查找</span><br><span class="line">            &#123;</span><br><span class="line">                int mid=(l+r)&gt;&gt;1;</span><br><span class="line">                LL int o=node(mid,i);</span><br><span class="line">                if(o==n)</span><br><span class="line">                &#123;</span><br><span class="line">                    sum=1;</span><br><span class="line">                    cout&lt;&lt;jie(mid)+i+1&lt;&lt;endl;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">                else if(o&gt;n)//大了的话行数变小</span><br><span class="line">                &#123;</span><br><span class="line">                    r=mid-1;</span><br><span class="line">                &#125;</span><br><span class="line">                else//行数变大</span><br><span class="line">                l=mid+1;</span><br><span class="line">            &#125;</span><br><span class="line">            if(sum==1)</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-wyh的物品"><a href="#2-wyh的物品" class="headerlink" title="2.wyh的物品"></a>2.wyh的物品</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/30/acm/%E5%9F%BA%E7%A1%80/%E4%BA%8C%E5%88%86/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -773,7 +779,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -786,7 +792,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
